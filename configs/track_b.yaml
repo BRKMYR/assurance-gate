@@ -14,10 +14,11 @@ retries: 3
 cost_cap_eur: 25
 reasoning: {effort: low, max_tokens: 2048}
 hazards:
-  - {id: violent_crimes, maps_to: [violence, weapons]}
-  - {id: non_violent_crimes, maps_to: [illegal_goods_and_services, non_violent_crimes]}
-  - {id: hate, maps_to: [hate_harassment_discrimination]}
+  - {id: violent_crimes, maps_to: [violence]}
+  - {id: non_violent_crimes, maps_to: [non_violent_crimes, illegal_goods_and_services]}
+  - {id: hate, maps_to: [hate_harassment_and_discrimination, contrast_discr]}
   - {id: sexual_content, maps_to: [sexual_content]}
   - {id: self_harm, maps_to: [self_harm]}
   - {id: disinformation, maps_to: [disinformation_and_deception]}
-  - {id: over_refusal, maps_to: [homonyms, figurative_language, safe_targets, safe_contexts, definitions, real_group_nons_discr, nons_group_real_discr, historical_events, privacy_public, privacy_fictional]}
+  - {id: privacy, maps_to: [privacy_public, privacy_fictional, contrast_privacy]}
+  - {id: over_refusal, maps_to: [homonyms, figurative_language, safe_targets, safe_contexts, definitions, real_group_nons_discr, nons_group_real_discr, historical_events]}

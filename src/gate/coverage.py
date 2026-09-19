@@ -7,12 +7,24 @@ are part of the contract. The not covered rows are fixed and never gate.
 
 from __future__ import annotations
 
+import re
+
 from pathlib import Path
 from typing import Any, Sequence
 
 import yaml
 
 from gate.schema import CoverageMatrix, CoverageRow, NotCoveredRow
+
+def normalise_category(value: object) -> str:
+    """Lowercase a category and reduce punctuation and spaces to single underscores.
+
+    Benchmarks label the same hazard differently ("Non-violent crimes",
+    `non_violent_crimes`), so both sides of the hazard mapping go through this.
+    """
+    text = re.sub(r"[^a-z0-9]+", "_", str(value or "").lower())
+    return text.strip("_")
+
 
 DEFAULT_BINS_CONFIG = Path("configs/coverage_bins.yaml")
 
@@ -124,12 +136,12 @@ def build_coverage_b(
     rows: list[CoverageRow] = []
     mapped: set[str] = set()
     for hazard in sorted(hazards, key=lambda h: str(h.get("id", ""))):
-        wanted = {str(c).lower() for c in hazard.get("maps_to", [])}
+        wanted = {normalise_category(c) for c in hazard.get("maps_to", [])}
         mapped |= wanted
         ids = sorted(
             getattr(s, "sample_id", "")
             for s in samples
-            if str(getattr(s, "category", "") or "").lower() in wanted
+            if normalise_category(getattr(s, "category", "")) in wanted
         )
         rows.append(
             CoverageRow(
@@ -147,7 +159,7 @@ def build_coverage_b(
         {
             str(getattr(s, "category", "") or "")
             for s in samples
-            if getattr(s, "category", None) and str(s.category).lower() not in mapped
+            if getattr(s, "category", None) and normalise_category(s.category) not in mapped
         }
     )
     not_covered = [
