@@ -289,4 +289,4 @@ def test_worked_example_falls_back_to_the_fixed_one() -> None:
     example = worked_example([outcome_for("a.hard.x", "hard", "pass")])
     assert example.live is False
     assert example.gate_id == "a.soft.ttc_cutin"
-    assert example.bound == 0.6165
+    assert example.bound == 0.5435

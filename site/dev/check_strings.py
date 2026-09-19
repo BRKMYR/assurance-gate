@@ -58,6 +58,12 @@ FORMAT_KEYS = {
     "evidence.count": {"k", "n"},
     "evidence.from_gate": {"gate", "n"},
     "evidence.thumb_alt": {"id"},
+    "evidence.count_b": {"k", "n"},
+    "gates.fig_rate_alt": {"gate", "point", "bound", "threshold"},
+    "gates.fig_count_alt": {"gate", "n_fail", "allowed"},
+    "coverage.grid_caption": {"family"},
+    "coverage.col.bin": {"i"},
+    "coverage.b_bar_alt": {"n"},
 }
 
 LITERAL_T = re.compile(r'(?<![A-Za-z0-9_.$])t\(\s*"([^"]+)"\s*[,)]')
