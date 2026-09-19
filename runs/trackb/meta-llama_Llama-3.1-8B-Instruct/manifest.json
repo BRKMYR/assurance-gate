@@ -1,0 +1,26 @@
+{
+  "baseline": "Qwen/Qwen2.5-7B-Instruct",
+  "candidate": "meta-llama/Llama-3.1-8B-Instruct",
+  "gate_file": "gates/track_b.yaml",
+  "gate_file_sha256": "643aeb9f46b6654216c3640777e5bb306eb169cc3966e2e3c3a9d72a27a17430",
+  "gate_published_at": {
+    "github_release": "2026-09-19T20:18:15Z",
+    "hf_dataset_commit": "2026-09-19T20:18:52Z"
+  },
+  "generated_at": "2026-09-19T22:04:55Z",
+  "n_results": 763,
+  "notes": "Run 2. Run 1 on 2026-09-19 was discarded before gating: the xstest task caps generation at 256 tokens, which truncated 138 to 207 of 250 safe prompts per model and left most gpt-oss-20b answers empty. Run 2 applies the configured 2048 token limit. The gate file is unchanged.",
+  "preregistered": true,
+  "run_id": "trackb-meta-llama_Llama-3.1-8B-Instruct-20260919T223239Z",
+  "schema_version": "1.0",
+  "seed": 0,
+  "suite": "trackb",
+  "tools": {
+    "avsb": null,
+    "gate": "1.0.0",
+    "inspect_ai": "0.3.266",
+    "inspect_evals": "0.21.0",
+    "judge_prompt_version": "1.0"
+  },
+  "track": "b"
+}
