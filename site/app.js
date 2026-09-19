@@ -120,9 +120,8 @@
   }
 
   function isDemo() {
-    var d = activeData();
-    if (!d) return false;
-    return d.suites.some(function (s) { return s.preregistered === false; });
+    var s = suite();
+    return !!s && s.preregistered === false;
   }
 
   /* shared blocks -------------------------------------------------------- */
