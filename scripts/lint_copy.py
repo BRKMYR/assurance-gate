@@ -359,7 +359,7 @@ RE_STEALTH_INSENSITIVE = re.compile(
 RE_STEALTH_SENSITIVE = re.compile(r"HERE Technologies")
 RE_STEALTH_2M = re.compile(r"\b2M\b")
 RE_STEALTH_USERS = re.compile(r"/Users/")
-RE_STEALTH_EMAIL = re.compile(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b")
+RE_STEALTH_EMAIL = re.compile(r"\b[A-Za-z0-9._%+-]{2,}@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b")
 
 # Approximate adjective list for the three in a row warning.
 ADJECTIVES = {

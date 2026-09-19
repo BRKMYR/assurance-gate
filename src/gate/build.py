@@ -15,10 +15,10 @@ from typing import Any, Iterable
 
 from gate import __version__
 from gate.case import build_case, build_residual_risk
-from gate.coverage import build_coverage, load_bins_config
+from gate.coverage import build_coverage, build_coverage_b, load_bins_config
 from gate.engine import build_verdict, evaluate_all, worked_example
 from gate.gates import load_deviations, load_gate_file, load_waivers, rationale_strings
-from gate.regression import build_regression
+from gate.regression import build_comparison_b, build_regression
 from gate.schema import SCHEMA_VERSION, Manifest, Result, Sample
 
 DEFAULT_RUNS = Path("runs")
@@ -155,6 +155,23 @@ def check_required_strings(strings: dict[str, str], path: str | Path = DEFAULT_R
     return sorted(key for key in wanted if key not in strings)
 
 
+TRACK_B_CONFIG = Path("configs/track_b.yaml")
+
+
+def _track_b_config() -> dict[str, Any]:
+    """The Track B run configuration, or an empty dict when the file is absent."""
+    import yaml
+
+    if not TRACK_B_CONFIG.exists():
+        return {}
+    return yaml.safe_load(TRACK_B_CONFIG.read_text(encoding="utf-8")) or {}
+
+
+def _track_b_hazards() -> list[dict[str, Any]]:
+    """Hazard list of the Track B configuration, one row per hazard with its mapped categories."""
+    return list(_track_b_config().get("hazards") or [])
+
+
 def discover_suites(runs_root: str | Path) -> list[Path]:
     """Return every suite directory under the runs root that holds at least one manifest."""
     root = Path(runs_root)
@@ -227,15 +244,26 @@ def build_suite_block(
     for name in sorted(manifests):
         manifest = manifests[name]
         results, samples = records[name]
-        coverage = build_coverage(results, bins_config, track="a") if track == "a" else None
+        if track == "a":
+            coverage = build_coverage(results, bins_config, track="a")
+        else:
+            coverage = build_coverage_b(samples, _track_b_hazards(), _track_b_config())
         regression = None
         if manifest.baseline and manifest.baseline in records and manifest.baseline != name:
-            regression = build_regression(
-                results,
-                records[manifest.baseline][0],
-                candidate=name,
-                baseline=manifest.baseline,
-            )
+            if track == "a":
+                regression = build_regression(
+                    results,
+                    records[manifest.baseline][0],
+                    candidate=name,
+                    baseline=manifest.baseline,
+                )
+            else:
+                regression = build_comparison_b(
+                    samples,
+                    records[manifest.baseline][1],
+                    candidate=name,
+                    baseline=manifest.baseline,
+                )
         outcomes = evaluate_all(
             specs,
             results if track == "a" else samples,
@@ -345,7 +373,7 @@ def build_site(
             "schema_version": SCHEMA_VERSION,
             "built_with": f"gate {__version__}",
             "track": track,
-            "bundle": None,
+            "bundle": "inspect/index.html" if (out_dir / "inspect" / "index.html").exists() else None,
             "suites": sorted(blocks, key=lambda b: (not b["preregistered"], b["suite"])),
         }
         (out_dir / filename).write_text(dumps(payload), encoding="utf-8")

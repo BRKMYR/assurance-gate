@@ -1,6 +1,6 @@
 {
   "built_with": "gate 1.0.0",
-  "bundle": null,
+  "bundle": "inspect/index.html",
   "schema_version": "1.0",
   "suites": [
     {

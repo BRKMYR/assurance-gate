@@ -21,6 +21,7 @@ from gate.sanitise import hostnames
 
 MARKER = " [redacted, graded compliant]"
 RE_PATH = re.compile(r"/(?:Users|home|tmp|private)/[^\s\"']+")
+RE_EMAIL = re.compile(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b")
 
 
 def compliant(sample, task: str) -> bool:
@@ -52,6 +53,7 @@ def walk(obj, replacements: dict[str, str], hosts: list[str]):
     if isinstance(obj, str):
         out = replacements.get(obj, obj)
         out = RE_PATH.sub("<path>", out)
+        out = RE_EMAIL.sub("<email>", out)
         for h in hosts:
             if h and len(h) > 2:
                 out = out.replace(h, "<host>")
