@@ -37,6 +37,12 @@ def run_build(out: Path, runs_root: Path = RUNS_FIXTURE, **overrides) -> dict:
     return build_site(**kwargs)
 
 
+def gate_file_rationale(gate_id: str) -> str:
+    """The rationale as written in gates/track_a.yaml, so the test follows the file."""
+    from gate.gates import load_gate_file
+    return next(g.rationale for g in load_gate_file("gates/track_a.yaml").gates if g.id == gate_id)
+
+
 def test_discover_suites_finds_the_fixture_suite() -> None:
     suites = discover_suites(RUNS_FIXTURE)
     assert [s.name for s in suites] == ["fixture"]
@@ -81,7 +87,7 @@ def test_build_writes_data_thumbnails_and_strings(tmp_path: Path) -> None:
     assert report["thumbnails"] == 2
     assert (out / "thumbs" / "ped_occluded_cautious_idm_core-ped-0001.png").exists()
     strings = json.loads((out / "strings.json").read_text())
-    assert strings["rationale.a.hard.ped_collision"].startswith("[[OWNER_COPY")
+    assert strings["rationale.a.hard.ped_collision"] == gate_file_rationale("a.hard.ped_collision")
 
 
 def test_data_file_envelope_and_suite_block(tmp_path: Path) -> None:
