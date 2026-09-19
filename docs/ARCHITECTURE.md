@@ -223,7 +223,7 @@ Waiver: `gate_id, candidate, signer, risk_accepted, mitigation, expires_at`. Dev
           "regression": {…RegressionReport…},
           "case": {"nodes": [ {…CaseNode…} ], "root": "g0"},
           "residual_risk": [ {…ResidualRiskRow…} ],
-          "worked_example": {"gate_id": "a.soft.ttc_cutin", "n": 16, "n_fail": 2, "point_estimate": 0.875, "bound": 0.6165, "threshold": 0.60, "note_key": "gates.worked_example"},
+          "worked_example": {"gate_id": "a.soft.ttc_cutin", "n": 16, "n_fail": 3, "point_estimate": 0.8125, "bound": 0.5435, "threshold": 0.60, "note_key": "gates.worked_example"},
           "results": [ {…Result…} ]
         }
       ]

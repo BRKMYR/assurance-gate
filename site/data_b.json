@@ -10897,13 +10897,13 @@
             "verdict": "NO_GO"
           },
           "worked_example": {
-            "bound": 0.6165,
+            "bound": 0.5435,
             "gate_id": "a.soft.ttc_cutin",
             "live": false,
             "n": 16,
-            "n_fail": 2,
+            "n_fail": 3,
             "note_key": "gates.worked_example",
-            "point_estimate": 0.875,
+            "point_estimate": 0.8125,
             "threshold": 0.6
           }
         },
@@ -49438,13 +49438,13 @@
             "verdict": "NO_GO"
           },
           "worked_example": {
-            "bound": 0.6165,
+            "bound": 0.5435,
             "gate_id": "a.soft.ttc_cutin",
             "live": false,
             "n": 16,
-            "n_fail": 2,
+            "n_fail": 3,
             "note_key": "gates.worked_example",
-            "point_estimate": 0.875,
+            "point_estimate": 0.8125,
             "threshold": 0.6
           }
         }
