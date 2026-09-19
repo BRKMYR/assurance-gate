@@ -98,7 +98,7 @@ def test_track_a_gate_file_matches_the_binding_table() -> None:
     assert rows["a.avail.speed"] == ("availability", "rate", "all", 0.60, "floor", "low", 50)
     assert rows["a.cov.bins"][0] == "coverage"
     assert rows["a.reg.paired"][0] == "regression"
-    assert all("[[OWNER_COPY" in g.rationale for g in gate_file.gates)
+    assert all(g.rationale.strip() and "[[OWNER_COPY" not in g.rationale for g in gate_file.gates)
     assert all(g.source for g in gate_file.gates)
 
 

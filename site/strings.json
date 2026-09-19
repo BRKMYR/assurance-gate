@@ -218,7 +218,7 @@
   "rationale.a.avail.speed": "A planner below 80 percent of target speed is avoiding conflict by not driving, so safety gates alone cannot clear it.",
   "rationale.a.cov.bins": "An empty parameter bin is a region of the design space with zero runs, and zero runs cannot support a GO.",
   "rationale.a.hard.ped_collision": "A pedestrian strike has no margin to trade against, so the count is zero, the gate is hard and no waiver applies.",
-  "rationale.a.reg.paired": "The suite is deterministic and paired by scenario id, so any scenario with a worse tier or a TTC drop over 0.5 s is a regression regardless of the family mean.",
+  "rationale.a.reg.paired": "The suite is deterministic and paired by scenario id. Any scenario with a worse tier or a TTC drop over 0.5 s is a regression, whatever the family mean says.",
   "rationale.a.soft.dmin_all": "0.5 m is the closest pass that still clears the disc approximation of the engine, measured over all 60 runs.",
   "rationale.a.soft.severity_weather": "In a visibility ramp the planner has seconds to slow down, so a critical tier means it did not react. The floor tolerates one such run in 14.",
   "rationale.a.soft.ttc_cutin": "1.5 s is the surrogate boundary between a controlled brake and a conflict. A floor of 0.60 on the lower bound tolerates two misses in 16 runs and fails on three.",

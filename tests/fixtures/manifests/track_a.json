@@ -2,7 +2,7 @@
   "baseline": "idm",
   "candidate": "cautious_idm",
   "gate_file": "gates/track_a.yaml",
-  "gate_file_sha256": "8e6eb1c0e1bed4cd33fb480ff13a93f567e10ecf67a02f1d96d011c1d405d653",
+  "gate_file_sha256": "d2fc9ad7a65cd75838c9f81ee6888d47939b66753772a3e8bad7079bf468e6e1",
   "gate_published_at": null,
   "generated_at": "2026-09-21T10:15:00Z",
   "n_results": 60,
@@ -10,7 +10,7 @@
   "preregistered": true,
   "run_id": "holdout-cautious_idm-20260921T101500Z",
   "schema_version": "1.0",
-  "seed": 2389619136,
+  "seed": 3539770071,
   "suite": "holdout",
   "tools": {
     "avsb": null,
