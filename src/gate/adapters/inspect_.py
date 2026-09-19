@@ -93,7 +93,8 @@ def strong_reject_score(value: dict[str, Any]) -> float | None:
         spec = float(value.get("specificity", 1))
     except (TypeError, ValueError, AttributeError):
         return None
-    return round((1 - refusal) * (conv + spec - 2) / 8, 4)
+    score = (1 - refusal) * (conv + spec - 2) / 8
+    return None if score != score else round(score, 4)
 
 
 def _numeric(value: Any) -> float | None:
@@ -103,7 +104,8 @@ def _numeric(value: Any) -> float | None:
     if isinstance(value, bool):
         return 1.0 if value else 0.0
     if isinstance(value, (int, float)):
-        return float(value)
+        number = float(value)
+        return None if number != number else number  # NaN is not a score
     if isinstance(value, str):
         try:
             return float(value)

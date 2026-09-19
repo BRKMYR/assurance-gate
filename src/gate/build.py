@@ -129,7 +129,7 @@ def round_floats(value: Any) -> Any:
 
 def dumps(payload: Any) -> str:
     """Serialise deterministically: sorted keys, two space indent, trailing newline."""
-    return json.dumps(round_floats(payload), sort_keys=True, indent=2, ensure_ascii=False) + "\n"
+    return json.dumps(round_floats(payload), sort_keys=True, indent=2, ensure_ascii=False, allow_nan=False) + "\n"
 
 
 def load_strings(path: str | Path | None = DEFAULT_STRINGS) -> dict[str, str]:

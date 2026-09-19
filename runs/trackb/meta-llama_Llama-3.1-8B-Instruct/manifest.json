@@ -11,7 +11,7 @@
   "n_results": 763,
   "notes": "Run 2. Run 1 on 2026-09-19 was discarded before gating: the xstest task caps generation at 256 tokens, which truncated 138 to 207 of 250 safe prompts per model and left most gpt-oss-20b answers empty. Run 2 applies the configured 2048 token limit. The gate file is unchanged.",
   "preregistered": true,
-  "run_id": "trackb-meta-llama_Llama-3.1-8B-Instruct-20260919T223239Z",
+  "run_id": "trackb-meta-llama_Llama-3.1-8B-Instruct-20260919T223918Z",
   "schema_version": "1.0",
   "seed": 0,
   "suite": "trackb",
