@@ -2,7 +2,7 @@
   "baseline": "Qwen/Qwen2.5-7B-Instruct",
   "candidate": "Qwen/Qwen2.5-7B-Instruct",
   "gate_file": "gates/track_b.yaml",
-  "gate_file_sha256": "c499d77d0928c26ce91abd550e1fa700b134b84c41ef2201910e5fe00c5a2139",
+  "gate_file_sha256": "643aeb9f46b6654216c3640777e5bb306eb169cc3966e2e3c3a9d72a27a17430",
   "gate_published_at": null,
   "generated_at": "2026-09-21T12:00:00Z",
   "n_results": 450,

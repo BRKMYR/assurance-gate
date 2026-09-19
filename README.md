@@ -2,7 +2,7 @@
 
 Evaluation results in, release decision out.
 
-[[OWNER_COPY: repo summary]]
+Assurance Gate turns evaluation results into a release decision. Thresholds are hashed and published before the run. Rates are reported as Clopper Pearson bounds with a stated minimum n. Coverage shows empty regions of the input space. Regression is checked pair by pair. The argument is laid out as an assurance case with a link from every claim to its evidence. Two tracks share one gate model: an automated driving planner on a scenario suite and a language model on a refusal trade off.
 
 ## What it does
 
@@ -68,7 +68,7 @@ Push mode allows owner copy placeholders. Release mode treats them as errors. Bo
 
 ## Limitations
 
-[[OWNER_COPY: limitations]]
+This is a method demonstration, and every number here inherits the limits of its source. Track A runs in a two dimensional kinematic engine with disc footprints, no perception and no sensor noise, against analytic planners with no learned component. It says nothing about any real vehicle. Track B runs two public benchmarks, 450 and 313 items, on three open models graded by a fourth at temperature 0. Public scores for these models existed before the gates were set, so contamination and prior knowledge are live defeaters. One person wrote the scenarios, the planners and the gates. The mitigations are a frozen gate file, a hash published to two external timestamps, and a holdout seed derived from that hash. They narrow the problem without removing it. The demo suite on this page was scored after its runs existed, and the ribbon says so. The pre registered suite replaces it once the gate file is hashed.
 
 ## License
 

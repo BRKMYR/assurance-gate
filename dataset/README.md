@@ -8,7 +8,7 @@ pretty_name: Assurance Gate runs
 
 The evaluation records behind the Assurance Gate dashboard.
 
-[[OWNER_COPY: dataset summary]]
+Results, manifests and pre registration records behind the Assurance Gate dashboard. Every run carries its gate file hash, its timestamps and its tool and model revisions, so the order of gate and run can be checked by anyone.
 
 ## What is in here
 
