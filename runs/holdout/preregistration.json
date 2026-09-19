@@ -1,0 +1,10 @@
+{
+  "gate_file": "gates/track_a.yaml",
+  "gate_file_sha256": "d2fc9ad7a65cd75838c9f81ee6888d47939b66753772a3e8bad7079bf468e6e1",
+  "github_release": "2026-09-19T20:18:10Z",
+  "hf_dataset_commit": "2026-09-19T20:18:52Z",
+  "schema_version": "1.0",
+  "suite": "holdout",
+  "tag": "gates-a-holdout-d2fc9ad7",
+  "track": "a"
+}

@@ -15,6 +15,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from gate import __version__
+from gate.schema import PublishedAt
 from gate.adapters import avsb
 
 DEMO_SUITE = "demo"
@@ -97,6 +98,14 @@ def ingest(
         gate_file=gate_file,
         sha256=avsb.gate_file_sha256(Path(root) / gate_file),
         n_results=len(results),
+        gate_published_at=(
+            PublishedAt(
+                github_release=record.get("github_release"),
+                hf_dataset_commit=record.get("hf_dataset_commit"),
+            )
+            if record
+            else None
+        ),
         avsb_version=avsb_version,
         gate_version=__version__,
     )

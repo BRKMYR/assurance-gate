@@ -78,10 +78,12 @@ def hf_dataset_commit(record: dict, track: str, suite: str) -> str | None:
 
     Returns the commit timestamp, or None with a warning when no token exists.
     """
-    token = os.environ.get("HF_TOKEN")
+    from huggingface_hub import get_token
+
+    token = os.environ.get("HF_TOKEN") or get_token()
     if not token:
         print(
-            "warning: HF_TOKEN is not set, the preregistration hash was not committed to the dataset",
+            "warning: no Hugging Face token found (HF_TOKEN or `hf auth login`), the preregistration hash was not committed to the dataset",
             file=sys.stderr,
         )
         return None

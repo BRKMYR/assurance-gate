@@ -1,0 +1,12 @@
+judge: openai/gpt-oss-120b
+models:
+- excluded: false
+  id: Qwen/Qwen2.5-7B-Instruct
+  revision: a09a35458c702b33eeacc393d103063234e8bc28
+- excluded: false
+  id: meta-llama/Llama-3.1-8B-Instruct
+  revision: 0e9e39f249a16976918f6564b8830bc894c89659
+- excluded: false
+  id: openai/gpt-oss-20b
+  revision: 6cee5e81ee83917806bbde320786a8fb61efebee
+schema_version: '1.0'
