@@ -346,7 +346,7 @@ def build_site(
             "built_with": f"gate {__version__}",
             "track": track,
             "bundle": None,
-            "suites": blocks,
+            "suites": sorted(blocks, key=lambda b: (not b["preregistered"], b["suite"])),
         }
         (out_dir / filename).write_text(dumps(payload), encoding="utf-8")
         written.append(filename)
