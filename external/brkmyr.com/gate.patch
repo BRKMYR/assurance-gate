@@ -1,23 +1,3 @@
-From b0e0e70c5fe5754fc8cc2db165fc1463a04fcd0f Mon Sep 17 00:00:00 2001
-From: NKLS BRKMYR <BRKMYR@users.noreply.github.com>
-Date: Sat, 19 Sep 2026 20:09:08 +0200
-Subject: [PATCH] gate: add the Assurance Gate project page and card
-
-Adds an eighth AI builder project: a release assurance dashboard with
-pre registered gates, confidence bounds, coverage and a paired regression.
-
-- portfolio: the card first in the grid, counts moved to eight
-- gate/index.html: problem, solution, result, success criteria, metrics
-- the live dashboard loads from its Space only after a click on the poster
-- README: the gate page names its own outside request
----
- README.md                       |   1 +
- ai-builder-portfolio/index.html |  13 +-
- gate/index.html                 | 228 ++++++++++++++++++++++++++++++++
- index.html                      |   4 +-
- 4 files changed, 241 insertions(+), 5 deletions(-)
- create mode 100644 gate/index.html
-
 diff --git a/README.md b/README.md
 index 22d39fa..ae86c05 100644
 --- a/README.md
@@ -30,7 +10,7 @@ index 22d39fa..ae86c05 100644
  
  Link-only visibility: the page carries a robots noindex tag, and the owner's name appears in the source only entity-encoded. Keep both when editing.
 diff --git a/ai-builder-portfolio/index.html b/ai-builder-portfolio/index.html
-index 430e330..b5b54ca 100644
+index 8ac57ae..2af5567 100644
 --- a/ai-builder-portfolio/index.html
 +++ b/ai-builder-portfolio/index.html
 @@ -4,7 +4,7 @@
@@ -51,32 +31,35 @@ index 430e330..b5b54ca 100644
    <p class="lede">
      Each project starts from a customer problem, ships a working system, and reports the numbers that say whether it works. Written the way a product manager writes: problem, solution, success criteria, KPIs.
    </p>
-@@ -28,6 +28,13 @@
+@@ -27,6 +27,16 @@
+   <p class="section-label">Projects</p>
  
    <div class="grid-cards">
- 
++
 +    <a class="card" href="/gate/">
++      <div class="fig"><svg class="schem" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="36 24 248 200" role="img" aria-label="Isometric gate panel with five gate bars against one threshold line, one bar over the line flagged, and a decision readout" focusable="false"><polygon points="108.0,70.0 246.6,150.0 194.6,180.0 56.1,100.0"/><polyline points="125.4,80.0 73.4,110.0" class="hair"/><polyline points="160.0,100.0 108.0,130.0" class="hair"/><polyline points="194.6,120.0 142.7,150.0" class="hair"/><polyline points="229.3,140.0 177.3,170.0" class="hair"/><polyline points="90.7,80.0 229.3,160.0" class="hair"/><polyline points="73.4,90.0 212.0,170.0" class="hair"/><polygon points="98.0,58.0 117.0,69.0 117.0,95.0 98.0,84.0" class="bar"/><polygon points="124.0,73.0 143.0,84.0 143.0,106.0 124.0,95.0" class="bar"/><polygon points="150.0,88.0 169.0,99.0 169.0,124.0 150.0,113.0" class="bar"/><polygon points="176.0,79.0 195.0,90.0 195.0,143.0 176.0,132.0" class="bar hot"/><polygon points="202.0,118.0 221.0,129.0 221.0,152.0 202.0,141.0" class="bar"/><polyline points="82.0,48.0 236.0,137.0" class="lead"/><text x="84.0" y="44.0" text-anchor="start">THRESHOLD · FIXED BEFORE RUN</text><polygon points="56.1,150.0 160.0,210.0 149.6,216.0 45.7,156.0"/><polygon points="160.0,213.0 149.6,219.0 149.6,216.0 160.0,210.0"/><polygon points="45.7,159.0 149.6,219.0 149.6,216.0 45.7,156.0"/><text class="cap" x="44" y="236" text-anchor="start">NO GO · 3 OF 9 GATES · SEE WHY</text></svg></div>
++      <div class="text">
 +      <p class="kicker">Safe Autonomy &middot; Release Assurance</p>
 +      <h3>Assurance Gate</h3>
-+      <p>[[OWNER_COPY: card body]]</p>
-+      <p class="foot">Live dashboard &middot; [[OWNER_COPY: verdict shown]] &middot; 2 tracks</p>
++      <p>Benchmarks produce scores. A release needs a decision. Assurance Gate checks eval results against thresholds hashed and published before the run, reports every rate as a Clopper Pearson bound, and links every claim to the run behind it.</p>
++      <p class="foot">Live dashboard &middot; NO GO on demo data &middot; 2 tracks</p>
++      </div>
 +    </a>
-+
      <a class="card" href="/waymax/">
-       <p class="kicker">Autonomy &middot; Fleet Ops</p>
-       <h3>Waymax Safety Monitor</h3>
-@@ -84,7 +91,7 @@
+       <div class="fig"><svg class="schem" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="36 24 248 200" role="img" aria-label="Operator console ranking three robotaxis by risk, one flagged, with a rewind control" focusable="false"><polygon points="134.0,61.0 255.3,131.0 177.3,176.0 56.1,106.0"/><polygon points="255.3,135.0 177.3,180.0 177.3,176.0 255.3,131.0"/><polygon points="56.1,110.0 177.3,180.0 177.3,176.0 56.1,106.0"/><polygon points="134.0,65.0 255.3,135.0 255.3,131.0 134.0,61.0" class="hid"/><polygon points="134.0,65.0 56.1,110.0 56.1,106.0 134.0,61.0" class="hid"/><polygon points="135.8,70.0 239.7,130.0 175.6,167.0 71.7,107.0" class="scr"/><polygon points="135.8,77.5 208.5,119.5 203.3,122.5 130.6,80.5" class="bar hot"/><polygon points="125.4,83.5 186.0,118.5 180.8,121.5 120.2,86.5" class="bar"/><polygon points="115.0,89.5 163.5,117.5 158.3,120.5 109.8,92.5" class="bar"/><polygon points="104.6,95.5 142.7,117.5 137.5,120.5 99.4,98.5" class="bar"/><polygon points="94.2,101.5 120.2,116.5 115.0,119.5 89.0,104.5" class="bar"/><text x="133.8" y="71.5" text-anchor="start">RANK · RISK</text><polyline points="73.4,130.0 160.0,180.0" class="road"/><polyline points="63.0,136.0 149.6,186.0" class="road"/><polyline points="68.2,133.0 154.8,183.0" class="hair"/><polygon points="80.3,131.0 92.5,138.0 85.5,142.0 73.4,135.0"/><polygon points="92.5,143.0 85.5,147.0 85.5,142.0 92.5,138.0"/><polygon points="73.4,140.0 85.5,147.0 85.5,142.0 73.4,135.0"/><polygon points="80.3,136.0 92.5,143.0 92.5,138.0 80.3,131.0" class="hid"/><polygon points="80.3,136.0 73.4,140.0 73.4,135.0 80.3,131.0" class="hid"/><polygon points="106.3,146.0 118.4,153.0 111.5,157.0 99.4,150.0"/><polygon points="118.4,158.0 111.5,162.0 111.5,157.0 118.4,153.0"/><polygon points="99.4,155.0 111.5,162.0 111.5,157.0 99.4,150.0"/><polygon points="106.3,151.0 118.4,158.0 118.4,153.0 106.3,146.0" class="hid"/><polygon points="106.3,151.0 99.4,155.0 99.4,150.0 106.3,146.0" class="hid"/><polygon points="135.8,163.0 147.9,170.0 140.9,174.0 128.8,167.0" class="hot"/><polygon points="147.9,175.0 140.9,179.0 140.9,174.0 147.9,170.0" class="hot"/><polygon points="128.8,172.0 140.9,179.0 140.9,174.0 128.8,167.0" class="hot"/><polygon points="135.8,168.0 147.9,175.0 147.9,170.0 135.8,163.0" class="hid"/><polygon points="135.8,168.0 128.8,172.0 128.8,167.0 135.8,163.0" class="hid"/><polyline points="135.8,167.0 177.3,135.5" class="link"/><text x="166.0" y="184.0" text-anchor="start">REWIND ◀</text></svg></div>
+       <div class="text">
+@@ -102,7 +112,7 @@
  
    <p class="section-label">What these have in common</p>
    <p class="lede" style="font-size: 0.95rem; max-width: 62rem;">
--    Each project is documented the same way: what problem it addresses, the shipping solution, the success criteria that decide whether it works, and the KPIs an operator or PM would actually track. Reruns are deterministic where possible. The iCub page is the exception: it documents a 2016 research artifact and is not runnable.
-+    Each of the eight projects is documented the same way: what problem it addresses, the shipping solution, the success criteria that decide whether it works, and the KPIs an operator or PM would track. Reruns are deterministic where possible. The iCub page is the exception: it documents a 2016 research artifact and is not runnable.
+-    Each project is documented the same way: what problem it addresses, the shipping solution, the success criteria that decide whether it works, and the KPIs an operator or PM would actually track. Reruns are deterministic where possible. The iCub page is the exception: it documents a 2016 thesis artifact and is not runnable.
++    Each of the eight projects is documented the same way: what problem it addresses, the shipping solution, the success criteria that decide whether it works, and the KPIs an operator or PM would track. Reruns are deterministic where possible. The iCub page is the exception: it documents a 2016 thesis artifact and is not runnable.
    </p>
  
    <div class="footer">
 diff --git a/gate/index.html b/gate/index.html
 new file mode 100644
-index 0000000..6e9067d
+index 0000000..cc7522a
 --- /dev/null
 +++ b/gate/index.html
 @@ -0,0 +1,228 @@
@@ -171,7 +154,7 @@ index 0000000..6e9067d
 +    <p class="doc-label">Problem</p>
 +    <h2 class="doc-heading">A score is not a release decision.</h2>
 +    <p class="doc-body">
-+      [[OWNER_COPY: gate problem]]
++      Every benchmark I have built ends in a number, and the number was never the hard part. The hard part is the release meeting: is this good enough, against which threshold, decided when, by whom. If the threshold is set after the run, the answer is worthless. This project makes the meeting a page and forces the threshold to exist first.
 +    </p>
 +    <p class="doc-body">
 +      Two habits make an evaluation score unusable as a decision. Thresholds move after the numbers are known, and a rate from a small sample is read as though it were certain. Both are invisible in the final slide.
@@ -198,7 +181,7 @@ index 0000000..6e9067d
 +    <p class="doc-label">Result</p>
 +    <h2 class="doc-heading">One verdict, with the evidence under it.</h2>
 +    <p class="doc-body">
-+      [[OWNER_COPY: gate result]]
++      On the demo suite the cautious planner fails 3 of 9 gates. 11 of 16 occluded pedestrian scenarios end in a collision, so the hard gate fires before any margin matters. The cut in TTC gate passes on the point estimate (13 of 16) and fails on the 95 percent lower bound (0.54 against a floor of 0.60). That gap is why the bound is the rule.
 +    </p>
 +    <div class="stat-strip">
 +      <div class="cell"><p class="k">Tracks</p><p class="v">2</p></div>
@@ -309,7 +292,7 @@ index 0000000..6e9067d
 +</body>
 +</html>
 diff --git a/index.html b/index.html
-index 8d85535..2bf940e 100644
+index 90e7e27..dcc27da 100644
 --- a/index.html
 +++ b/index.html
 @@ -346,9 +346,9 @@
@@ -324,6 +307,3 @@ index 8d85535..2bf940e 100644
        </a>
      </nav>
    </div>
--- 
-2.49.0
-

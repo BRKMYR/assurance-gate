@@ -100,5 +100,5 @@ gates:
     direction: max
     severity: medium
     min_n: 0
-    rationale: "The suite is deterministic and paired by scenario id, so any scenario with a worse tier or a TTC drop over 0.5 s is a regression regardless of the family mean."
+    rationale: "The suite is deterministic and paired by scenario id. Any scenario with a worse tier or a TTC drop over 0.5 s is a regression, whatever the family mean says."
     source: "ISO 21448:2022 Annex C (informative)"
