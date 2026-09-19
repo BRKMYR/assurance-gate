@@ -70,6 +70,13 @@ jobs:
 
       - name: lighthouse ci
         run: npx --yes @lhci/cli@0.14.x autorun
+      - name: keep the lighthouse report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-report
+          path: .lighthouseci
+          if-no-files-found: ignore
 
       - name: first load budget
         run: |
