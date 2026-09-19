@@ -11,7 +11,7 @@ license: apache-2.0
 
 Evaluation results in, release decision out.
 
-[[OWNER_COPY: space summary]]
+One question, one page: can this candidate ship, and if not, why. Thresholds were fixed before the run. Every number links to the run behind it.
 
 ## What this Space shows
 
@@ -38,4 +38,4 @@ The runs behind this page are published as a dataset. Results, manifests and the
 
 ## Limitations
 
-[[OWNER_COPY: space limitations]]
+Method demonstration on a simulated suite and public benchmarks. It certifies nothing and makes no claim about any vehicle or product.

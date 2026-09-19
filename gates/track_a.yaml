@@ -12,7 +12,7 @@ gates:
     direction: max
     severity: high
     min_n: 14
-    rationale: "[[OWNER_COPY: rationale a.hard.ped_collision]]"
+    rationale: "A pedestrian strike has no margin to trade against, so the count is zero, the gate is hard and no waiver applies."
     source: "ISO 21448:2022 clause 7 (informative)"
   - id: a.soft.ttc_cutin
     class: soft
@@ -23,7 +23,7 @@ gates:
     direction: floor
     severity: medium
     min_n: 14
-    rationale: "[[OWNER_COPY: rationale a.soft.ttc_cutin]]"
+    rationale: "1.5 s is the surrogate boundary between a controlled brake and a conflict. A floor of 0.60 on the lower bound tolerates two misses in 16 runs and fails on three."
     source: "ISO 21448:2022 Annex C (informative)"
   - id: a.soft.ttc_hardbrake
     class: soft
@@ -34,7 +34,7 @@ gates:
     direction: floor
     severity: medium
     min_n: 12
-    rationale: "[[OWNER_COPY: rationale a.soft.ttc_hardbrake]]"
+    rationale: "Same 1.5 s boundary on 14 runs, where a floor of 0.60 on the bound tolerates one miss."
     source: "ISO 21448:2022 Annex C (informative)"
   - id: a.soft.dmin_all
     class: soft
@@ -45,7 +45,7 @@ gates:
     direction: floor
     severity: medium
     min_n: 50
-    rationale: "[[OWNER_COPY: rationale a.soft.dmin_all]]"
+    rationale: "0.5 m is the closest pass that still clears the disc approximation of the engine, measured over all 60 runs."
     source: "UL 4600:2023 Section 8 (informative)"
   - id: a.soft.severity_weather
     class: soft
@@ -56,7 +56,7 @@ gates:
     direction: floor
     severity: medium
     min_n: 12
-    rationale: "[[OWNER_COPY: rationale a.soft.severity_weather]]"
+    rationale: "In a visibility ramp the planner has seconds to slow down, so a critical tier means it did not react. The floor tolerates one such run in 14."
     source: "ISO 21448:2022 clause 7 (informative)"
   - id: a.avail.hard_brake
     class: availability
@@ -67,7 +67,7 @@ gates:
     direction: floor
     severity: low
     min_n: 50
-    rationale: "[[OWNER_COPY: rationale a.avail.hard_brake]]"
+    rationale: "A planner that brakes hard in more than one run in ten is passing the safety gates by making the ride unusable."
     source: "UL 4600:2023 Section 16 (informative)"
   - id: a.avail.speed
     class: availability
@@ -78,7 +78,7 @@ gates:
     direction: floor
     severity: low
     min_n: 50
-    rationale: "[[OWNER_COPY: rationale a.avail.speed]]"
+    rationale: "A planner below 80 percent of target speed is avoiding conflict by not driving, so safety gates alone cannot clear it."
     source: "UL 4600:2023 Section 16 (informative)"
   - id: a.cov.bins
     class: coverage
@@ -89,7 +89,7 @@ gates:
     direction: max
     severity: medium
     min_n: 0
-    rationale: "[[OWNER_COPY: rationale a.cov.bins]]"
+    rationale: "An empty parameter bin is a region of the design space with zero runs, and zero runs cannot support a GO."
     source: "UL 4600:2023 Section 8 (informative)"
   - id: a.reg.paired
     class: regression
@@ -100,5 +100,5 @@ gates:
     direction: max
     severity: medium
     min_n: 0
-    rationale: "[[OWNER_COPY: rationale a.reg.paired]]"
+    rationale: "The suite is deterministic and paired by scenario id, so any scenario with a worse tier or a TTC drop over 0.5 s is a regression regardless of the family mean."
     source: "ISO 21448:2022 Annex C (informative)"
