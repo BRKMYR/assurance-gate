@@ -20,6 +20,15 @@ import yaml
 from gate import __version__
 from gate.schema import SCHEMA_VERSION, Manifest, ToolVersions
 
+
+def _resolve_token() -> str | None:
+    """HF_TOKEN from the environment, else the token stored by `hf auth login`."""
+    import os
+    from huggingface_hub import get_token
+
+    return os.environ.get("HF_TOKEN") or get_token()
+
+
 #: Cost model for the cap of section 7.6. Deliberately pessimistic: the cap is
 #: there to stop a runaway job, not to price one precisely.
 SAMPLES_PER_TASK = 450
@@ -219,7 +228,7 @@ def run(config_path: Path | str, *, log_dir: Path | str, dry_run: bool, token: s
 
     provider = plan.provider_order[0]
     eval_set(
-        tasks=plan.tasks,
+        tasks=[t if "/" in t else f"inspect_evals/{t}" for t in plan.tasks],
         model=[model_string(model_id, provider) for model_id in active],
         log_dir=str(log_dir),
         temperature=plan.temperature,
@@ -242,7 +251,7 @@ def _cmd(args: argparse.Namespace) -> int:
             args.config,
             log_dir=args.log_dir,
             dry_run=args.dry_run,
-            token=os.environ.get("HF_TOKEN"),
+            token=_resolve_token(),
         )
     except RunRefused as exc:
         print(f"run: refused, {exc}", file=sys.stderr)

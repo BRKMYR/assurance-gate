@@ -1,0 +1,26 @@
+{
+  "baseline": "idm",
+  "candidate": "constant_velocity",
+  "gate_file": "gates/track_a.yaml",
+  "gate_file_sha256": "d2fc9ad7a65cd75838c9f81ee6888d47939b66753772a3e8bad7079bf468e6e1",
+  "gate_published_at": {
+    "github_release": "2026-09-19T20:18:10Z",
+    "hf_dataset_commit": "2026-09-19T20:18:52Z"
+  },
+  "generated_at": "2026-09-19T20:19:19Z",
+  "n_results": 60,
+  "notes": "",
+  "preregistered": true,
+  "run_id": "holdout-constant_velocity-20260919T201919Z",
+  "schema_version": "1.0",
+  "seed": 3539770071,
+  "suite": "holdout",
+  "tools": {
+    "avsb": "0.1.0",
+    "gate": "1.0.0",
+    "inspect_ai": null,
+    "inspect_evals": null,
+    "judge_prompt_version": null
+  },
+  "track": "a"
+}

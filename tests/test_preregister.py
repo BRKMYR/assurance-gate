@@ -51,13 +51,15 @@ def no_network(monkeypatch: pytest.MonkeyPatch) -> list[tuple[str, str, str]]:
     return calls
 
 
-def test_a_ready_suite_is_preregistered(repo: Path, no_network: list, capsys) -> None:
+def test_a_ready_suite_is_preregistered(repo: Path, no_network: list, capsys, monkeypatch) -> None:
+    monkeypatch.delenv("HF_TOKEN", raising=False)
+    monkeypatch.setattr("huggingface_hub.get_token", lambda: None)
     record = preregister.preregister(repo, "a", "holdout")
     digest = record["gate_file_sha256"]
     assert record["tag"] == f"gates-a-holdout-{digest[:8]}"
     assert record["github_release"] == "2026-09-21T09:58:11Z"
     assert record["hf_dataset_commit"] is None
-    assert "HF_TOKEN is not set" in capsys.readouterr().err
+    assert "no Hugging Face token found" in capsys.readouterr().err
     written = json.loads((repo / "runs/holdout/preregistration.json").read_text(encoding="utf-8"))
     assert written == record
     assert no_network[0][2].splitlines()[1] == f"sha256 {digest}"
