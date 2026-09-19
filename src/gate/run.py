@@ -302,11 +302,11 @@ def write_outputs(
         else:
             manifest.preregistered = False
         (out_dir / "samples.json").write_text(
-            _json.dumps([x.model_dump() for x in samples], indent=2, sort_keys=True, ensure_ascii=False) + "\n",
+            _json.dumps([x.model_dump() for x in samples], indent=2, sort_keys=True, ensure_ascii=False, allow_nan=False) + "\n",
             encoding="utf-8",
         )
         (out_dir / "manifest.json").write_text(
-            _json.dumps(manifest.model_dump(), indent=2, sort_keys=True) + "\n", encoding="utf-8"
+            _json.dumps(manifest.model_dump(), indent=2, sort_keys=True, allow_nan=False) + "\n", encoding="utf-8"
         )
         written += [out_dir / "samples.json", out_dir / "manifest.json"]
     return written

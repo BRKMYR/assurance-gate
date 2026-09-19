@@ -740,6 +740,9 @@
     var view = document.getElementById("view");
     var route = parseHash();
     var page = ROUTES[route.path] || ROUTES["/"];
+    var wantB = route.params.get("track") === "b";
+    if (wantB && TRACK !== "b" && B_STATE !== "loading") { setTrack("b"); return; }
+    if (!wantB && route.params.get("track") === "a" && TRACK !== "a") { TRACK = "a"; }
     clear(view);
     try {
       add(view, page(route.params));
