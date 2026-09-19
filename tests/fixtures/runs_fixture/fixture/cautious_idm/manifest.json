@@ -1,0 +1,23 @@
+{
+  "baseline": "idm",
+  "candidate": "cautious_idm",
+  "gate_file": "gates/track_a.yaml",
+  "gate_file_sha256": "0b2391213a751aea71ee69c4e045e06280d1e4b2614f1457e08f863166bed76a",
+  "gate_published_at": null,
+  "generated_at": "2026-09-19T00:00:00Z",
+  "n_results": 4,
+  "notes": "",
+  "preregistered": false,
+  "run_id": "fixture-cautious_idm-20260919T000000Z",
+  "schema_version": "1.0",
+  "seed": 186880289,
+  "suite": "fixture",
+  "tools": {
+    "avsb": null,
+    "gate": null,
+    "inspect_ai": null,
+    "inspect_evals": null,
+    "judge_prompt_version": null
+  },
+  "track": "a"
+}

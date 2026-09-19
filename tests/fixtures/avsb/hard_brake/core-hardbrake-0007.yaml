@@ -1,0 +1,66 @@
+actors:
+- actor_id: lead
+  initial:
+    speed_mps: 20.6408
+    x_m: 15.983
+    y_m: 1.75
+    yaw_rad: 0.0
+  kind: vehicle
+  length_m: 4.5
+  mass_kg: 1500.0
+  phases:
+  - accel_mps2: 0.0
+    lateral_speed_mps: 0.0
+    target_speed_mps: 20.6408
+    target_y_m: null
+    trigger:
+      at_time_s: 0.0
+      ego_x_m: null
+      gap_m: null
+      type: time
+  - accel_mps2: -7.7118
+    lateral_speed_mps: 0.0
+    target_speed_mps: 0.0
+    target_y_m: null
+    trigger:
+      at_time_s: 3.3706
+      ego_x_m: null
+      gap_m: null
+      type: time
+  width_m: 1.9
+description: Lead vehicle at 20.6 m/s, initial gap 16.0 m; brakes at -7.71 m/s^2 starting
+  t=3.4 s.
+dt_s: 0.1
+duration_s: 15.0
+ego:
+  initial:
+    speed_mps: 21.3913
+    x_m: 0.0
+    y_m: 1.75
+    yaw_rad: 0.0
+  lane: 0
+  length_m: 4.5
+  mass_kg: 1500.0
+  target_speed_mps: 21.3913
+  width_m: 1.9
+environment:
+  friction_end: 0.9
+  friction_start: 0.9
+  visibility_end_m: 200.0
+  visibility_start_m: 200.0
+family: hard_brake
+parameters:
+  brake_decel_mps2: -7.7118
+  brake_trigger_time_s: 3.3706
+  ego_speed_mps: 21.3913
+  initial_gap_m: 15.983
+  lead_speed_delta_mps: 0.7505
+road:
+  lane_width_m: 3.5
+  length_m: 400.0
+  n_lanes: 2
+  speed_limit_mps: 22.2
+scenario_id: core-hardbrake-0007
+schema_version: '1.0'
+seed: 42
+suite: core

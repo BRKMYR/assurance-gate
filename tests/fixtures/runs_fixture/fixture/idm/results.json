@@ -1,0 +1,68 @@
+[
+  {
+    "description": "Pedestrian occluded by parked vehicle at x=63.8 m; begins crossing at speed 1.09 m/s when ego reaches x=34.2 m.",
+    "duration_s": 15.0,
+    "family": "ped_occluded",
+    "metrics": {
+      "collision": true,
+      "collision_t_s": 5.4,
+      "d_min_m": -1.1328,
+      "d_min_t_s": 5.6,
+      "delta_v_mps": 0.4427,
+      "hard_brake_events": 1,
+      "hard_brake_fraction": 0.0331,
+      "mean_speed_ratio": null,
+      "pet_min_s": 0.3,
+      "severity_index": 1,
+      "ttc_min_s": 0.0211,
+      "ttc_min_t_s": 5.3
+    },
+    "n_steps": 151,
+    "parameters": {
+      "ego_speed_mps": 11.6311,
+      "occluder_x_m": 63.7636,
+      "ped_speed_mps": 1.0936,
+      "trigger_ego_x_m": 34.1672,
+      "trigger_offset_m": 29.5964
+    },
+    "planner": "idm",
+    "scenario_id": "core-ped-0001",
+    "score": 10.0,
+    "severity_tier": "critical",
+    "suite": "fixture",
+    "thumbnail": "thumbs/ped_occluded_idm_core-ped-0001.png"
+  },
+  {
+    "description": "Pedestrian occluded by parked vehicle at x=44.7 m; begins crossing at speed 1.38 m/s when ego reaches x=26.7 m.",
+    "duration_s": 15.0,
+    "family": "ped_occluded",
+    "metrics": {
+      "collision": true,
+      "collision_t_s": 5.0,
+      "d_min_m": -1.4799,
+      "d_min_t_s": 5.4,
+      "delta_v_mps": 0.3063,
+      "hard_brake_events": 1,
+      "hard_brake_fraction": 0.0397,
+      "mean_speed_ratio": null,
+      "pet_min_s": 0.1,
+      "severity_index": 1,
+      "ttc_min_s": 0.0292,
+      "ttc_min_t_s": 4.9
+    },
+    "n_steps": 151,
+    "parameters": {
+      "ego_speed_mps": 8.6821,
+      "occluder_x_m": 44.6721,
+      "ped_speed_mps": 1.3838,
+      "trigger_ego_x_m": 26.6946,
+      "trigger_offset_m": 17.9775
+    },
+    "planner": "idm",
+    "scenario_id": "core-ped-0009",
+    "score": 10.0,
+    "severity_tier": "critical",
+    "suite": "fixture",
+    "thumbnail": null
+  }
+]

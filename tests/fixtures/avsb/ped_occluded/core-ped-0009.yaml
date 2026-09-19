@@ -1,0 +1,77 @@
+actors:
+- actor_id: occluder
+  initial:
+    speed_mps: 0.0
+    x_m: 44.6721
+    y_m: -1.2
+    yaw_rad: 0.0
+  kind: static
+  length_m: 6.0
+  mass_kg: 1800.0
+  phases: []
+  width_m: 2.0
+- actor_id: pedestrian
+  initial:
+    speed_mps: 0.0
+    x_m: 44.6721
+    y_m: -2.5
+    yaw_rad: 1.5708
+  kind: pedestrian
+  length_m: 0.6
+  mass_kg: 75.0
+  phases:
+  - accel_mps2: 0.0
+    lateral_speed_mps: 0.0
+    target_speed_mps: 0.0
+    target_y_m: null
+    trigger:
+      at_time_s: 0.0
+      ego_x_m: null
+      gap_m: null
+      type: time
+  - accel_mps2: 0.0
+    lateral_speed_mps: 1.3838
+    target_speed_mps: 0.0
+    target_y_m: 6.0
+    trigger:
+      at_time_s: null
+      ego_x_m: 26.6946
+      gap_m: null
+      type: ego_x
+  width_m: 0.6
+description: Pedestrian occluded by parked vehicle at x=44.7 m; begins crossing at
+  speed 1.38 m/s when ego reaches x=26.7 m.
+dt_s: 0.1
+duration_s: 15.0
+ego:
+  initial:
+    speed_mps: 8.6821
+    x_m: 0.0
+    y_m: 1.75
+    yaw_rad: 0.0
+  lane: 0
+  length_m: 4.5
+  mass_kg: 1500.0
+  target_speed_mps: 8.6821
+  width_m: 1.9
+environment:
+  friction_end: 0.9
+  friction_start: 0.9
+  visibility_end_m: 200.0
+  visibility_start_m: 200.0
+family: ped_occluded
+parameters:
+  ego_speed_mps: 8.6821
+  occluder_x_m: 44.6721
+  ped_speed_mps: 1.3838
+  trigger_ego_x_m: 26.6946
+  trigger_offset_m: 17.9775
+road:
+  lane_width_m: 3.5
+  length_m: 400.0
+  n_lanes: 2
+  speed_limit_mps: 13.9
+scenario_id: core-ped-0009
+schema_version: '1.0'
+seed: 42
+suite: core

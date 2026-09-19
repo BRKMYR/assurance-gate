@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "assurance-gate"
+version = "1.0.0"
+description = "Turns evaluation results into a release decision with pre registered gates, coverage, regression and an assurance case."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "Apache-2.0"}
+dependencies = [
+  "pydantic>=2.5",
+  "pyyaml>=6.0",
+  "jinja2>=3.1",
+  "huggingface_hub>=0.25",
+]
+
+[project.optional-dependencies]
+trackb = ["inspect-ai>=0.3.100", "inspect-evals", "openai>=1.40"]
+dev = ["pytest>=8", "pytest-cov>=5"]
+
+[project.scripts]
+gate = "gate.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

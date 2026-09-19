@@ -1,0 +1,25 @@
+{
+  "duration_s": 20.0,
+  "family": "weather_ramp",
+  "metrics": {
+    "collision": false,
+    "collision_t_s": null,
+    "d_min_m": 23.2715,
+    "d_min_t_s": 20.0,
+    "delta_v_mps": null,
+    "hard_brake_events": 1,
+    "hard_brake_fraction": 0.0299,
+    "pet_min_s": 2.8,
+    "severity_index": 0,
+    "ttc_min_s": 4.653,
+    "ttc_min_t_s": 0.0
+  },
+  "n_steps": 201,
+  "planner": "cautious_idm",
+  "scenario_id": "core-weather-0008",
+  "schema_version": "1.0",
+  "score": 98.209,
+  "severity_tier": "nominal",
+  "suite": "core",
+  "trajectory_log": "artifacts/core/cautious_idm/core-weather-0008.jsonl"
+}

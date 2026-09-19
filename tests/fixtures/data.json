@@ -1,0 +1,2282 @@
+{
+  "built_with": "gate 1.0.0",
+  "bundle": null,
+  "schema_version": "1.0",
+  "suites": [
+    {
+      "candidates": [
+        {
+          "baseline": "idm",
+          "candidate": "cautious_idm",
+          "case": {
+            "nodes": [
+              {
+                "children": [
+                  "c.engine_limits",
+                  "c.deployment",
+                  "a.simulation_fidelity",
+                  "a.predicate_validity",
+                  "a.baseline_comparable",
+                  "s0",
+                  "d.contamination",
+                  "d.quantisation",
+                  "d.sandbagging",
+                  "d.unknown_unsafe"
+                ],
+                "evidence_ref": null,
+                "id": "g0",
+                "status": "fail",
+                "text_key": "case.goal",
+                "type": "goal"
+              },
+              {
+                "children": [],
+                "evidence_ref": null,
+                "id": "c.engine_limits",
+                "status": "info",
+                "text_key": "case.context.engine_limits",
+                "type": "context"
+              },
+              {
+                "children": [],
+                "evidence_ref": null,
+                "id": "c.deployment",
+                "status": "info",
+                "text_key": "owner.deployment_context",
+                "type": "context"
+              },
+              {
+                "children": [],
+                "evidence_ref": null,
+                "id": "a.simulation_fidelity",
+                "status": "info",
+                "text_key": "case.assumption.simulation_fidelity",
+                "type": "assumption"
+              },
+              {
+                "children": [],
+                "evidence_ref": null,
+                "id": "a.predicate_validity",
+                "status": "info",
+                "text_key": "case.assumption.predicate_validity",
+                "type": "assumption"
+              },
+              {
+                "children": [],
+                "evidence_ref": null,
+                "id": "a.baseline_comparable",
+                "status": "info",
+                "text_key": "case.assumption.baseline_comparable",
+                "type": "assumption"
+              },
+              {
+                "children": [
+                  "cl.cut_in",
+                  "cl.hard_brake",
+                  "cl.ped_occluded",
+                  "cl.weather_ramp"
+                ],
+                "evidence_ref": null,
+                "id": "s0",
+                "status": "info",
+                "text_key": "case.strategy",
+                "type": "strategy"
+              },
+              {
+                "children": [
+                  "ev.gate.cut_in.a.soft.ttc_cutin",
+                  "ev.gate.cut_in.a.soft.dmin_all",
+                  "ev.gate.cut_in.a.avail.hard_brake",
+                  "ev.gate.cut_in.a.avail.speed",
+                  "ev.gate.cut_in.a.cov.bins",
+                  "ev.gate.cut_in.a.reg.paired",
+                  "ev.cut_in.core-cutin-0010"
+                ],
+                "evidence_ref": null,
+                "id": "cl.cut_in",
+                "status": "fail",
+                "text_key": "case.claim.cut_in",
+                "type": "claim"
+              },
+              {
+                "children": [
+                  "ev.gate.hard_brake.a.soft.ttc_hardbrake",
+                  "ev.gate.hard_brake.a.soft.dmin_all",
+                  "ev.gate.hard_brake.a.avail.hard_brake",
+                  "ev.gate.hard_brake.a.avail.speed",
+                  "ev.gate.hard_brake.a.cov.bins",
+                  "ev.gate.hard_brake.a.reg.paired",
+                  "ev.hard_brake.core-hardbrake-0007"
+                ],
+                "evidence_ref": null,
+                "id": "cl.hard_brake",
+                "status": "fail",
+                "text_key": "case.claim.hard_brake",
+                "type": "claim"
+              },
+              {
+                "children": [
+                  "ev.gate.ped_occluded.a.hard.ped_collision",
+                  "ev.gate.ped_occluded.a.soft.dmin_all",
+                  "ev.gate.ped_occluded.a.avail.hard_brake",
+                  "ev.gate.ped_occluded.a.avail.speed",
+                  "ev.gate.ped_occluded.a.cov.bins",
+                  "ev.gate.ped_occluded.a.reg.paired",
+                  "ev.ped_occluded.core-ped-0001"
+                ],
+                "evidence_ref": null,
+                "id": "cl.ped_occluded",
+                "status": "fail",
+                "text_key": "case.claim.ped_occluded",
+                "type": "claim"
+              },
+              {
+                "children": [
+                  "ev.gate.weather_ramp.a.soft.dmin_all",
+                  "ev.gate.weather_ramp.a.soft.severity_weather",
+                  "ev.gate.weather_ramp.a.avail.hard_brake",
+                  "ev.gate.weather_ramp.a.avail.speed",
+                  "ev.gate.weather_ramp.a.cov.bins",
+                  "ev.gate.weather_ramp.a.reg.paired",
+                  "ev.weather_ramp.core-weather-0008"
+                ],
+                "evidence_ref": null,
+                "id": "cl.weather_ramp",
+                "status": "fail",
+                "text_key": "case.claim.weather_ramp",
+                "type": "claim"
+              },
+              {
+                "children": [],
+                "evidence_ref": "a.soft.ttc_cutin",
+                "id": "ev.gate.cut_in.a.soft.ttc_cutin",
+                "status": "fail",
+                "text_key": "gate.short.a.soft.ttc_cutin",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "a.soft.dmin_all",
+                "id": "ev.gate.cut_in.a.soft.dmin_all",
+                "status": "fail",
+                "text_key": "gate.short.a.soft.dmin_all",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "a.avail.hard_brake",
+                "id": "ev.gate.cut_in.a.avail.hard_brake",
+                "status": "fail",
+                "text_key": "gate.short.a.avail.hard_brake",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "a.avail.speed",
+                "id": "ev.gate.cut_in.a.avail.speed",
+                "status": "fail",
+                "text_key": "gate.short.a.avail.speed",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "a.cov.bins",
+                "id": "ev.gate.cut_in.a.cov.bins",
+                "status": "fail",
+                "text_key": "gate.short.a.cov.bins",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "a.reg.paired",
+                "id": "ev.gate.cut_in.a.reg.paired",
+                "status": "pass",
+                "text_key": "gate.short.a.reg.paired",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "core-cutin-0010",
+                "id": "ev.cut_in.core-cutin-0010",
+                "status": "info",
+                "text_key": "case.evidence.record",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "a.soft.ttc_hardbrake",
+                "id": "ev.gate.hard_brake.a.soft.ttc_hardbrake",
+                "status": "fail",
+                "text_key": "gate.short.a.soft.ttc_hardbrake",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "a.soft.dmin_all",
+                "id": "ev.gate.hard_brake.a.soft.dmin_all",
+                "status": "fail",
+                "text_key": "gate.short.a.soft.dmin_all",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "a.avail.hard_brake",
+                "id": "ev.gate.hard_brake.a.avail.hard_brake",
+                "status": "fail",
+                "text_key": "gate.short.a.avail.hard_brake",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "a.avail.speed",
+                "id": "ev.gate.hard_brake.a.avail.speed",
+                "status": "fail",
+                "text_key": "gate.short.a.avail.speed",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "a.cov.bins",
+                "id": "ev.gate.hard_brake.a.cov.bins",
+                "status": "fail",
+                "text_key": "gate.short.a.cov.bins",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "a.reg.paired",
+                "id": "ev.gate.hard_brake.a.reg.paired",
+                "status": "pass",
+                "text_key": "gate.short.a.reg.paired",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "core-hardbrake-0007",
+                "id": "ev.hard_brake.core-hardbrake-0007",
+                "status": "fail",
+                "text_key": "case.evidence.record",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "a.hard.ped_collision",
+                "id": "ev.gate.ped_occluded.a.hard.ped_collision",
+                "status": "fail",
+                "text_key": "gate.short.a.hard.ped_collision",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "a.soft.dmin_all",
+                "id": "ev.gate.ped_occluded.a.soft.dmin_all",
+                "status": "fail",
+                "text_key": "gate.short.a.soft.dmin_all",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "a.avail.hard_brake",
+                "id": "ev.gate.ped_occluded.a.avail.hard_brake",
+                "status": "fail",
+                "text_key": "gate.short.a.avail.hard_brake",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "a.avail.speed",
+                "id": "ev.gate.ped_occluded.a.avail.speed",
+                "status": "fail",
+                "text_key": "gate.short.a.avail.speed",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "a.cov.bins",
+                "id": "ev.gate.ped_occluded.a.cov.bins",
+                "status": "fail",
+                "text_key": "gate.short.a.cov.bins",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "a.reg.paired",
+                "id": "ev.gate.ped_occluded.a.reg.paired",
+                "status": "pass",
+                "text_key": "gate.short.a.reg.paired",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "core-ped-0001",
+                "id": "ev.ped_occluded.core-ped-0001",
+                "status": "fail",
+                "text_key": "case.evidence.record",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "a.soft.dmin_all",
+                "id": "ev.gate.weather_ramp.a.soft.dmin_all",
+                "status": "fail",
+                "text_key": "gate.short.a.soft.dmin_all",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "a.soft.severity_weather",
+                "id": "ev.gate.weather_ramp.a.soft.severity_weather",
+                "status": "fail",
+                "text_key": "gate.short.a.soft.severity_weather",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "a.avail.hard_brake",
+                "id": "ev.gate.weather_ramp.a.avail.hard_brake",
+                "status": "fail",
+                "text_key": "gate.short.a.avail.hard_brake",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "a.avail.speed",
+                "id": "ev.gate.weather_ramp.a.avail.speed",
+                "status": "fail",
+                "text_key": "gate.short.a.avail.speed",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "a.cov.bins",
+                "id": "ev.gate.weather_ramp.a.cov.bins",
+                "status": "fail",
+                "text_key": "gate.short.a.cov.bins",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "a.reg.paired",
+                "id": "ev.gate.weather_ramp.a.reg.paired",
+                "status": "pass",
+                "text_key": "gate.short.a.reg.paired",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "core-weather-0008",
+                "id": "ev.weather_ramp.core-weather-0008",
+                "status": "info",
+                "text_key": "case.evidence.record",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": null,
+                "id": "d.contamination",
+                "status": "info",
+                "text_key": "case.defeater.contamination",
+                "type": "defeater"
+              },
+              {
+                "children": [],
+                "evidence_ref": null,
+                "id": "d.quantisation",
+                "status": "info",
+                "text_key": "case.defeater.quantisation",
+                "type": "defeater"
+              },
+              {
+                "children": [],
+                "evidence_ref": null,
+                "id": "d.sandbagging",
+                "status": "info",
+                "text_key": "case.defeater.sandbagging",
+                "type": "defeater"
+              },
+              {
+                "children": [],
+                "evidence_ref": null,
+                "id": "d.unknown_unsafe",
+                "status": "info",
+                "text_key": "case.defeater.unknown_unsafe",
+                "type": "defeater"
+              }
+            ],
+            "root": "g0"
+          },
+          "coverage": {
+            "not_covered": [
+              {
+                "hazard": "intersections",
+                "note_key": "coverage.not_covered.intersections"
+              },
+              {
+                "hazard": "cyclists",
+                "note_key": "coverage.not_covered.cyclists"
+              },
+              {
+                "hazard": "night and low light",
+                "note_key": "coverage.not_covered.night_low_light"
+              },
+              {
+                "hazard": "sensor faults",
+                "note_key": "coverage.not_covered.sensor_faults"
+              },
+              {
+                "hazard": "multi actor interactions",
+                "note_key": "coverage.not_covered.multi_actor"
+              },
+              {
+                "hazard": "ODD exit behaviour",
+                "note_key": "coverage.not_covered.odd_exit"
+              }
+            ],
+            "passed": false,
+            "rows": [
+              {
+                "bin_label": "15.0-17.33",
+                "family": "cut_in",
+                "hi": 17.33,
+                "lo": 15.0,
+                "n": 0,
+                "parameter": "ego_speed_mps",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "17.33-19.67",
+                "family": "cut_in",
+                "hi": 19.67,
+                "lo": 17.33,
+                "n": 0,
+                "parameter": "ego_speed_mps",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "19.67-22.0",
+                "family": "cut_in",
+                "hi": 22.0,
+                "lo": 19.67,
+                "n": 1,
+                "parameter": "ego_speed_mps",
+                "scenario_ids": [
+                  "core-cutin-0010"
+                ],
+                "status": "sparse"
+              },
+              {
+                "bin_label": "15.0-20.0",
+                "family": "cut_in",
+                "hi": 20.0,
+                "lo": 15.0,
+                "n": 1,
+                "parameter": "initial_gap_m",
+                "scenario_ids": [
+                  "core-cutin-0010"
+                ],
+                "status": "sparse"
+              },
+              {
+                "bin_label": "20.0-25.0",
+                "family": "cut_in",
+                "hi": 25.0,
+                "lo": 20.0,
+                "n": 0,
+                "parameter": "initial_gap_m",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "25.0-30.0",
+                "family": "cut_in",
+                "hi": 30.0,
+                "lo": 25.0,
+                "n": 0,
+                "parameter": "initial_gap_m",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "8.0-11.33",
+                "family": "cut_in",
+                "hi": 11.33,
+                "lo": 8.0,
+                "n": 1,
+                "parameter": "trigger_gap_m",
+                "scenario_ids": [
+                  "core-cutin-0010"
+                ],
+                "status": "sparse"
+              },
+              {
+                "bin_label": "11.33-14.67",
+                "family": "cut_in",
+                "hi": 14.67,
+                "lo": 11.33,
+                "n": 0,
+                "parameter": "trigger_gap_m",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "14.67-18.0",
+                "family": "cut_in",
+                "hi": 18.0,
+                "lo": 14.67,
+                "n": 0,
+                "parameter": "trigger_gap_m",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "3.5-5.0",
+                "family": "hard_brake",
+                "hi": 5.0,
+                "lo": 3.5,
+                "n": 0,
+                "parameter": "brake_decel_mps2",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "5.0-6.5",
+                "family": "hard_brake",
+                "hi": 6.5,
+                "lo": 5.0,
+                "n": 0,
+                "parameter": "brake_decel_mps2",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "6.5-8.0",
+                "family": "hard_brake",
+                "hi": 8.0,
+                "lo": 6.5,
+                "n": 1,
+                "parameter": "brake_decel_mps2",
+                "scenario_ids": [
+                  "core-hardbrake-0007"
+                ],
+                "status": "sparse"
+              },
+              {
+                "bin_label": "15.0-17.33",
+                "family": "hard_brake",
+                "hi": 17.33,
+                "lo": 15.0,
+                "n": 0,
+                "parameter": "ego_speed_mps",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "17.33-19.67",
+                "family": "hard_brake",
+                "hi": 19.67,
+                "lo": 17.33,
+                "n": 0,
+                "parameter": "ego_speed_mps",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "19.67-22.0",
+                "family": "hard_brake",
+                "hi": 22.0,
+                "lo": 19.67,
+                "n": 1,
+                "parameter": "ego_speed_mps",
+                "scenario_ids": [
+                  "core-hardbrake-0007"
+                ],
+                "status": "sparse"
+              },
+              {
+                "bin_label": "12.0-19.67",
+                "family": "hard_brake",
+                "hi": 19.67,
+                "lo": 12.0,
+                "n": 1,
+                "parameter": "initial_gap_m",
+                "scenario_ids": [
+                  "core-hardbrake-0007"
+                ],
+                "status": "sparse"
+              },
+              {
+                "bin_label": "19.67-27.33",
+                "family": "hard_brake",
+                "hi": 27.33,
+                "lo": 19.67,
+                "n": 0,
+                "parameter": "initial_gap_m",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "27.33-35.0",
+                "family": "hard_brake",
+                "hi": 35.0,
+                "lo": 27.33,
+                "n": 0,
+                "parameter": "initial_gap_m",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "8.0-10.0",
+                "family": "ped_occluded",
+                "hi": 10.0,
+                "lo": 8.0,
+                "n": 0,
+                "parameter": "ego_speed_mps",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "10.0-12.0",
+                "family": "ped_occluded",
+                "hi": 12.0,
+                "lo": 10.0,
+                "n": 1,
+                "parameter": "ego_speed_mps",
+                "scenario_ids": [
+                  "core-ped-0001"
+                ],
+                "status": "sparse"
+              },
+              {
+                "bin_label": "12.0-14.0",
+                "family": "ped_occluded",
+                "hi": 14.0,
+                "lo": 12.0,
+                "n": 0,
+                "parameter": "ego_speed_mps",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "40.0-50.0",
+                "family": "ped_occluded",
+                "hi": 50.0,
+                "lo": 40.0,
+                "n": 0,
+                "parameter": "occluder_x_m",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "50.0-60.0",
+                "family": "ped_occluded",
+                "hi": 60.0,
+                "lo": 50.0,
+                "n": 0,
+                "parameter": "occluder_x_m",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "60.0-70.0",
+                "family": "ped_occluded",
+                "hi": 70.0,
+                "lo": 60.0,
+                "n": 1,
+                "parameter": "occluder_x_m",
+                "scenario_ids": [
+                  "core-ped-0001"
+                ],
+                "status": "sparse"
+              },
+              {
+                "bin_label": "1.0-1.5",
+                "family": "ped_occluded",
+                "hi": 1.5,
+                "lo": 1.0,
+                "n": 1,
+                "parameter": "ped_speed_mps",
+                "scenario_ids": [
+                  "core-ped-0001"
+                ],
+                "status": "sparse"
+              },
+              {
+                "bin_label": "1.5-2.0",
+                "family": "ped_occluded",
+                "hi": 2.0,
+                "lo": 1.5,
+                "n": 0,
+                "parameter": "ped_speed_mps",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "2.0-2.5",
+                "family": "ped_occluded",
+                "hi": 2.5,
+                "lo": 2.0,
+                "n": 0,
+                "parameter": "ped_speed_mps",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "14.0-16.0",
+                "family": "weather_ramp",
+                "hi": 16.0,
+                "lo": 14.0,
+                "n": 0,
+                "parameter": "ego_speed_mps",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "16.0-18.0",
+                "family": "weather_ramp",
+                "hi": 18.0,
+                "lo": 16.0,
+                "n": 0,
+                "parameter": "ego_speed_mps",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "18.0-20.0",
+                "family": "weather_ramp",
+                "hi": 20.0,
+                "lo": 18.0,
+                "n": 1,
+                "parameter": "ego_speed_mps",
+                "scenario_ids": [
+                  "core-weather-0008"
+                ],
+                "status": "sparse"
+              },
+              {
+                "bin_label": "0.25-0.3333",
+                "family": "weather_ramp",
+                "hi": 0.3333,
+                "lo": 0.25,
+                "n": 0,
+                "parameter": "friction_end",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "0.3333-0.4167",
+                "family": "weather_ramp",
+                "hi": 0.4167,
+                "lo": 0.3333,
+                "n": 1,
+                "parameter": "friction_end",
+                "scenario_ids": [
+                  "core-weather-0008"
+                ],
+                "status": "sparse"
+              },
+              {
+                "bin_label": "0.4167-0.5",
+                "family": "weather_ramp",
+                "hi": 0.5,
+                "lo": 0.4167,
+                "n": 0,
+                "parameter": "friction_end",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "15.0-25.0",
+                "family": "weather_ramp",
+                "hi": 25.0,
+                "lo": 15.0,
+                "n": 1,
+                "parameter": "visibility_end_m",
+                "scenario_ids": [
+                  "core-weather-0008"
+                ],
+                "status": "sparse"
+              },
+              {
+                "bin_label": "25.0-35.0",
+                "family": "weather_ramp",
+                "hi": 35.0,
+                "lo": 25.0,
+                "n": 0,
+                "parameter": "visibility_end_m",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "35.0-45.0",
+                "family": "weather_ramp",
+                "hi": 45.0,
+                "lo": 35.0,
+                "n": 0,
+                "parameter": "visibility_end_m",
+                "scenario_ids": [],
+                "status": "empty"
+              }
+            ],
+            "track": "a",
+            "unbinned": 0,
+            "unmapped": []
+          },
+          "excluded": false,
+          "gates": [
+            {
+              "bound": null,
+              "bound_kind": "none",
+              "class": "hard",
+              "deviation": null,
+              "direction": "max",
+              "failing_ids": [
+                "core-ped-0001"
+              ],
+              "frozen_status": null,
+              "gate_id": "a.hard.ped_collision",
+              "kind": "count",
+              "margin": null,
+              "n": 1,
+              "n_fail": 1,
+              "n_unscorable": 0,
+              "point_estimate": null,
+              "reason": "insufficient_n",
+              "status": "fail",
+              "threshold": 0.0,
+              "waiver": null,
+              "waiver_note": null
+            },
+            {
+              "bound": 0.025,
+              "bound_kind": "lower",
+              "class": "soft",
+              "deviation": null,
+              "direction": "floor",
+              "failing_ids": [],
+              "frozen_status": null,
+              "gate_id": "a.soft.ttc_cutin",
+              "kind": "rate",
+              "margin": null,
+              "n": 1,
+              "n_fail": 0,
+              "n_unscorable": 0,
+              "point_estimate": 1.0,
+              "reason": "insufficient_n",
+              "status": "fail",
+              "threshold": 0.6,
+              "waiver": null,
+              "waiver_note": null
+            },
+            {
+              "bound": 0.025,
+              "bound_kind": "lower",
+              "class": "soft",
+              "deviation": null,
+              "direction": "floor",
+              "failing_ids": [],
+              "frozen_status": null,
+              "gate_id": "a.soft.ttc_hardbrake",
+              "kind": "rate",
+              "margin": null,
+              "n": 1,
+              "n_fail": 0,
+              "n_unscorable": 0,
+              "point_estimate": 1.0,
+              "reason": "insufficient_n",
+              "status": "fail",
+              "threshold": 0.6,
+              "waiver": null,
+              "waiver_note": null
+            },
+            {
+              "bound": 0.1941,
+              "bound_kind": "lower",
+              "class": "soft",
+              "deviation": null,
+              "direction": "floor",
+              "failing_ids": [
+                "core-ped-0001"
+              ],
+              "frozen_status": null,
+              "gate_id": "a.soft.dmin_all",
+              "kind": "rate",
+              "margin": null,
+              "n": 4,
+              "n_fail": 1,
+              "n_unscorable": 0,
+              "point_estimate": 0.75,
+              "reason": "insufficient_n",
+              "status": "fail",
+              "threshold": 0.6,
+              "waiver": null,
+              "waiver_note": null
+            },
+            {
+              "bound": 0.025,
+              "bound_kind": "lower",
+              "class": "soft",
+              "deviation": null,
+              "direction": "floor",
+              "failing_ids": [],
+              "frozen_status": null,
+              "gate_id": "a.soft.severity_weather",
+              "kind": "rate",
+              "margin": null,
+              "n": 1,
+              "n_fail": 0,
+              "n_unscorable": 0,
+              "point_estimate": 1.0,
+              "reason": "insufficient_n",
+              "status": "fail",
+              "threshold": 0.6,
+              "waiver": null,
+              "waiver_note": null
+            },
+            {
+              "bound": 0.0676,
+              "bound_kind": "lower",
+              "class": "availability",
+              "deviation": null,
+              "direction": "floor",
+              "failing_ids": [
+                "core-hardbrake-0007",
+                "core-ped-0001"
+              ],
+              "frozen_status": null,
+              "gate_id": "a.avail.hard_brake",
+              "kind": "rate",
+              "margin": null,
+              "n": 4,
+              "n_fail": 2,
+              "n_unscorable": 0,
+              "point_estimate": 0.5,
+              "reason": "insufficient_n",
+              "status": "fail",
+              "threshold": 0.6,
+              "waiver": null,
+              "waiver_note": null
+            },
+            {
+              "bound": 0.0,
+              "bound_kind": "lower",
+              "class": "availability",
+              "deviation": null,
+              "direction": "floor",
+              "failing_ids": [],
+              "frozen_status": null,
+              "gate_id": "a.avail.speed",
+              "kind": "rate",
+              "margin": null,
+              "n": 0,
+              "n_fail": 0,
+              "n_unscorable": 4,
+              "point_estimate": null,
+              "reason": "insufficient_n",
+              "status": "fail",
+              "threshold": 0.6,
+              "waiver": null,
+              "waiver_note": null
+            },
+            {
+              "bound": null,
+              "bound_kind": "none",
+              "class": "coverage",
+              "deviation": null,
+              "direction": "max",
+              "failing_ids": [
+                "cut_in.ego_speed_mps.15.0-17.33",
+                "cut_in.ego_speed_mps.17.33-19.67",
+                "cut_in.initial_gap_m.20.0-25.0",
+                "cut_in.initial_gap_m.25.0-30.0",
+                "cut_in.trigger_gap_m.11.33-14.67",
+                "cut_in.trigger_gap_m.14.67-18.0",
+                "hard_brake.brake_decel_mps2.3.5-5.0",
+                "hard_brake.brake_decel_mps2.5.0-6.5",
+                "hard_brake.ego_speed_mps.15.0-17.33",
+                "hard_brake.ego_speed_mps.17.33-19.67",
+                "hard_brake.initial_gap_m.19.67-27.33",
+                "hard_brake.initial_gap_m.27.33-35.0",
+                "ped_occluded.ego_speed_mps.12.0-14.0",
+                "ped_occluded.ego_speed_mps.8.0-10.0",
+                "ped_occluded.occluder_x_m.40.0-50.0",
+                "ped_occluded.occluder_x_m.50.0-60.0",
+                "ped_occluded.ped_speed_mps.1.5-2.0",
+                "ped_occluded.ped_speed_mps.2.0-2.5",
+                "weather_ramp.ego_speed_mps.14.0-16.0",
+                "weather_ramp.ego_speed_mps.16.0-18.0",
+                "weather_ramp.friction_end.0.25-0.3333",
+                "weather_ramp.friction_end.0.4167-0.5",
+                "weather_ramp.visibility_end_m.25.0-35.0",
+                "weather_ramp.visibility_end_m.35.0-45.0"
+              ],
+              "frozen_status": null,
+              "gate_id": "a.cov.bins",
+              "kind": "count",
+              "margin": -24.0,
+              "n": 36,
+              "n_fail": 24,
+              "n_unscorable": 0,
+              "point_estimate": null,
+              "reason": "empty_bins",
+              "status": "fail",
+              "threshold": 0.0,
+              "waiver": null,
+              "waiver_note": null
+            },
+            {
+              "bound": null,
+              "bound_kind": "none",
+              "class": "regression",
+              "deviation": null,
+              "direction": "max",
+              "failing_ids": [],
+              "frozen_status": null,
+              "gate_id": "a.reg.paired",
+              "kind": "count",
+              "margin": 0.0,
+              "n": 1,
+              "n_fail": 0,
+              "n_unscorable": 0,
+              "point_estimate": null,
+              "reason": null,
+              "status": "pass",
+              "threshold": 0.0,
+              "waiver": null,
+              "waiver_note": null
+            }
+          ],
+          "regression": {
+            "baseline": "idm",
+            "candidate": "cautious_idm",
+            "family_means": {
+              "ped_occluded": {
+                "n_pairs": 1.0,
+                "ttc_baseline": 0.0211,
+                "ttc_candidate": 0.0728
+              }
+            },
+            "kind": "regression",
+            "n_pairs": 1,
+            "n_tier_worse": 0,
+            "n_ttc_drop": 0,
+            "pairs": [
+              {
+                "family": "ped_occluded",
+                "scenario_id": "core-ped-0001",
+                "tier_baseline": "critical",
+                "tier_candidate": "critical",
+                "tier_worse": false,
+                "ttc_baseline": 0.0211,
+                "ttc_candidate": 0.0728,
+                "ttc_delta": 0.0517,
+                "ttc_drop": false
+              }
+            ],
+            "passed": true
+          },
+          "residual_risk": [
+            {
+              "cannot_see": [
+                "risk.cut_in.perception",
+                "risk.cut_in.latency",
+                "risk.cut_in.multi_actor",
+                "risk.cut_in.odd_exit"
+              ],
+              "family": "cut_in",
+              "not_covered": [
+                "intersections",
+                "cyclists",
+                "night and low light",
+                "sensor faults",
+                "multi actor interactions",
+                "ODD exit behaviour"
+              ]
+            },
+            {
+              "cannot_see": [
+                "risk.hard_brake.perception",
+                "risk.hard_brake.latency",
+                "risk.hard_brake.multi_actor",
+                "risk.hard_brake.odd_exit"
+              ],
+              "family": "hard_brake",
+              "not_covered": [
+                "intersections",
+                "cyclists",
+                "night and low light",
+                "sensor faults",
+                "multi actor interactions",
+                "ODD exit behaviour"
+              ]
+            },
+            {
+              "cannot_see": [
+                "risk.ped_occluded.perception",
+                "risk.ped_occluded.latency",
+                "risk.ped_occluded.multi_actor",
+                "risk.ped_occluded.odd_exit"
+              ],
+              "family": "ped_occluded",
+              "not_covered": [
+                "intersections",
+                "cyclists",
+                "night and low light",
+                "sensor faults",
+                "multi actor interactions",
+                "ODD exit behaviour"
+              ]
+            },
+            {
+              "cannot_see": [
+                "risk.weather_ramp.perception",
+                "risk.weather_ramp.latency",
+                "risk.weather_ramp.multi_actor",
+                "risk.weather_ramp.odd_exit"
+              ],
+              "family": "weather_ramp",
+              "not_covered": [
+                "intersections",
+                "cyclists",
+                "night and low light",
+                "sensor faults",
+                "multi actor interactions",
+                "ODD exit behaviour"
+              ]
+            }
+          ],
+          "results": [
+            {
+              "description": "Adjacent-lane vehicle cuts in ahead of ego with 15.2 m initial gap; trigger at gap<=11.1 m; lateral speed 0.78 m/s.",
+              "duration_s": 15.0,
+              "family": "cut_in",
+              "metrics": {
+                "collision": false,
+                "collision_t_s": null,
+                "d_min_m": 7.5186,
+                "d_min_t_s": 1.4,
+                "delta_v_mps": null,
+                "hard_brake_events": 1,
+                "hard_brake_fraction": 0.0662,
+                "mean_speed_ratio": null,
+                "pet_min_s": 0.6,
+                "severity_index": 0,
+                "ttc_min_s": 3.025,
+                "ttc_min_t_s": 0.9
+              },
+              "n_steps": 151,
+              "parameters": {
+                "ego_speed_mps": 21.223,
+                "initial_gap_m": 15.2111,
+                "lateral_speed_mps": 0.7808,
+                "speed_delta_mps": -3.4701,
+                "trigger_gap_m": 11.0806
+              },
+              "planner": "cautious_idm",
+              "scenario_id": "core-cutin-0010",
+              "score": 82.0265,
+              "severity_tier": "near_miss",
+              "suite": "fixture",
+              "thumbnail": null
+            },
+            {
+              "description": "Lead vehicle at 20.6 m/s, initial gap 16.0 m; brakes at -7.71 m/s^2 starting t=3.4 s.",
+              "duration_s": 15.0,
+              "family": "hard_brake",
+              "metrics": {
+                "collision": false,
+                "collision_t_s": null,
+                "d_min_m": 4.0214,
+                "d_min_t_s": 15.0,
+                "delta_v_mps": null,
+                "hard_brake_events": 2,
+                "hard_brake_fraction": 0.1258,
+                "mean_speed_ratio": null,
+                "pet_min_s": 0.6,
+                "severity_index": 0,
+                "ttc_min_s": 2.4096,
+                "ttc_min_t_s": 6.1
+              },
+              "n_steps": 151,
+              "parameters": {
+                "brake_decel_mps2": -7.7118,
+                "brake_trigger_time_s": 3.3706,
+                "ego_speed_mps": 21.3913,
+                "initial_gap_m": 15.983,
+                "lead_speed_delta_mps": 0.7505
+              },
+              "planner": "cautious_idm",
+              "scenario_id": "core-hardbrake-0007",
+              "score": 70.5781,
+              "severity_tier": "near_miss",
+              "suite": "fixture",
+              "thumbnail": null
+            },
+            {
+              "description": "Pedestrian occluded by parked vehicle at x=63.8 m; begins crossing at speed 1.09 m/s when ego reaches x=34.2 m.",
+              "duration_s": 15.0,
+              "family": "ped_occluded",
+              "metrics": {
+                "collision": true,
+                "collision_t_s": 6.2,
+                "d_min_m": -1.2871,
+                "d_min_t_s": 7.1,
+                "delta_v_mps": 0.1761,
+                "hard_brake_events": 1,
+                "hard_brake_fraction": 0.2715,
+                "mean_speed_ratio": null,
+                "pet_min_s": 0.5,
+                "severity_index": 1,
+                "ttc_min_s": 0.0728,
+                "ttc_min_t_s": 6.1
+              },
+              "n_steps": 151,
+              "parameters": {
+                "ego_speed_mps": 11.6311,
+                "occluder_x_m": 63.7636,
+                "ped_speed_mps": 1.0936,
+                "trigger_ego_x_m": 34.1672,
+                "trigger_offset_m": 29.5964
+              },
+              "planner": "cautious_idm",
+              "scenario_id": "core-ped-0001",
+              "score": 10.0,
+              "severity_tier": "critical",
+              "suite": "fixture",
+              "thumbnail": "thumbs/ped_occluded_cautious_idm_core-ped-0001.png"
+            },
+            {
+              "description": "Lead vehicle at 8.6 m/s while visibility ramps 200 -> 18.5 m and friction 0.9 -> 0.40 over 20 s.",
+              "duration_s": 20.0,
+              "family": "weather_ramp",
+              "metrics": {
+                "collision": false,
+                "collision_t_s": null,
+                "d_min_m": 23.2715,
+                "d_min_t_s": 20.0,
+                "delta_v_mps": null,
+                "hard_brake_events": 1,
+                "hard_brake_fraction": 0.0299,
+                "mean_speed_ratio": null,
+                "pet_min_s": 2.8,
+                "severity_index": 0,
+                "ttc_min_s": 4.653,
+                "ttc_min_t_s": 0.0
+              },
+              "n_steps": 201,
+              "parameters": {
+                "ego_speed_mps": 19.57,
+                "friction_end": 0.4021,
+                "initial_gap_m": 55.339,
+                "lead_speed_mps": 8.644,
+                "visibility_end_m": 18.531
+              },
+              "planner": "cautious_idm",
+              "scenario_id": "core-weather-0008",
+              "score": 98.209,
+              "severity_tier": "nominal",
+              "suite": "fixture",
+              "thumbnail": null
+            }
+          ],
+          "samples": [],
+          "verdict": {
+            "candidate": "cautious_idm",
+            "conditional_gates": [],
+            "failing_gates": [
+              "a.hard.ped_collision",
+              "a.cov.bins",
+              "a.soft.dmin_all",
+              "a.soft.severity_weather",
+              "a.soft.ttc_cutin",
+              "a.soft.ttc_hardbrake",
+              "a.avail.hard_brake",
+              "a.avail.speed"
+            ],
+            "headline": "cautious_idm: NO_GO. 8 of 9 gates failed. Pedestrian collision, Coverage bins, Minimum distance, Weather severity, Cut in time to collision, Hard brake time to collision, Hard brake rate, Speed keeping.",
+            "n_gates": 9,
+            "suite": "fixture",
+            "verdict": "NO_GO"
+          },
+          "worked_example": {
+            "bound": 0.025,
+            "gate_id": "a.soft.ttc_cutin",
+            "live": true,
+            "n": 1,
+            "n_fail": 0,
+            "note_key": "gates.worked_example",
+            "point_estimate": 1.0,
+            "threshold": 0.6
+          }
+        },
+        {
+          "baseline": null,
+          "candidate": "idm",
+          "case": {
+            "nodes": [
+              {
+                "children": [
+                  "c.engine_limits",
+                  "c.deployment",
+                  "a.simulation_fidelity",
+                  "a.predicate_validity",
+                  "a.baseline_comparable",
+                  "s0",
+                  "d.contamination",
+                  "d.quantisation",
+                  "d.sandbagging",
+                  "d.unknown_unsafe"
+                ],
+                "evidence_ref": null,
+                "id": "g0",
+                "status": "fail",
+                "text_key": "case.goal",
+                "type": "goal"
+              },
+              {
+                "children": [],
+                "evidence_ref": null,
+                "id": "c.engine_limits",
+                "status": "info",
+                "text_key": "case.context.engine_limits",
+                "type": "context"
+              },
+              {
+                "children": [],
+                "evidence_ref": null,
+                "id": "c.deployment",
+                "status": "info",
+                "text_key": "owner.deployment_context",
+                "type": "context"
+              },
+              {
+                "children": [],
+                "evidence_ref": null,
+                "id": "a.simulation_fidelity",
+                "status": "info",
+                "text_key": "case.assumption.simulation_fidelity",
+                "type": "assumption"
+              },
+              {
+                "children": [],
+                "evidence_ref": null,
+                "id": "a.predicate_validity",
+                "status": "info",
+                "text_key": "case.assumption.predicate_validity",
+                "type": "assumption"
+              },
+              {
+                "children": [],
+                "evidence_ref": null,
+                "id": "a.baseline_comparable",
+                "status": "info",
+                "text_key": "case.assumption.baseline_comparable",
+                "type": "assumption"
+              },
+              {
+                "children": [
+                  "cl.ped_occluded"
+                ],
+                "evidence_ref": null,
+                "id": "s0",
+                "status": "info",
+                "text_key": "case.strategy",
+                "type": "strategy"
+              },
+              {
+                "children": [
+                  "ev.gate.ped_occluded.a.hard.ped_collision",
+                  "ev.gate.ped_occluded.a.soft.dmin_all",
+                  "ev.gate.ped_occluded.a.avail.hard_brake",
+                  "ev.gate.ped_occluded.a.avail.speed",
+                  "ev.gate.ped_occluded.a.cov.bins",
+                  "ev.gate.ped_occluded.a.reg.paired",
+                  "ev.ped_occluded.core-ped-0001",
+                  "ev.ped_occluded.core-ped-0009"
+                ],
+                "evidence_ref": null,
+                "id": "cl.ped_occluded",
+                "status": "fail",
+                "text_key": "case.claim.ped_occluded",
+                "type": "claim"
+              },
+              {
+                "children": [],
+                "evidence_ref": "a.hard.ped_collision",
+                "id": "ev.gate.ped_occluded.a.hard.ped_collision",
+                "status": "fail",
+                "text_key": "gate.short.a.hard.ped_collision",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "a.soft.dmin_all",
+                "id": "ev.gate.ped_occluded.a.soft.dmin_all",
+                "status": "fail",
+                "text_key": "gate.short.a.soft.dmin_all",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "a.avail.hard_brake",
+                "id": "ev.gate.ped_occluded.a.avail.hard_brake",
+                "status": "fail",
+                "text_key": "gate.short.a.avail.hard_brake",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "a.avail.speed",
+                "id": "ev.gate.ped_occluded.a.avail.speed",
+                "status": "fail",
+                "text_key": "gate.short.a.avail.speed",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "a.cov.bins",
+                "id": "ev.gate.ped_occluded.a.cov.bins",
+                "status": "fail",
+                "text_key": "gate.short.a.cov.bins",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "a.reg.paired",
+                "id": "ev.gate.ped_occluded.a.reg.paired",
+                "status": "info",
+                "text_key": "gate.short.a.reg.paired",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "core-ped-0001",
+                "id": "ev.ped_occluded.core-ped-0001",
+                "status": "fail",
+                "text_key": "case.evidence.record",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": "core-ped-0009",
+                "id": "ev.ped_occluded.core-ped-0009",
+                "status": "fail",
+                "text_key": "case.evidence.record",
+                "type": "evidence"
+              },
+              {
+                "children": [],
+                "evidence_ref": null,
+                "id": "d.contamination",
+                "status": "info",
+                "text_key": "case.defeater.contamination",
+                "type": "defeater"
+              },
+              {
+                "children": [],
+                "evidence_ref": null,
+                "id": "d.quantisation",
+                "status": "info",
+                "text_key": "case.defeater.quantisation",
+                "type": "defeater"
+              },
+              {
+                "children": [],
+                "evidence_ref": null,
+                "id": "d.sandbagging",
+                "status": "info",
+                "text_key": "case.defeater.sandbagging",
+                "type": "defeater"
+              },
+              {
+                "children": [],
+                "evidence_ref": null,
+                "id": "d.unknown_unsafe",
+                "status": "info",
+                "text_key": "case.defeater.unknown_unsafe",
+                "type": "defeater"
+              }
+            ],
+            "root": "g0"
+          },
+          "coverage": {
+            "not_covered": [
+              {
+                "hazard": "intersections",
+                "note_key": "coverage.not_covered.intersections"
+              },
+              {
+                "hazard": "cyclists",
+                "note_key": "coverage.not_covered.cyclists"
+              },
+              {
+                "hazard": "night and low light",
+                "note_key": "coverage.not_covered.night_low_light"
+              },
+              {
+                "hazard": "sensor faults",
+                "note_key": "coverage.not_covered.sensor_faults"
+              },
+              {
+                "hazard": "multi actor interactions",
+                "note_key": "coverage.not_covered.multi_actor"
+              },
+              {
+                "hazard": "ODD exit behaviour",
+                "note_key": "coverage.not_covered.odd_exit"
+              }
+            ],
+            "passed": false,
+            "rows": [
+              {
+                "bin_label": "15.0-17.33",
+                "family": "cut_in",
+                "hi": 17.33,
+                "lo": 15.0,
+                "n": 0,
+                "parameter": "ego_speed_mps",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "17.33-19.67",
+                "family": "cut_in",
+                "hi": 19.67,
+                "lo": 17.33,
+                "n": 0,
+                "parameter": "ego_speed_mps",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "19.67-22.0",
+                "family": "cut_in",
+                "hi": 22.0,
+                "lo": 19.67,
+                "n": 0,
+                "parameter": "ego_speed_mps",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "15.0-20.0",
+                "family": "cut_in",
+                "hi": 20.0,
+                "lo": 15.0,
+                "n": 0,
+                "parameter": "initial_gap_m",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "20.0-25.0",
+                "family": "cut_in",
+                "hi": 25.0,
+                "lo": 20.0,
+                "n": 0,
+                "parameter": "initial_gap_m",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "25.0-30.0",
+                "family": "cut_in",
+                "hi": 30.0,
+                "lo": 25.0,
+                "n": 0,
+                "parameter": "initial_gap_m",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "8.0-11.33",
+                "family": "cut_in",
+                "hi": 11.33,
+                "lo": 8.0,
+                "n": 0,
+                "parameter": "trigger_gap_m",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "11.33-14.67",
+                "family": "cut_in",
+                "hi": 14.67,
+                "lo": 11.33,
+                "n": 0,
+                "parameter": "trigger_gap_m",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "14.67-18.0",
+                "family": "cut_in",
+                "hi": 18.0,
+                "lo": 14.67,
+                "n": 0,
+                "parameter": "trigger_gap_m",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "3.5-5.0",
+                "family": "hard_brake",
+                "hi": 5.0,
+                "lo": 3.5,
+                "n": 0,
+                "parameter": "brake_decel_mps2",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "5.0-6.5",
+                "family": "hard_brake",
+                "hi": 6.5,
+                "lo": 5.0,
+                "n": 0,
+                "parameter": "brake_decel_mps2",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "6.5-8.0",
+                "family": "hard_brake",
+                "hi": 8.0,
+                "lo": 6.5,
+                "n": 0,
+                "parameter": "brake_decel_mps2",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "15.0-17.33",
+                "family": "hard_brake",
+                "hi": 17.33,
+                "lo": 15.0,
+                "n": 0,
+                "parameter": "ego_speed_mps",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "17.33-19.67",
+                "family": "hard_brake",
+                "hi": 19.67,
+                "lo": 17.33,
+                "n": 0,
+                "parameter": "ego_speed_mps",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "19.67-22.0",
+                "family": "hard_brake",
+                "hi": 22.0,
+                "lo": 19.67,
+                "n": 0,
+                "parameter": "ego_speed_mps",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "12.0-19.67",
+                "family": "hard_brake",
+                "hi": 19.67,
+                "lo": 12.0,
+                "n": 0,
+                "parameter": "initial_gap_m",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "19.67-27.33",
+                "family": "hard_brake",
+                "hi": 27.33,
+                "lo": 19.67,
+                "n": 0,
+                "parameter": "initial_gap_m",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "27.33-35.0",
+                "family": "hard_brake",
+                "hi": 35.0,
+                "lo": 27.33,
+                "n": 0,
+                "parameter": "initial_gap_m",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "8.0-10.0",
+                "family": "ped_occluded",
+                "hi": 10.0,
+                "lo": 8.0,
+                "n": 1,
+                "parameter": "ego_speed_mps",
+                "scenario_ids": [
+                  "core-ped-0009"
+                ],
+                "status": "sparse"
+              },
+              {
+                "bin_label": "10.0-12.0",
+                "family": "ped_occluded",
+                "hi": 12.0,
+                "lo": 10.0,
+                "n": 1,
+                "parameter": "ego_speed_mps",
+                "scenario_ids": [
+                  "core-ped-0001"
+                ],
+                "status": "sparse"
+              },
+              {
+                "bin_label": "12.0-14.0",
+                "family": "ped_occluded",
+                "hi": 14.0,
+                "lo": 12.0,
+                "n": 0,
+                "parameter": "ego_speed_mps",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "40.0-50.0",
+                "family": "ped_occluded",
+                "hi": 50.0,
+                "lo": 40.0,
+                "n": 1,
+                "parameter": "occluder_x_m",
+                "scenario_ids": [
+                  "core-ped-0009"
+                ],
+                "status": "sparse"
+              },
+              {
+                "bin_label": "50.0-60.0",
+                "family": "ped_occluded",
+                "hi": 60.0,
+                "lo": 50.0,
+                "n": 0,
+                "parameter": "occluder_x_m",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "60.0-70.0",
+                "family": "ped_occluded",
+                "hi": 70.0,
+                "lo": 60.0,
+                "n": 1,
+                "parameter": "occluder_x_m",
+                "scenario_ids": [
+                  "core-ped-0001"
+                ],
+                "status": "sparse"
+              },
+              {
+                "bin_label": "1.0-1.5",
+                "family": "ped_occluded",
+                "hi": 1.5,
+                "lo": 1.0,
+                "n": 2,
+                "parameter": "ped_speed_mps",
+                "scenario_ids": [
+                  "core-ped-0001",
+                  "core-ped-0009"
+                ],
+                "status": "ok"
+              },
+              {
+                "bin_label": "1.5-2.0",
+                "family": "ped_occluded",
+                "hi": 2.0,
+                "lo": 1.5,
+                "n": 0,
+                "parameter": "ped_speed_mps",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "2.0-2.5",
+                "family": "ped_occluded",
+                "hi": 2.5,
+                "lo": 2.0,
+                "n": 0,
+                "parameter": "ped_speed_mps",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "14.0-16.0",
+                "family": "weather_ramp",
+                "hi": 16.0,
+                "lo": 14.0,
+                "n": 0,
+                "parameter": "ego_speed_mps",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "16.0-18.0",
+                "family": "weather_ramp",
+                "hi": 18.0,
+                "lo": 16.0,
+                "n": 0,
+                "parameter": "ego_speed_mps",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "18.0-20.0",
+                "family": "weather_ramp",
+                "hi": 20.0,
+                "lo": 18.0,
+                "n": 0,
+                "parameter": "ego_speed_mps",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "0.25-0.3333",
+                "family": "weather_ramp",
+                "hi": 0.3333,
+                "lo": 0.25,
+                "n": 0,
+                "parameter": "friction_end",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "0.3333-0.4167",
+                "family": "weather_ramp",
+                "hi": 0.4167,
+                "lo": 0.3333,
+                "n": 0,
+                "parameter": "friction_end",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "0.4167-0.5",
+                "family": "weather_ramp",
+                "hi": 0.5,
+                "lo": 0.4167,
+                "n": 0,
+                "parameter": "friction_end",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "15.0-25.0",
+                "family": "weather_ramp",
+                "hi": 25.0,
+                "lo": 15.0,
+                "n": 0,
+                "parameter": "visibility_end_m",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "25.0-35.0",
+                "family": "weather_ramp",
+                "hi": 35.0,
+                "lo": 25.0,
+                "n": 0,
+                "parameter": "visibility_end_m",
+                "scenario_ids": [],
+                "status": "empty"
+              },
+              {
+                "bin_label": "35.0-45.0",
+                "family": "weather_ramp",
+                "hi": 45.0,
+                "lo": 35.0,
+                "n": 0,
+                "parameter": "visibility_end_m",
+                "scenario_ids": [],
+                "status": "empty"
+              }
+            ],
+            "track": "a",
+            "unbinned": 0,
+            "unmapped": []
+          },
+          "excluded": false,
+          "gates": [
+            {
+              "bound": null,
+              "bound_kind": "none",
+              "class": "hard",
+              "deviation": null,
+              "direction": "max",
+              "failing_ids": [
+                "core-ped-0001",
+                "core-ped-0009"
+              ],
+              "frozen_status": null,
+              "gate_id": "a.hard.ped_collision",
+              "kind": "count",
+              "margin": null,
+              "n": 2,
+              "n_fail": 2,
+              "n_unscorable": 0,
+              "point_estimate": null,
+              "reason": "insufficient_n",
+              "status": "fail",
+              "threshold": 0.0,
+              "waiver": null,
+              "waiver_note": null
+            },
+            {
+              "bound": 0.0,
+              "bound_kind": "lower",
+              "class": "soft",
+              "deviation": null,
+              "direction": "floor",
+              "failing_ids": [],
+              "frozen_status": null,
+              "gate_id": "a.soft.ttc_cutin",
+              "kind": "rate",
+              "margin": null,
+              "n": 0,
+              "n_fail": 0,
+              "n_unscorable": 0,
+              "point_estimate": null,
+              "reason": "insufficient_n",
+              "status": "fail",
+              "threshold": 0.6,
+              "waiver": null,
+              "waiver_note": null
+            },
+            {
+              "bound": 0.0,
+              "bound_kind": "lower",
+              "class": "soft",
+              "deviation": null,
+              "direction": "floor",
+              "failing_ids": [],
+              "frozen_status": null,
+              "gate_id": "a.soft.ttc_hardbrake",
+              "kind": "rate",
+              "margin": null,
+              "n": 0,
+              "n_fail": 0,
+              "n_unscorable": 0,
+              "point_estimate": null,
+              "reason": "insufficient_n",
+              "status": "fail",
+              "threshold": 0.6,
+              "waiver": null,
+              "waiver_note": null
+            },
+            {
+              "bound": 0.0,
+              "bound_kind": "lower",
+              "class": "soft",
+              "deviation": null,
+              "direction": "floor",
+              "failing_ids": [
+                "core-ped-0001",
+                "core-ped-0009"
+              ],
+              "frozen_status": null,
+              "gate_id": "a.soft.dmin_all",
+              "kind": "rate",
+              "margin": null,
+              "n": 2,
+              "n_fail": 2,
+              "n_unscorable": 0,
+              "point_estimate": 0.0,
+              "reason": "insufficient_n",
+              "status": "fail",
+              "threshold": 0.6,
+              "waiver": null,
+              "waiver_note": null
+            },
+            {
+              "bound": 0.0,
+              "bound_kind": "lower",
+              "class": "soft",
+              "deviation": null,
+              "direction": "floor",
+              "failing_ids": [],
+              "frozen_status": null,
+              "gate_id": "a.soft.severity_weather",
+              "kind": "rate",
+              "margin": null,
+              "n": 0,
+              "n_fail": 0,
+              "n_unscorable": 0,
+              "point_estimate": null,
+              "reason": "insufficient_n",
+              "status": "fail",
+              "threshold": 0.6,
+              "waiver": null,
+              "waiver_note": null
+            },
+            {
+              "bound": 0.1581,
+              "bound_kind": "lower",
+              "class": "availability",
+              "deviation": null,
+              "direction": "floor",
+              "failing_ids": [],
+              "frozen_status": null,
+              "gate_id": "a.avail.hard_brake",
+              "kind": "rate",
+              "margin": null,
+              "n": 2,
+              "n_fail": 0,
+              "n_unscorable": 0,
+              "point_estimate": 1.0,
+              "reason": "insufficient_n",
+              "status": "fail",
+              "threshold": 0.6,
+              "waiver": null,
+              "waiver_note": null
+            },
+            {
+              "bound": 0.0,
+              "bound_kind": "lower",
+              "class": "availability",
+              "deviation": null,
+              "direction": "floor",
+              "failing_ids": [],
+              "frozen_status": null,
+              "gate_id": "a.avail.speed",
+              "kind": "rate",
+              "margin": null,
+              "n": 0,
+              "n_fail": 0,
+              "n_unscorable": 2,
+              "point_estimate": null,
+              "reason": "insufficient_n",
+              "status": "fail",
+              "threshold": 0.6,
+              "waiver": null,
+              "waiver_note": null
+            },
+            {
+              "bound": null,
+              "bound_kind": "none",
+              "class": "coverage",
+              "deviation": null,
+              "direction": "max",
+              "failing_ids": [
+                "cut_in.ego_speed_mps.15.0-17.33",
+                "cut_in.ego_speed_mps.17.33-19.67",
+                "cut_in.ego_speed_mps.19.67-22.0",
+                "cut_in.initial_gap_m.15.0-20.0",
+                "cut_in.initial_gap_m.20.0-25.0",
+                "cut_in.initial_gap_m.25.0-30.0",
+                "cut_in.trigger_gap_m.11.33-14.67",
+                "cut_in.trigger_gap_m.14.67-18.0",
+                "cut_in.trigger_gap_m.8.0-11.33",
+                "hard_brake.brake_decel_mps2.3.5-5.0",
+                "hard_brake.brake_decel_mps2.5.0-6.5",
+                "hard_brake.brake_decel_mps2.6.5-8.0",
+                "hard_brake.ego_speed_mps.15.0-17.33",
+                "hard_brake.ego_speed_mps.17.33-19.67",
+                "hard_brake.ego_speed_mps.19.67-22.0",
+                "hard_brake.initial_gap_m.12.0-19.67",
+                "hard_brake.initial_gap_m.19.67-27.33",
+                "hard_brake.initial_gap_m.27.33-35.0",
+                "ped_occluded.ego_speed_mps.12.0-14.0",
+                "ped_occluded.occluder_x_m.50.0-60.0",
+                "ped_occluded.ped_speed_mps.1.5-2.0",
+                "ped_occluded.ped_speed_mps.2.0-2.5",
+                "weather_ramp.ego_speed_mps.14.0-16.0",
+                "weather_ramp.ego_speed_mps.16.0-18.0",
+                "weather_ramp.ego_speed_mps.18.0-20.0",
+                "weather_ramp.friction_end.0.25-0.3333",
+                "weather_ramp.friction_end.0.3333-0.4167",
+                "weather_ramp.friction_end.0.4167-0.5",
+                "weather_ramp.visibility_end_m.15.0-25.0",
+                "weather_ramp.visibility_end_m.25.0-35.0",
+                "weather_ramp.visibility_end_m.35.0-45.0"
+              ],
+              "frozen_status": null,
+              "gate_id": "a.cov.bins",
+              "kind": "count",
+              "margin": -31.0,
+              "n": 36,
+              "n_fail": 31,
+              "n_unscorable": 0,
+              "point_estimate": null,
+              "reason": "empty_bins",
+              "status": "fail",
+              "threshold": 0.0,
+              "waiver": null,
+              "waiver_note": null
+            },
+            {
+              "bound": null,
+              "bound_kind": "none",
+              "class": "regression",
+              "deviation": null,
+              "direction": "max",
+              "failing_ids": [],
+              "frozen_status": null,
+              "gate_id": "a.reg.paired",
+              "kind": "count",
+              "margin": null,
+              "n": 0,
+              "n_fail": 0,
+              "n_unscorable": 0,
+              "point_estimate": null,
+              "reason": "no_baseline",
+              "status": "not_applicable",
+              "threshold": 0.0,
+              "waiver": null,
+              "waiver_note": null
+            }
+          ],
+          "regression": null,
+          "residual_risk": [
+            {
+              "cannot_see": [
+                "risk.ped_occluded.perception",
+                "risk.ped_occluded.latency",
+                "risk.ped_occluded.multi_actor",
+                "risk.ped_occluded.odd_exit"
+              ],
+              "family": "ped_occluded",
+              "not_covered": [
+                "intersections",
+                "cyclists",
+                "night and low light",
+                "sensor faults",
+                "multi actor interactions",
+                "ODD exit behaviour"
+              ]
+            }
+          ],
+          "results": [
+            {
+              "description": "Pedestrian occluded by parked vehicle at x=63.8 m; begins crossing at speed 1.09 m/s when ego reaches x=34.2 m.",
+              "duration_s": 15.0,
+              "family": "ped_occluded",
+              "metrics": {
+                "collision": true,
+                "collision_t_s": 5.4,
+                "d_min_m": -1.1328,
+                "d_min_t_s": 5.6,
+                "delta_v_mps": 0.4427,
+                "hard_brake_events": 1,
+                "hard_brake_fraction": 0.0331,
+                "mean_speed_ratio": null,
+                "pet_min_s": 0.3,
+                "severity_index": 1,
+                "ttc_min_s": 0.0211,
+                "ttc_min_t_s": 5.3
+              },
+              "n_steps": 151,
+              "parameters": {
+                "ego_speed_mps": 11.6311,
+                "occluder_x_m": 63.7636,
+                "ped_speed_mps": 1.0936,
+                "trigger_ego_x_m": 34.1672,
+                "trigger_offset_m": 29.5964
+              },
+              "planner": "idm",
+              "scenario_id": "core-ped-0001",
+              "score": 10.0,
+              "severity_tier": "critical",
+              "suite": "fixture",
+              "thumbnail": "thumbs/ped_occluded_idm_core-ped-0001.png"
+            },
+            {
+              "description": "Pedestrian occluded by parked vehicle at x=44.7 m; begins crossing at speed 1.38 m/s when ego reaches x=26.7 m.",
+              "duration_s": 15.0,
+              "family": "ped_occluded",
+              "metrics": {
+                "collision": true,
+                "collision_t_s": 5.0,
+                "d_min_m": -1.4799,
+                "d_min_t_s": 5.4,
+                "delta_v_mps": 0.3063,
+                "hard_brake_events": 1,
+                "hard_brake_fraction": 0.0397,
+                "mean_speed_ratio": null,
+                "pet_min_s": 0.1,
+                "severity_index": 1,
+                "ttc_min_s": 0.0292,
+                "ttc_min_t_s": 4.9
+              },
+              "n_steps": 151,
+              "parameters": {
+                "ego_speed_mps": 8.6821,
+                "occluder_x_m": 44.6721,
+                "ped_speed_mps": 1.3838,
+                "trigger_ego_x_m": 26.6946,
+                "trigger_offset_m": 17.9775
+              },
+              "planner": "idm",
+              "scenario_id": "core-ped-0009",
+              "score": 10.0,
+              "severity_tier": "critical",
+              "suite": "fixture",
+              "thumbnail": null
+            }
+          ],
+          "samples": [],
+          "verdict": {
+            "candidate": "idm",
+            "conditional_gates": [],
+            "failing_gates": [
+              "a.hard.ped_collision",
+              "a.cov.bins",
+              "a.soft.dmin_all",
+              "a.soft.severity_weather",
+              "a.soft.ttc_cutin",
+              "a.soft.ttc_hardbrake",
+              "a.avail.hard_brake",
+              "a.avail.speed"
+            ],
+            "headline": "idm: NO_GO. 8 of 9 gates failed. Pedestrian collision, Coverage bins, Minimum distance, Weather severity, Cut in time to collision, Hard brake time to collision, Hard brake rate, Speed keeping.",
+            "n_gates": 9,
+            "suite": "fixture",
+            "verdict": "NO_GO"
+          },
+          "worked_example": {
+            "bound": 0.1581,
+            "gate_id": "a.avail.hard_brake",
+            "live": true,
+            "n": 2,
+            "n_fail": 0,
+            "note_key": "gates.worked_example",
+            "point_estimate": 1.0,
+            "threshold": 0.6
+          }
+        }
+      ],
+      "credibility": [
+        "credibility.1",
+        "credibility.2",
+        "credibility.3",
+        "credibility.4",
+        "credibility.5",
+        "credibility.6",
+        "credibility.7",
+        "credibility.public_record"
+      ],
+      "deviations": [],
+      "first_run_at": "2026-09-19T00:00:00Z",
+      "gate_file_sha256": "0b2391213a751aea71ee69c4e045e06280d1e4b2614f1457e08f863166bed76a",
+      "gate_published_at": null,
+      "independence": [
+        "independence.1",
+        "independence.2",
+        "independence.3",
+        "independence.mitigations"
+      ],
+      "preregistered": false,
+      "suite": "fixture"
+    }
+  ],
+  "track": "a"
+}

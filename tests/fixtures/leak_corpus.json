@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "note": "Ten strings that must all come out clean. {host} is replaced with socket.gethostname() by the test.",
+  "strings": [
+    "/Users/someone/src/github.com/BRKMYR/assurance-gate/runs/demo/idm/results.json",
+    "/home/runner/work/assurance-gate/assurance-gate/logs/track_b/2026-09-19.eval",
+    "/tmp/gate_bundle/index.html was written by the bundler",
+    "/private/var/folders/q9/T/pytest-of-someone/tiny.eval",
+    "write access questions go to someone@example.com",
+    "{host}",
+    "the log was written on {host}.local at 12:00 UTC",
+    "traceback File \"/Users/someone/.venv/lib/python3.13/site-packages/inspect_ai/log.py\", line 1",
+    "mixed line with /home/x/artifacts/core/idm.json and someone.else@example.org",
+    "file:///Users/someone/Library/CloudStorage/GoogleDrive/report.png"
+  ],
+  "object": {
+    "eval": {
+      "task": "xstest",
+      "env": {"HF_TOKEN": "hf_secret"},
+      "metadata": {
+        "hostname": "{host}",
+        "user": "someone",
+        "cwd": "/Users/someone/src",
+        "argv": ["inspect", "eval", "--model", "x"],
+        "environment": "laptop",
+        "keep": "/Users/someone/keep/this/path.json"
+      }
+    }
+  }
+}

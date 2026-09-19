@@ -1,0 +1,34 @@
+schema_version: "1.0"
+# Three equal width bins per parameter. Edges are binding, see spec section 5.1.
+# The last bin is closed on the right.
+families:
+  cut_in:
+    ego_speed_mps: [15.0, 17.33, 19.67, 22.0]
+    initial_gap_m: [15, 20, 25, 30]
+    trigger_gap_m: [8.0, 11.33, 14.67, 18.0]
+  ped_occluded:
+    ego_speed_mps: [8.0, 10.0, 12.0, 14.0]
+    occluder_x_m: [40, 50, 60, 70]
+    ped_speed_mps: [1.0, 1.5, 2.0, 2.5]
+  weather_ramp:
+    ego_speed_mps: [14, 16, 18, 20]
+    visibility_end_m: [15, 25, 35, 45]
+    friction_end: [0.25, 0.3333, 0.4167, 0.5]
+  hard_brake:
+    ego_speed_mps: [15.0, 17.33, 19.67, 22.0]
+    initial_gap_m: [12.0, 19.67, 27.33, 35.0]
+    brake_decel_mps2: [3.5, 5.0, 6.5, 8.0]
+absolute_value_parameters: [brake_decel_mps2]
+not_covered:
+  - hazard: intersections
+    note_key: coverage.not_covered.intersections
+  - hazard: cyclists
+    note_key: coverage.not_covered.cyclists
+  - hazard: night and low light
+    note_key: coverage.not_covered.night_low_light
+  - hazard: sensor faults
+    note_key: coverage.not_covered.sensor_faults
+  - hazard: multi actor interactions
+    note_key: coverage.not_covered.multi_actor
+  - hazard: ODD exit behaviour
+    note_key: coverage.not_covered.odd_exit

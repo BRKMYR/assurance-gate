@@ -1,0 +1,23 @@
+{
+  "baseline": "idm",
+  "candidate": "constant_velocity",
+  "gate_file": "gates/track_a.yaml",
+  "gate_file_sha256": "0b2391213a751aea71ee69c4e045e06280d1e4b2614f1457e08f863166bed76a",
+  "gate_published_at": null,
+  "generated_at": "2026-08-23T10:03:47Z",
+  "n_results": 60,
+  "notes": "Demo data. Gates were written after these runs.",
+  "preregistered": false,
+  "run_id": "demo-constant_velocity-20260823T100347Z",
+  "schema_version": "1.0",
+  "seed": 186880289,
+  "suite": "demo",
+  "tools": {
+    "avsb": "0.1.0",
+    "gate": "1.0.0",
+    "inspect_ai": null,
+    "inspect_evals": null,
+    "judge_prompt_version": null
+  },
+  "track": "a"
+}

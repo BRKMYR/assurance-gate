@@ -1,0 +1,23 @@
+{
+  "baseline": "Qwen/Qwen2.5-7B-Instruct",
+  "candidate": "Qwen/Qwen2.5-7B-Instruct",
+  "gate_file": "gates/track_b.yaml",
+  "gate_file_sha256": "c499d77d0928c26ce91abd550e1fa700b134b84c41ef2201910e5fe00c5a2139",
+  "gate_published_at": null,
+  "generated_at": "2026-09-21T12:00:00Z",
+  "n_results": 450,
+  "notes": "",
+  "preregistered": true,
+  "run_id": "holdout-qwen25-7b-20260921T120000Z",
+  "schema_version": "1.0",
+  "seed": 0,
+  "suite": "holdout",
+  "tools": {
+    "avsb": null,
+    "gate": null,
+    "inspect_ai": null,
+    "inspect_evals": null,
+    "judge_prompt_version": null
+  },
+  "track": "b"
+}

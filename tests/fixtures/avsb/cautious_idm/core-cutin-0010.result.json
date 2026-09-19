@@ -1,0 +1,25 @@
+{
+  "duration_s": 15.0,
+  "family": "cut_in",
+  "metrics": {
+    "collision": false,
+    "collision_t_s": null,
+    "d_min_m": 7.5186,
+    "d_min_t_s": 1.4,
+    "delta_v_mps": null,
+    "hard_brake_events": 1,
+    "hard_brake_fraction": 0.0662,
+    "pet_min_s": 0.6,
+    "severity_index": 0,
+    "ttc_min_s": 3.025,
+    "ttc_min_t_s": 0.9
+  },
+  "n_steps": 151,
+  "planner": "cautious_idm",
+  "scenario_id": "core-cutin-0010",
+  "schema_version": "1.0",
+  "score": 82.0265,
+  "severity_tier": "near_miss",
+  "suite": "core",
+  "trajectory_log": "artifacts/core/cautious_idm/core-cutin-0010.jsonl"
+}

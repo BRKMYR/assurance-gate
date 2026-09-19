@@ -1,0 +1,104 @@
+schema_version: "1.0"
+track: a
+suite: holdout
+frozen: true
+gates:
+  - id: a.hard.ped_collision
+    class: hard
+    kind: count
+    family: ped_occluded
+    predicate: "metrics.collision == false"
+    threshold: 0
+    direction: max
+    severity: high
+    min_n: 14
+    rationale: "[[OWNER_COPY: rationale a.hard.ped_collision]]"
+    source: "ISO 21448:2022 clause 7 (informative)"
+  - id: a.soft.ttc_cutin
+    class: soft
+    kind: rate
+    family: cut_in
+    predicate: "metrics.ttc_min_s >= 1.5"
+    threshold: 0.60
+    direction: floor
+    severity: medium
+    min_n: 14
+    rationale: "[[OWNER_COPY: rationale a.soft.ttc_cutin]]"
+    source: "ISO 21448:2022 Annex C (informative)"
+  - id: a.soft.ttc_hardbrake
+    class: soft
+    kind: rate
+    family: hard_brake
+    predicate: "metrics.ttc_min_s >= 1.5"
+    threshold: 0.60
+    direction: floor
+    severity: medium
+    min_n: 12
+    rationale: "[[OWNER_COPY: rationale a.soft.ttc_hardbrake]]"
+    source: "ISO 21448:2022 Annex C (informative)"
+  - id: a.soft.dmin_all
+    class: soft
+    kind: rate
+    family: all
+    predicate: "metrics.d_min_m >= 0.5"
+    threshold: 0.60
+    direction: floor
+    severity: medium
+    min_n: 50
+    rationale: "[[OWNER_COPY: rationale a.soft.dmin_all]]"
+    source: "UL 4600:2023 Section 8 (informative)"
+  - id: a.soft.severity_weather
+    class: soft
+    kind: rate
+    family: weather_ramp
+    predicate: "severity_tier != \"critical\""
+    threshold: 0.60
+    direction: floor
+    severity: medium
+    min_n: 12
+    rationale: "[[OWNER_COPY: rationale a.soft.severity_weather]]"
+    source: "ISO 21448:2022 clause 7 (informative)"
+  - id: a.avail.hard_brake
+    class: availability
+    kind: rate
+    family: all
+    predicate: "metrics.hard_brake_fraction <= 0.10"
+    threshold: 0.60
+    direction: floor
+    severity: low
+    min_n: 50
+    rationale: "[[OWNER_COPY: rationale a.avail.hard_brake]]"
+    source: "UL 4600:2023 Section 16 (informative)"
+  - id: a.avail.speed
+    class: availability
+    kind: rate
+    family: all
+    predicate: "metrics.mean_speed_ratio >= 0.80"
+    threshold: 0.60
+    direction: floor
+    severity: low
+    min_n: 50
+    rationale: "[[OWNER_COPY: rationale a.avail.speed]]"
+    source: "UL 4600:2023 Section 16 (informative)"
+  - id: a.cov.bins
+    class: coverage
+    kind: count
+    family: all
+    predicate: ""
+    threshold: 0
+    direction: max
+    severity: medium
+    min_n: 0
+    rationale: "[[OWNER_COPY: rationale a.cov.bins]]"
+    source: "UL 4600:2023 Section 8 (informative)"
+  - id: a.reg.paired
+    class: regression
+    kind: count
+    family: all
+    predicate: ""
+    threshold: 0
+    direction: max
+    severity: medium
+    min_n: 0
+    rationale: "[[OWNER_COPY: rationale a.reg.paired]]"
+    source: "ISO 21448:2022 Annex C (informative)"
