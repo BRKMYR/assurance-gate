@@ -112,9 +112,11 @@ def test_without_hf_token_a_real_run_exits_2(
     repo: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture
 ) -> None:
     monkeypatch.setattr(publish, "HfApi", FakeApi)
+    monkeypatch.delenv("HF_TOKEN", raising=False)
+    monkeypatch.setattr("huggingface_hub.get_token", lambda: None)
     assert publish.run(args_for(repo)) == publish.EXIT_NO_TOKEN
     assert FakeApi.calls == []
-    assert "HF_TOKEN is not set" in capsys.readouterr().out
+    assert "no Hugging Face token found" in capsys.readouterr().out
 
 
 def test_space_upload_uses_delete_patterns_and_restores_the_card(

@@ -23,6 +23,15 @@ from typing import Sequence
 
 from huggingface_hub import HfApi
 
+
+def _resolve_token() -> str | None:
+    """HF_TOKEN from the environment, else the token stored by `hf auth login`."""
+    import os
+    from huggingface_hub import get_token
+
+    return os.environ.get("HF_TOKEN") or get_token()
+
+
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 
 SPACE_REPO_ID = "N20X/assurance-gate"
@@ -171,10 +180,10 @@ def run(args: argparse.Namespace) -> int:
             print(f"  {step}")
         return EXIT_OK
 
-    token = os.environ.get("HF_TOKEN")
+    token = _resolve_token()
     if not token:
         print(
-            "gate publish: HF_TOKEN is not set. Set a token with write scope on "
+            "gate publish: no Hugging Face token found (HF_TOKEN or `hf auth login`). Set a token with write scope on "
             f"{SPACE_REPO_ID} and {DATASET_REPO_ID}, or run with --dry-run.",
         )
         return EXIT_NO_TOKEN
