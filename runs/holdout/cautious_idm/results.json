@@ -30,7 +30,7 @@
     "score": 94.0,
     "severity_tier": "nominal",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/cut_in_cautious_idm_holdout-cutin-0001.png"
   },
   {
     "description": "Adjacent-lane vehicle cuts in ahead of ego with 22.7 m initial gap; trigger at gap<=12.5 m; lateral speed 0.78 m/s.",
@@ -63,7 +63,7 @@
     "score": 90.0,
     "severity_tier": "nominal",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/cut_in_cautious_idm_holdout-cutin-0002.png"
   },
   {
     "description": "Adjacent-lane vehicle cuts in ahead of ego with 29.1 m initial gap; trigger at gap<=12.1 m; lateral speed 1.12 m/s.",
@@ -96,7 +96,7 @@
     "score": 97.0,
     "severity_tier": "nominal",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/cut_in_cautious_idm_holdout-cutin-0003.png"
   },
   {
     "description": "Adjacent-lane vehicle cuts in ahead of ego with 28.1 m initial gap; trigger at gap<=13.4 m; lateral speed 0.74 m/s.",
@@ -129,7 +129,7 @@
     "score": 86.6159,
     "severity_tier": "near_miss",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/cut_in_cautious_idm_holdout-cutin-0004.png"
   },
   {
     "description": "Adjacent-lane vehicle cuts in ahead of ego with 21.3 m initial gap; trigger at gap<=13.4 m; lateral speed 1.19 m/s.",
@@ -162,7 +162,7 @@
     "score": 83.8212,
     "severity_tier": "near_miss",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/cut_in_cautious_idm_holdout-cutin-0005.png"
   },
   {
     "description": "Adjacent-lane vehicle cuts in ahead of ego with 17.5 m initial gap; trigger at gap<=13.7 m; lateral speed 1.28 m/s.",
@@ -195,7 +195,7 @@
     "score": 76.9272,
     "severity_tier": "near_miss",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/cut_in_cautious_idm_holdout-cutin-0006.png"
   },
   {
     "description": "Adjacent-lane vehicle cuts in ahead of ego with 15.8 m initial gap; trigger at gap<=14.8 m; lateral speed 1.47 m/s.",
@@ -228,7 +228,7 @@
     "score": 81.2266,
     "severity_tier": "near_miss",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/cut_in_cautious_idm_holdout-cutin-0007.png"
   },
   {
     "description": "Adjacent-lane vehicle cuts in ahead of ego with 27.6 m initial gap; trigger at gap<=15.6 m; lateral speed 0.80 m/s.",
@@ -261,7 +261,7 @@
     "score": 87.6159,
     "severity_tier": "nominal",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/cut_in_cautious_idm_holdout-cutin-0008.png"
   },
   {
     "description": "Adjacent-lane vehicle cuts in ahead of ego with 22.8 m initial gap; trigger at gap<=10.3 m; lateral speed 0.92 m/s.",
@@ -294,7 +294,7 @@
     "score": 90.0,
     "severity_tier": "nominal",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/cut_in_cautious_idm_holdout-cutin-0009.png"
   },
   {
     "description": "Adjacent-lane vehicle cuts in ahead of ego with 19.5 m initial gap; trigger at gap<=13.5 m; lateral speed 1.40 m/s.",
@@ -327,7 +327,7 @@
     "score": 92.0,
     "severity_tier": "nominal",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/cut_in_cautious_idm_holdout-cutin-0010.png"
   },
   {
     "description": "Adjacent-lane vehicle cuts in ahead of ego with 22.8 m initial gap; trigger at gap<=12.7 m; lateral speed 0.89 m/s.",
@@ -360,7 +360,7 @@
     "score": 91.0,
     "severity_tier": "nominal",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/cut_in_cautious_idm_holdout-cutin-0011.png"
   },
   {
     "description": "Adjacent-lane vehicle cuts in ahead of ego with 19.0 m initial gap; trigger at gap<=9.4 m; lateral speed 0.86 m/s.",
@@ -393,7 +393,7 @@
     "score": 83.8212,
     "severity_tier": "near_miss",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/cut_in_cautious_idm_holdout-cutin-0012.png"
   },
   {
     "description": "Adjacent-lane vehicle cuts in ahead of ego with 15.3 m initial gap; trigger at gap<=11.5 m; lateral speed 1.33 m/s.",
@@ -426,7 +426,7 @@
     "score": 89.0,
     "severity_tier": "near_miss",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/cut_in_cautious_idm_holdout-cutin-0013.png"
   },
   {
     "description": "Adjacent-lane vehicle cuts in ahead of ego with 28.3 m initial gap; trigger at gap<=9.3 m; lateral speed 1.38 m/s.",
@@ -459,7 +459,7 @@
     "score": 81.4238,
     "severity_tier": "near_miss",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/cut_in_cautious_idm_holdout-cutin-0014.png"
   },
   {
     "description": "Adjacent-lane vehicle cuts in ahead of ego with 23.5 m initial gap; trigger at gap<=9.8 m; lateral speed 1.06 m/s.",
@@ -492,7 +492,7 @@
     "score": 78.7168,
     "severity_tier": "near_miss",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/cut_in_cautious_idm_holdout-cutin-0015.png"
   },
   {
     "description": "Adjacent-lane vehicle cuts in ahead of ego with 16.0 m initial gap; trigger at gap<=15.0 m; lateral speed 1.46 m/s.",
@@ -557,7 +557,7 @@
     "score": 81.4662,
     "severity_tier": "near_miss",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/hard_brake_cautious_idm_holdout-hardbrake-0001.png"
   },
   {
     "description": "Lead vehicle at 19.3 m/s, initial gap 24.5 m; brakes at -5.52 m/s^2 starting t=4.0 s.",
@@ -589,7 +589,7 @@
     "score": 85.4819,
     "severity_tier": "nominal",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/hard_brake_cautious_idm_holdout-hardbrake-0002.png"
   },
   {
     "description": "Lead vehicle at 16.3 m/s, initial gap 16.1 m; brakes at -7.40 m/s^2 starting t=2.4 s.",
@@ -621,7 +621,7 @@
     "score": 78.0231,
     "severity_tier": "near_miss",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/hard_brake_cautious_idm_holdout-hardbrake-0003.png"
   },
   {
     "description": "Lead vehicle at 16.0 m/s, initial gap 20.4 m; brakes at -4.15 m/s^2 starting t=4.8 s.",
@@ -653,7 +653,7 @@
     "score": 89.4501,
     "severity_tier": "nominal",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/hard_brake_cautious_idm_holdout-hardbrake-0004.png"
   },
   {
     "description": "Lead vehicle at 19.8 m/s, initial gap 29.5 m; brakes at -3.99 m/s^2 starting t=4.2 s.",
@@ -685,7 +685,7 @@
     "score": 88.6174,
     "severity_tier": "nominal",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/hard_brake_cautious_idm_holdout-hardbrake-0005.png"
   },
   {
     "description": "Lead vehicle at 15.9 m/s, initial gap 14.6 m; brakes at -5.45 m/s^2 starting t=3.7 s.",
@@ -717,7 +717,7 @@
     "score": 81.1362,
     "severity_tier": "near_miss",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/hard_brake_cautious_idm_holdout-hardbrake-0006.png"
   },
   {
     "description": "Lead vehicle at 21.4 m/s, initial gap 24.6 m; brakes at -7.08 m/s^2 starting t=2.8 s.",
@@ -749,7 +749,7 @@
     "score": 78.6018,
     "severity_tier": "nominal",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/hard_brake_cautious_idm_holdout-hardbrake-0007.png"
   },
   {
     "description": "Lead vehicle at 18.9 m/s, initial gap 13.1 m; brakes at -4.35 m/s^2 starting t=2.8 s.",
@@ -781,7 +781,7 @@
     "score": 78.3149,
     "severity_tier": "near_miss",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/hard_brake_cautious_idm_holdout-hardbrake-0008.png"
   },
   {
     "description": "Lead vehicle at 19.4 m/s, initial gap 12.5 m; brakes at -4.01 m/s^2 starting t=3.5 s.",
@@ -845,7 +845,7 @@
     "score": 83.8309,
     "severity_tier": "nominal",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/hard_brake_cautious_idm_holdout-hardbrake-0010.png"
   },
   {
     "description": "Lead vehicle at 16.0 m/s, initial gap 23.0 m; brakes at -7.96 m/s^2 starting t=2.5 s.",
@@ -877,7 +877,7 @@
     "score": 81.4093,
     "severity_tier": "nominal",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/hard_brake_cautious_idm_holdout-hardbrake-0011.png"
   },
   {
     "description": "Lead vehicle at 16.1 m/s, initial gap 30.2 m; brakes at -6.65 m/s^2 starting t=3.9 s.",
@@ -909,7 +909,7 @@
     "score": 94.6396,
     "severity_tier": "nominal",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/hard_brake_cautious_idm_holdout-hardbrake-0012.png"
   },
   {
     "description": "Lead vehicle at 16.8 m/s, initial gap 30.6 m; brakes at -3.56 m/s^2 starting t=2.7 s.",
@@ -941,7 +941,7 @@
     "score": 92.1847,
     "severity_tier": "nominal",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/hard_brake_cautious_idm_holdout-hardbrake-0013.png"
   },
   {
     "description": "Lead vehicle at 16.1 m/s, initial gap 33.1 m; brakes at -6.50 m/s^2 starting t=3.5 s.",
@@ -973,7 +973,7 @@
     "score": 99.6026,
     "severity_tier": "nominal",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/hard_brake_cautious_idm_holdout-hardbrake-0014.png"
   },
   {
     "description": "Pedestrian occluded by parked vehicle at x=51.4 m; begins crossing at speed 2.06 m/s when ego reaches x=25.6 m.",
@@ -1005,7 +1005,7 @@
     "score": 64.3705,
     "severity_tier": "near_miss",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/ped_occluded_cautious_idm_holdout-ped-0001.png"
   },
   {
     "description": "Pedestrian occluded by parked vehicle at x=68.6 m; begins crossing at speed 1.21 m/s when ego reaches x=40.3 m.",
@@ -1069,7 +1069,7 @@
     "score": 10.0,
     "severity_tier": "critical",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/ped_occluded_cautious_idm_holdout-ped-0003.png"
   },
   {
     "description": "Pedestrian occluded by parked vehicle at x=48.7 m; begins crossing at speed 2.01 m/s when ego reaches x=35.6 m.",
@@ -1101,7 +1101,7 @@
     "score": 10.0,
     "severity_tier": "critical",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/ped_occluded_cautious_idm_holdout-ped-0004.png"
   },
   {
     "description": "Pedestrian occluded by parked vehicle at x=58.5 m; begins crossing at speed 1.47 m/s when ego reaches x=29.9 m.",
@@ -1133,7 +1133,7 @@
     "score": 52.2596,
     "severity_tier": "near_miss",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/ped_occluded_cautious_idm_holdout-ped-0005.png"
   },
   {
     "description": "Pedestrian occluded by parked vehicle at x=56.0 m; begins crossing at speed 1.82 m/s when ego reaches x=27.1 m.",
@@ -1165,7 +1165,7 @@
     "score": 68.3448,
     "severity_tier": "near_miss",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/ped_occluded_cautious_idm_holdout-ped-0006.png"
   },
   {
     "description": "Pedestrian occluded by parked vehicle at x=68.1 m; begins crossing at speed 1.99 m/s when ego reaches x=52.9 m.",
@@ -1197,7 +1197,7 @@
     "score": 10.0,
     "severity_tier": "critical",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/ped_occluded_cautious_idm_holdout-ped-0007.png"
   },
   {
     "description": "Pedestrian occluded by parked vehicle at x=46.0 m; begins crossing at speed 1.34 m/s when ego reaches x=26.2 m.",
@@ -1229,7 +1229,7 @@
     "score": 10.0,
     "severity_tier": "critical",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/ped_occluded_cautious_idm_holdout-ped-0008.png"
   },
   {
     "description": "Pedestrian occluded by parked vehicle at x=66.7 m; begins crossing at speed 1.62 m/s when ego reaches x=42.6 m.",
@@ -1261,7 +1261,7 @@
     "score": 65.9625,
     "severity_tier": "near_miss",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/ped_occluded_cautious_idm_holdout-ped-0009.png"
   },
   {
     "description": "Pedestrian occluded by parked vehicle at x=63.6 m; begins crossing at speed 1.84 m/s when ego reaches x=33.6 m.",
@@ -1293,7 +1293,7 @@
     "score": 63.3409,
     "severity_tier": "near_miss",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/ped_occluded_cautious_idm_holdout-ped-0010.png"
   },
   {
     "description": "Pedestrian occluded by parked vehicle at x=60.5 m; begins crossing at speed 1.42 m/s when ego reaches x=36.6 m.",
@@ -1325,7 +1325,7 @@
     "score": 71.4241,
     "severity_tier": "near_miss",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/ped_occluded_cautious_idm_holdout-ped-0011.png"
   },
   {
     "description": "Pedestrian occluded by parked vehicle at x=55.3 m; begins crossing at speed 1.25 m/s when ego reaches x=33.0 m.",
@@ -1357,7 +1357,7 @@
     "score": 10.0,
     "severity_tier": "critical",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/ped_occluded_cautious_idm_holdout-ped-0012.png"
   },
   {
     "description": "Pedestrian occluded by parked vehicle at x=54.3 m; begins crossing at speed 2.47 m/s when ego reaches x=27.8 m.",
@@ -1389,7 +1389,7 @@
     "score": 66.7566,
     "severity_tier": "near_miss",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/ped_occluded_cautious_idm_holdout-ped-0013.png"
   },
   {
     "description": "Pedestrian occluded by parked vehicle at x=69.8 m; begins crossing at speed 1.17 m/s when ego reaches x=53.7 m.",
@@ -1421,7 +1421,7 @@
     "score": 10.0,
     "severity_tier": "critical",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/ped_occluded_cautious_idm_holdout-ped-0014.png"
   },
   {
     "description": "Pedestrian occluded by parked vehicle at x=58.1 m; begins crossing at speed 1.52 m/s when ego reaches x=45.9 m.",
@@ -1453,7 +1453,7 @@
     "score": 10.0,
     "severity_tier": "critical",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/ped_occluded_cautious_idm_holdout-ped-0015.png"
   },
   {
     "description": "Pedestrian occluded by parked vehicle at x=43.8 m; begins crossing at speed 2.16 m/s when ego reaches x=30.6 m.",
@@ -1485,7 +1485,7 @@
     "score": 10.0,
     "severity_tier": "critical",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/ped_occluded_cautious_idm_holdout-ped-0016.png"
   },
   {
     "description": "Lead vehicle at 10.1 m/s while visibility ramps 200 -> 38.5 m and friction 0.9 -> 0.48 over 20 s.",
@@ -1516,7 +1516,7 @@
     "score": 98.5075,
     "severity_tier": "nominal",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/weather_ramp_cautious_idm_holdout-weather-0001.png"
   },
   {
     "description": "Lead vehicle at 9.6 m/s while visibility ramps 200 -> 28.5 m and friction 0.9 -> 0.45 over 20 s.",
@@ -1547,7 +1547,7 @@
     "score": 100.0,
     "severity_tier": "nominal",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/weather_ramp_cautious_idm_holdout-weather-0002.png"
   },
   {
     "description": "Lead vehicle at 8.6 m/s while visibility ramps 200 -> 37.6 m and friction 0.9 -> 0.28 over 20 s.",
@@ -1609,7 +1609,7 @@
     "score": 100.0,
     "severity_tier": "nominal",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/weather_ramp_cautious_idm_holdout-weather-0004.png"
   },
   {
     "description": "Lead vehicle at 11.0 m/s while visibility ramps 200 -> 39.6 m and friction 0.9 -> 0.50 over 20 s.",
@@ -1640,7 +1640,7 @@
     "score": 99.7015,
     "severity_tier": "nominal",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/weather_ramp_cautious_idm_holdout-weather-0005.png"
   },
   {
     "description": "Lead vehicle at 11.1 m/s while visibility ramps 200 -> 18.9 m and friction 0.9 -> 0.47 over 20 s.",
@@ -1671,7 +1671,7 @@
     "score": 100.0,
     "severity_tier": "nominal",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/weather_ramp_cautious_idm_holdout-weather-0006.png"
   },
   {
     "description": "Lead vehicle at 8.8 m/s while visibility ramps 200 -> 44.6 m and friction 0.9 -> 0.45 over 20 s.",
@@ -1702,7 +1702,7 @@
     "score": 98.806,
     "severity_tier": "nominal",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/weather_ramp_cautious_idm_holdout-weather-0007.png"
   },
   {
     "description": "Lead vehicle at 10.9 m/s while visibility ramps 200 -> 43.1 m and friction 0.9 -> 0.34 over 20 s.",
@@ -1733,7 +1733,7 @@
     "score": 100.0,
     "severity_tier": "nominal",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/weather_ramp_cautious_idm_holdout-weather-0008.png"
   },
   {
     "description": "Lead vehicle at 8.4 m/s while visibility ramps 200 -> 41.3 m and friction 0.9 -> 0.48 over 20 s.",
@@ -1764,7 +1764,7 @@
     "score": 98.806,
     "severity_tier": "nominal",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/weather_ramp_cautious_idm_holdout-weather-0009.png"
   },
   {
     "description": "Lead vehicle at 8.8 m/s while visibility ramps 200 -> 36.5 m and friction 0.9 -> 0.44 over 20 s.",
@@ -1795,7 +1795,7 @@
     "score": 99.7015,
     "severity_tier": "nominal",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/weather_ramp_cautious_idm_holdout-weather-0010.png"
   },
   {
     "description": "Lead vehicle at 9.2 m/s while visibility ramps 200 -> 37.3 m and friction 0.9 -> 0.31 over 20 s.",
@@ -1826,7 +1826,7 @@
     "score": 99.7015,
     "severity_tier": "nominal",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/weather_ramp_cautious_idm_holdout-weather-0011.png"
   },
   {
     "description": "Lead vehicle at 11.5 m/s while visibility ramps 200 -> 32.8 m and friction 0.9 -> 0.27 over 20 s.",
@@ -1857,7 +1857,7 @@
     "score": 100.0,
     "severity_tier": "nominal",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/weather_ramp_cautious_idm_holdout-weather-0012.png"
   },
   {
     "description": "Lead vehicle at 10.4 m/s while visibility ramps 200 -> 36.9 m and friction 0.9 -> 0.45 over 20 s.",
@@ -1888,7 +1888,7 @@
     "score": 100.0,
     "severity_tier": "nominal",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/weather_ramp_cautious_idm_holdout-weather-0013.png"
   },
   {
     "description": "Lead vehicle at 11.4 m/s while visibility ramps 200 -> 31.3 m and friction 0.9 -> 0.36 over 20 s.",
@@ -1919,6 +1919,6 @@
     "score": 100.0,
     "severity_tier": "nominal",
     "suite": "holdout",
-    "thumbnail": null
+    "thumbnail": "thumbs/weather_ramp_cautious_idm_holdout-weather-0014.png"
   }
 ]
