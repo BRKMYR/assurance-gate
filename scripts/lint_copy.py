@@ -40,6 +40,8 @@ DEFAULT_PROSE_GLOBS: tuple[str, ...] = (
 
 # Stealth grep reaches wider, section 10.
 STEALTH_ROOTS: tuple[str, ...] = ("site", "runs", "space", "dataset", "external")
+#: Third party viewer code shipped inside the Inspect bundle is not our copy.
+STEALTH_SKIP_PREFIXES: tuple[str, ...] = ("site/inspect/assets/",)
 STEALTH_EXTRA_FILES: tuple[str, ...] = ("README.md",)
 
 SKIP_SUFFIXES = {
@@ -357,7 +359,7 @@ RE_STEALTH_INSENSITIVE = re.compile(
 RE_STEALTH_SENSITIVE = re.compile(r"HERE Technologies")
 RE_STEALTH_2M = re.compile(r"\b2M\b")
 RE_STEALTH_USERS = re.compile(r"/Users/")
-RE_STEALTH_EMAIL = re.compile(r"\b[\w.+-]+@[\w-]+\.[\w.-]+\b")
+RE_STEALTH_EMAIL = re.compile(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b")
 
 # Approximate adjective list for the three in a row warning.
 ADJECTIVES = {
@@ -528,7 +530,11 @@ def default_prose_files(root: Path) -> list[Path]:
 def default_stealth_files(root: Path) -> list[Path]:
     found: list[Path] = []
     for name in STEALTH_ROOTS:
-        found.extend(iter_files(root / name))
+        for path in iter_files(root / name):
+            rel = relative(path, root)
+            if any(rel.startswith(prefix) for prefix in STEALTH_SKIP_PREFIXES):
+                continue
+            found.append(path)
     for name in STEALTH_EXTRA_FILES:
         path = root / name
         if path.is_file():
