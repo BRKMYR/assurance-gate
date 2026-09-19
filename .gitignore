@@ -5,3 +5,5 @@ site/inspect/
 .pytest_cache/
 .lighthouseci/
 node_modules/
+logs/
+configs/track_b.lock.yaml.bak
