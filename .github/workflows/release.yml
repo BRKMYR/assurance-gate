@@ -23,7 +23,7 @@ jobs:
           cache: pip
 
       - name: install
-        run: pip install -e ".[dev]"
+        run: pip install -e ".[dev,trackb]"
 
       - name: copy lint, release mode
         run: python scripts/lint_copy.py --mode release

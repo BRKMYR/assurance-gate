@@ -24,7 +24,7 @@ jobs:
           cache: pip
 
       - name: install
-        run: pip install -e ".[dev]"
+        run: pip install -e ".[dev,trackb]"
 
       - name: pytest
         run: pytest -q
@@ -62,7 +62,7 @@ jobs:
           node-version: "20"
 
       - name: install
-        run: pip install -e ".[dev]"
+        run: pip install -e ".[dev,trackb]"
 
       - name: build the dashboard data
         run: gate build --out site/
