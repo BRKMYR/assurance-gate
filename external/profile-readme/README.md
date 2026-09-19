@@ -13,7 +13,7 @@ My background in Physical AI goes back to 2016, when I worked with the **iCub hu
 ## Focus Areas
 
 ### Safe Autonomy: Assurance, Evals and ODD
-ODD management as a clearance question: where an automated driving function may operate, where it must hand back, and how that boundary is maintained in the map rather than discovered in test. Alongside it, safety evaluation for autonomous driving with adversarial scenarios and safety critical metrics on a vendor neutral scorecard, applying **UL 4600** and **SOTIF** (ISO 21448). Real time safety monitoring for robotaxi fleets with teleoperation trigger detection on Waymax and the Waymo Open Motion Dataset. Adversarial robustness tooling is public: [`pytorch-shield`](https://github.com/BRKMYR/pytorch-shield). [[OWNER_COPY: focus sentence]]
+ODD management as a clearance question: where an automated driving function may operate, where it must hand back, and how that boundary is maintained in the map rather than discovered in test. Alongside it, safety evaluation for autonomous driving with adversarial scenarios and safety critical metrics on a vendor neutral scorecard, applying **UL 4600** and **SOTIF** (ISO 21448). Real time safety monitoring for robotaxi fleets with teleoperation trigger detection on Waymax and the Waymo Open Motion Dataset. Adversarial robustness tooling is public: [`pytorch-shield`](https://github.com/BRKMYR/pytorch-shield). Above the benchmarks sits the decision layer, where thresholds exist before the data and every claim carries its evidence.
 
 ### Spatial Intelligence: SAR and Earth Observation
 SAR and EO AI pipelines from satellite tasking to intelligence product: Sentinel-1 acquisition, change and ship detection, damage assessment, and a vision language analyst console that refuses questions the imaging physics cannot answer. In stealth.
@@ -32,7 +32,7 @@ Ordered by current priority. Most projects are developed in private repositories
 
 | Project | Status | Repo | Focus |
 | :--- | :--- | :--- | :--- |
-| Assurance Gate | Live | [Space](https://huggingface.co/spaces/N20X/assurance-gate) and [GitHub](https://github.com/BRKMYR/assurance-gate) | [[OWNER_COPY: profile row]] |
+| Assurance Gate | Live | [Space](https://huggingface.co/spaces/N20X/assurance-gate) and [GitHub](https://github.com/BRKMYR/assurance-gate) | Release gate over eval results: thresholds hashed before the run, Clopper Pearson bounds, parameter space coverage, paired regression, assurance case with linked evidence. Live on a static Space. |
 | Waymax Safety Monitor | Shipped | Private | Risk ranked fleet dashboard for robotaxi teleoperators: three scenarios, seven trigger kinds, rewindable timeline on the Waymo Open Motion Dataset. |
 | AV Safety Benchmark | Shipped | Private | Vendor neutral safety scorecard: 60 scenarios, four families, one composite score. 180 runs against three baselines. |
 | World Model Benchmark | v0.2 | Private | World foundation model evaluation: six metrics, six failure modes, closed form baselines, toy suite leaderboard. |

@@ -125,8 +125,9 @@ def test_ac_1_lint_push_passes_on_the_repo() -> None:
 
 
 def test_ac_2_lint_release_fails_while_a_placeholder_remains() -> None:
-    found = violations(None, "release")
+    found = violations([CORPUS / "fail_owner_copy.md"], "release")
     assert any(finding.rule == "owner_copy" for finding in found)
+    assert not any(finding.rule == "owner_copy" for finding in violations([CORPUS / "fail_owner_copy.md"], "push"))
 
 
 def test_ac_2_lint_release_passes_on_the_corpus_pass_file() -> None:
