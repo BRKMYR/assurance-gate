@@ -33,7 +33,8 @@ jobs:
         run: python scripts/lint_copy.py --mode push
 
       - name: stealth grep over everything that ships
-        run: python scripts/lint_copy.py --mode push site runs space dataset external README.md
+        # default paths: prose rules over our own copy, stealth grep over site, runs, space, dataset, external and README
+        run: python scripts/lint_copy.py --mode push
 
       - name: build the dashboard data
         run: gate build --out site/
