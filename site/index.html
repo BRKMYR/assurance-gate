@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Assurance Gate</title>
+<meta name="description" content="A release gate report for autonomy candidates. Gates, coverage, assurance case and evidence.">
+<meta property="og:title" content="Assurance Gate">
+<meta property="og:description" content="A release gate report for autonomy candidates.">
+<meta property="og:image" content="assets/og.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#view" data-s="app.skip">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <p class="brand" data-s="app.title">Assurance Gate</p>
+    <nav aria-label="Pages">
+      <ul class="nav" id="nav">
+        <li><a href="#/" data-route="/" data-s="nav.decision">Decision</a></li>
+        <li><a href="#/gates" data-route="/gates" data-s="nav.gates">Gates</a></li>
+        <li><a href="#/coverage" data-route="/coverage" data-s="nav.coverage">Coverage</a></li>
+        <li><a href="#/case" data-route="/case" data-s="nav.case">Case</a></li>
+        <li><a href="#/evidence" data-route="/evidence" data-s="nav.evidence">Evidence</a></li>
+        <li><a href="#/limits" data-route="/limits" data-s="nav.limits">Limits</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="view" class="wrap" tabindex="-1">
+  <p class="loading" data-s="app.loading">Loading the report.</p>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <p id="foot-note" data-s="app.footer">Every number on this page comes from the run records in this repository.</p>
+  </div>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

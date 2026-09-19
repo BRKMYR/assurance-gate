@@ -1,0 +1,57 @@
+actors:
+- actor_id: lead
+  initial:
+    speed_mps: 8.644
+    x_m: 55.339
+    y_m: 5.25
+    yaw_rad: 0.0
+  kind: vehicle
+  length_m: 4.5
+  mass_kg: 1500.0
+  phases:
+  - accel_mps2: 0.0
+    lateral_speed_mps: 0.0
+    target_speed_mps: 8.644
+    target_y_m: null
+    trigger:
+      at_time_s: 0.0
+      ego_x_m: null
+      gap_m: null
+      type: time
+  width_m: 1.9
+description: Lead vehicle at 8.6 m/s while visibility ramps 200 -> 18.5 m and friction
+  0.9 -> 0.40 over 20 s.
+dt_s: 0.1
+duration_s: 20.0
+ego:
+  initial:
+    speed_mps: 19.57
+    x_m: 0.0
+    y_m: 5.25
+    yaw_rad: 0.0
+  lane: 1
+  length_m: 4.5
+  mass_kg: 1500.0
+  target_speed_mps: 19.57
+  width_m: 1.9
+environment:
+  friction_end: 0.4021
+  friction_start: 0.9
+  visibility_end_m: 18.531
+  visibility_start_m: 200.0
+family: weather_ramp
+parameters:
+  ego_speed_mps: 19.57
+  friction_end: 0.4021
+  initial_gap_m: 55.339
+  lead_speed_mps: 8.644
+  visibility_end_m: 18.531
+road:
+  lane_width_m: 3.5
+  length_m: 400.0
+  n_lanes: 3
+  speed_limit_mps: 22.2
+scenario_id: core-weather-0008
+schema_version: '1.0'
+seed: 42
+suite: core

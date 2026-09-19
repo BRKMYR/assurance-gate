@@ -1,0 +1,2502 @@
+{
+ "built_with": "gate 1.0.0",
+ "bundle": null,
+ "schema_version": "1.0",
+ "suites": [
+  {
+   "candidates": [
+    {
+     "baseline": "idm",
+     "candidate": "cautious_idm",
+     "case": {
+      "nodes": [
+       {
+        "children": [
+         "c1",
+         "c2",
+         "a1",
+         "a2",
+         "s1"
+        ],
+        "evidence_ref": null,
+        "id": "g0",
+        "status": "fail",
+        "text_key": "case.goal",
+        "type": "goal"
+       },
+       {
+        "children": [],
+        "evidence_ref": null,
+        "id": "c1",
+        "status": "info",
+        "text_key": "case.context.engine",
+        "type": "context"
+       },
+       {
+        "children": [],
+        "evidence_ref": null,
+        "id": "c2",
+        "status": "info",
+        "text_key": "case.context.deployment",
+        "type": "context"
+       },
+       {
+        "children": [
+         "d4"
+        ],
+        "evidence_ref": null,
+        "id": "a1",
+        "status": "info",
+        "text_key": "case.assumption.representativeness",
+        "type": "assumption"
+       },
+       {
+        "children": [],
+        "evidence_ref": null,
+        "id": "a2",
+        "status": "info",
+        "text_key": "case.assumption.serving",
+        "type": "assumption"
+       },
+       {
+        "children": [
+         "cl1",
+         "cl2",
+         "cl3",
+         "cl4"
+        ],
+        "evidence_ref": null,
+        "id": "s1",
+        "status": "info",
+        "text_key": "case.strategy.hazards",
+        "type": "strategy"
+       },
+       {
+        "children": [
+         "e1",
+         "e2",
+         "d1"
+        ],
+        "evidence_ref": null,
+        "id": "cl1",
+        "status": "fail",
+        "text_key": "case.claim.ped_occluded",
+        "type": "claim"
+       },
+       {
+        "children": [
+         "e3",
+         "d2"
+        ],
+        "evidence_ref": null,
+        "id": "cl2",
+        "status": "fail",
+        "text_key": "case.claim.cut_in",
+        "type": "claim"
+       },
+       {
+        "children": [
+         "e4"
+        ],
+        "evidence_ref": null,
+        "id": "cl3",
+        "status": "pass",
+        "text_key": "case.claim.hard_brake",
+        "type": "claim"
+       },
+       {
+        "children": [
+         "e5",
+         "d3"
+        ],
+        "evidence_ref": null,
+        "id": "cl4",
+        "status": "pass",
+        "text_key": "case.claim.weather_ramp",
+        "type": "claim"
+       },
+       {
+        "children": [],
+        "evidence_ref": "a.hard.ped_collision",
+        "id": "e1",
+        "status": "fail",
+        "text_key": "case.evidence.gate",
+        "type": "evidence"
+       },
+       {
+        "children": [],
+        "evidence_ref": "core-ped-0001",
+        "id": "e2",
+        "status": "fail",
+        "text_key": "case.evidence.scenario",
+        "type": "evidence"
+       },
+       {
+        "children": [],
+        "evidence_ref": "a.soft.ttc_cutin",
+        "id": "e3",
+        "status": "fail",
+        "text_key": "case.evidence.gate",
+        "type": "evidence"
+       },
+       {
+        "children": [],
+        "evidence_ref": "a.soft.ttc_hardbrake",
+        "id": "e4",
+        "status": "pass",
+        "text_key": "case.evidence.gate",
+        "type": "evidence"
+       },
+       {
+        "children": [],
+        "evidence_ref": "a.soft.severity_weather",
+        "id": "e5",
+        "status": "pass",
+        "text_key": "case.evidence.gate",
+        "type": "evidence"
+       },
+       {
+        "children": [],
+        "evidence_ref": null,
+        "id": "d1",
+        "status": "info",
+        "text_key": "case.defeater.contamination",
+        "type": "defeater"
+       },
+       {
+        "children": [],
+        "evidence_ref": null,
+        "id": "d2",
+        "status": "info",
+        "text_key": "case.defeater.quantisation",
+        "type": "defeater"
+       },
+       {
+        "children": [],
+        "evidence_ref": null,
+        "id": "d3",
+        "status": "info",
+        "text_key": "case.defeater.sandbagging",
+        "type": "defeater"
+       },
+       {
+        "children": [],
+        "evidence_ref": null,
+        "id": "d4",
+        "status": "info",
+        "text_key": "case.defeater.unknown_unsafe",
+        "type": "defeater"
+       }
+      ],
+      "root": "g0"
+     },
+     "coverage": {
+      "not_covered": [
+       {
+        "hazard": "intersections",
+        "note_key": "coverage.not_covered.intersections"
+       },
+       {
+        "hazard": "cyclists",
+        "note_key": "coverage.not_covered.cyclists"
+       },
+       {
+        "hazard": "night",
+        "note_key": "coverage.not_covered.night"
+       },
+       {
+        "hazard": "sensor_faults",
+        "note_key": "coverage.not_covered.sensor_faults"
+       },
+       {
+        "hazard": "multi_actor",
+        "note_key": "coverage.not_covered.multi_actor"
+       },
+       {
+        "hazard": "odd_exit",
+        "note_key": "coverage.not_covered.odd_exit"
+       }
+      ],
+      "passed": false,
+      "rows": [
+       {
+        "bin_label": "15 to 17.33",
+        "family": "cut_in",
+        "hi": 17.33,
+        "lo": 15.0,
+        "n": 6,
+        "parameter": "ego_speed_mps",
+        "scenario_ids": [
+         "core-cut-0001"
+        ],
+        "status": "ok"
+       },
+       {
+        "bin_label": "17.33 to 19.67",
+        "family": "cut_in",
+        "hi": 19.67,
+        "lo": 17.33,
+        "n": 5,
+        "parameter": "ego_speed_mps",
+        "scenario_ids": [
+         "core-cut-0002"
+        ],
+        "status": "ok"
+       },
+       {
+        "bin_label": "19.67 to 22",
+        "family": "cut_in",
+        "hi": 22.0,
+        "lo": 19.67,
+        "n": 5,
+        "parameter": "ego_speed_mps",
+        "scenario_ids": [
+         "core-cut-0003"
+        ],
+        "status": "ok"
+       },
+       {
+        "bin_label": "15 to 20",
+        "family": "cut_in",
+        "hi": 20.0,
+        "lo": 15.0,
+        "n": 6,
+        "parameter": "initial_gap_m",
+        "scenario_ids": [
+         "core-cut-0001"
+        ],
+        "status": "ok"
+       },
+       {
+        "bin_label": "20 to 25",
+        "family": "cut_in",
+        "hi": 25.0,
+        "lo": 20.0,
+        "n": 5,
+        "parameter": "initial_gap_m",
+        "scenario_ids": [
+         "core-cut-0002"
+        ],
+        "status": "ok"
+       },
+       {
+        "bin_label": "25 to 30",
+        "family": "cut_in",
+        "hi": 30.0,
+        "lo": 25.0,
+        "n": 5,
+        "parameter": "initial_gap_m",
+        "scenario_ids": [
+         "core-cut-0003"
+        ],
+        "status": "ok"
+       },
+       {
+        "bin_label": "8 to 11.33",
+        "family": "cut_in",
+        "hi": 11.33,
+        "lo": 8.0,
+        "n": 6,
+        "parameter": "trigger_gap_m",
+        "scenario_ids": [
+         "core-cut-0001"
+        ],
+        "status": "ok"
+       },
+       {
+        "bin_label": "11.33 to 14.67",
+        "family": "cut_in",
+        "hi": 14.67,
+        "lo": 11.33,
+        "n": 5,
+        "parameter": "trigger_gap_m",
+        "scenario_ids": [
+         "core-cut-0002"
+        ],
+        "status": "ok"
+       },
+       {
+        "bin_label": "14.67 to 18",
+        "family": "cut_in",
+        "hi": 18.0,
+        "lo": 14.67,
+        "n": 5,
+        "parameter": "trigger_gap_m",
+        "scenario_ids": [
+         "core-cut-0003"
+        ],
+        "status": "ok"
+       },
+       {
+        "bin_label": "8 to 10",
+        "family": "ped_occluded",
+        "hi": 10.0,
+        "lo": 8.0,
+        "n": 6,
+        "parameter": "ego_speed_mps",
+        "scenario_ids": [
+         "core-ped-0001",
+         "core-ped-0004",
+         "core-ped-0007",
+         "core-ped-0010",
+         "core-ped-0013",
+         "core-ped-0016"
+        ],
+        "status": "ok"
+       },
+       {
+        "bin_label": "10 to 12",
+        "family": "ped_occluded",
+        "hi": 12.0,
+        "lo": 10.0,
+        "n": 5,
+        "parameter": "ego_speed_mps",
+        "scenario_ids": [
+         "core-ped-0002",
+         "core-ped-0005",
+         "core-ped-0008",
+         "core-ped-0011",
+         "core-ped-0014"
+        ],
+        "status": "ok"
+       },
+       {
+        "bin_label": "12 to 14",
+        "family": "ped_occluded",
+        "hi": 14.0,
+        "lo": 12.0,
+        "n": 5,
+        "parameter": "ego_speed_mps",
+        "scenario_ids": [
+         "core-ped-0003",
+         "core-ped-0006",
+         "core-ped-0009",
+         "core-ped-0012",
+         "core-ped-0015"
+        ],
+        "status": "ok"
+       },
+       {
+        "bin_label": "40 to 50",
+        "family": "ped_occluded",
+        "hi": 50.0,
+        "lo": 40.0,
+        "n": 6,
+        "parameter": "occluder_x_m",
+        "scenario_ids": [
+         "core-ped-0001",
+         "core-ped-0004",
+         "core-ped-0007",
+         "core-ped-0010",
+         "core-ped-0013",
+         "core-ped-0016"
+        ],
+        "status": "ok"
+       },
+       {
+        "bin_label": "50 to 60",
+        "family": "ped_occluded",
+        "hi": 60.0,
+        "lo": 50.0,
+        "n": 5,
+        "parameter": "occluder_x_m",
+        "scenario_ids": [
+         "core-ped-0002",
+         "core-ped-0005",
+         "core-ped-0008",
+         "core-ped-0011",
+         "core-ped-0014"
+        ],
+        "status": "ok"
+       },
+       {
+        "bin_label": "60 to 70",
+        "family": "ped_occluded",
+        "hi": 70.0,
+        "lo": 60.0,
+        "n": 5,
+        "parameter": "occluder_x_m",
+        "scenario_ids": [
+         "core-ped-0003",
+         "core-ped-0006",
+         "core-ped-0009",
+         "core-ped-0012",
+         "core-ped-0015"
+        ],
+        "status": "ok"
+       },
+       {
+        "bin_label": "1 to 1.5",
+        "family": "ped_occluded",
+        "hi": 1.5,
+        "lo": 1.0,
+        "n": 10,
+        "parameter": "ped_speed_mps",
+        "scenario_ids": [
+         "core-ped-0001",
+         "core-ped-0004",
+         "core-ped-0007",
+         "core-ped-0010",
+         "core-ped-0013",
+         "core-ped-0016"
+        ],
+        "status": "ok"
+       },
+       {
+        "bin_label": "1.5 to 2",
+        "family": "ped_occluded",
+        "hi": 2.0,
+        "lo": 1.5,
+        "n": 6,
+        "parameter": "ped_speed_mps",
+        "scenario_ids": [
+         "core-ped-0002",
+         "core-ped-0005",
+         "core-ped-0008",
+         "core-ped-0011",
+         "core-ped-0014"
+        ],
+        "status": "ok"
+       },
+       {
+        "bin_label": "2 to 2.5",
+        "family": "ped_occluded",
+        "hi": 2.5,
+        "lo": 2.0,
+        "n": 0,
+        "parameter": "ped_speed_mps",
+        "scenario_ids": [
+         "core-ped-0003",
+         "core-ped-0006",
+         "core-ped-0009",
+         "core-ped-0012",
+         "core-ped-0015"
+        ],
+        "status": "empty"
+       },
+       {
+        "bin_label": "14 to 16",
+        "family": "weather_ramp",
+        "hi": 16.0,
+        "lo": 14.0,
+        "n": 5,
+        "parameter": "ego_speed_mps",
+        "scenario_ids": [
+         "core-wea-0001"
+        ],
+        "status": "ok"
+       },
+       {
+        "bin_label": "16 to 18",
+        "family": "weather_ramp",
+        "hi": 18.0,
+        "lo": 16.0,
+        "n": 5,
+        "parameter": "ego_speed_mps",
+        "scenario_ids": [
+         "core-wea-0002"
+        ],
+        "status": "ok"
+       },
+       {
+        "bin_label": "18 to 20",
+        "family": "weather_ramp",
+        "hi": 20.0,
+        "lo": 18.0,
+        "n": 4,
+        "parameter": "ego_speed_mps",
+        "scenario_ids": [],
+        "status": "ok"
+       },
+       {
+        "bin_label": "15 to 25",
+        "family": "weather_ramp",
+        "hi": 25.0,
+        "lo": 15.0,
+        "n": 5,
+        "parameter": "visibility_end_m",
+        "scenario_ids": [
+         "core-wea-0001"
+        ],
+        "status": "ok"
+       },
+       {
+        "bin_label": "25 to 35",
+        "family": "weather_ramp",
+        "hi": 35.0,
+        "lo": 25.0,
+        "n": 5,
+        "parameter": "visibility_end_m",
+        "scenario_ids": [
+         "core-wea-0002"
+        ],
+        "status": "ok"
+       },
+       {
+        "bin_label": "35 to 45",
+        "family": "weather_ramp",
+        "hi": 45.0,
+        "lo": 35.0,
+        "n": 4,
+        "parameter": "visibility_end_m",
+        "scenario_ids": [],
+        "status": "ok"
+       },
+       {
+        "bin_label": "0.25 to 0.3333",
+        "family": "weather_ramp",
+        "hi": 0.3333,
+        "lo": 0.25,
+        "n": 1,
+        "parameter": "friction_end",
+        "scenario_ids": [
+         "core-wea-0001"
+        ],
+        "status": "sparse"
+       },
+       {
+        "bin_label": "0.3333 to 0.4167",
+        "family": "weather_ramp",
+        "hi": 0.4167,
+        "lo": 0.3333,
+        "n": 8,
+        "parameter": "friction_end",
+        "scenario_ids": [
+         "core-wea-0002"
+        ],
+        "status": "ok"
+       },
+       {
+        "bin_label": "0.4167 to 0.5",
+        "family": "weather_ramp",
+        "hi": 0.5,
+        "lo": 0.4167,
+        "n": 5,
+        "parameter": "friction_end",
+        "scenario_ids": [],
+        "status": "ok"
+       },
+       {
+        "bin_label": "15 to 17.33",
+        "family": "hard_brake",
+        "hi": 17.33,
+        "lo": 15.0,
+        "n": 5,
+        "parameter": "ego_speed_mps",
+        "scenario_ids": [
+         "core-brk-0001"
+        ],
+        "status": "ok"
+       },
+       {
+        "bin_label": "17.33 to 19.67",
+        "family": "hard_brake",
+        "hi": 19.67,
+        "lo": 17.33,
+        "n": 5,
+        "parameter": "ego_speed_mps",
+        "scenario_ids": [
+         "core-brk-0002"
+        ],
+        "status": "ok"
+       },
+       {
+        "bin_label": "19.67 to 22",
+        "family": "hard_brake",
+        "hi": 22.0,
+        "lo": 19.67,
+        "n": 4,
+        "parameter": "ego_speed_mps",
+        "scenario_ids": [],
+        "status": "ok"
+       },
+       {
+        "bin_label": "12 to 19.67",
+        "family": "hard_brake",
+        "hi": 19.67,
+        "lo": 12.0,
+        "n": 5,
+        "parameter": "initial_gap_m",
+        "scenario_ids": [
+         "core-brk-0001"
+        ],
+        "status": "ok"
+       },
+       {
+        "bin_label": "19.67 to 27.33",
+        "family": "hard_brake",
+        "hi": 27.33,
+        "lo": 19.67,
+        "n": 5,
+        "parameter": "initial_gap_m",
+        "scenario_ids": [
+         "core-brk-0002"
+        ],
+        "status": "ok"
+       },
+       {
+        "bin_label": "27.33 to 35",
+        "family": "hard_brake",
+        "hi": 35.0,
+        "lo": 27.33,
+        "n": 4,
+        "parameter": "initial_gap_m",
+        "scenario_ids": [],
+        "status": "ok"
+       },
+       {
+        "bin_label": "3.5 to 5",
+        "family": "hard_brake",
+        "hi": 5.0,
+        "lo": 3.5,
+        "n": 7,
+        "parameter": "brake_decel_mps2",
+        "scenario_ids": [
+         "core-brk-0001"
+        ],
+        "status": "ok"
+       },
+       {
+        "bin_label": "5 to 6.5",
+        "family": "hard_brake",
+        "hi": 6.5,
+        "lo": 5.0,
+        "n": 6,
+        "parameter": "brake_decel_mps2",
+        "scenario_ids": [
+         "core-brk-0002"
+        ],
+        "status": "ok"
+       },
+       {
+        "bin_label": "6.5 to 8",
+        "family": "hard_brake",
+        "hi": 8.0,
+        "lo": 6.5,
+        "n": 1,
+        "parameter": "brake_decel_mps2",
+        "scenario_ids": [],
+        "status": "sparse"
+       }
+      ],
+      "track": "a",
+      "unbinned": 2,
+      "unmapped": []
+     },
+     "excluded": false,
+     "gates": [
+      {
+       "bound": null,
+       "bound_kind": "none",
+       "class": "hard",
+       "deviation": null,
+       "direction": "max",
+       "failing_ids": [
+        "core-ped-0001",
+        "core-ped-0002",
+        "core-ped-0003",
+        "core-ped-0004",
+        "core-ped-0005",
+        "core-ped-0006",
+        "core-ped-0007",
+        "core-ped-0008",
+        "core-ped-0009",
+        "core-ped-0010",
+        "core-ped-0011"
+       ],
+       "frozen_status": null,
+       "gate_id": "a.hard.ped_collision",
+       "kind": "count",
+       "margin": null,
+       "n": 16,
+       "n_fail": 11,
+       "n_unscorable": 0,
+       "point_estimate": null,
+       "reason": null,
+       "status": "fail",
+       "threshold": 0.0,
+       "waiver": null,
+       "waiver_note": null
+      },
+      {
+       "bound": 0.5435,
+       "bound_kind": "lower",
+       "class": "soft",
+       "deviation": null,
+       "direction": "floor",
+       "failing_ids": [
+        "core-cut-0003",
+        "core-cut-0008",
+        "core-cut-0012"
+       ],
+       "frozen_status": null,
+       "gate_id": "a.soft.ttc_cutin",
+       "kind": "rate",
+       "margin": -0.0565,
+       "n": 16,
+       "n_fail": 3,
+       "n_unscorable": 0,
+       "point_estimate": 0.8125,
+       "reason": null,
+       "status": "fail",
+       "threshold": 0.6,
+       "waiver": {
+        "candidate": "cautious_idm",
+        "expires_at": "2026-08-01T00:00:00Z",
+        "gate_id": "a.soft.ttc_cutin",
+        "mitigation": "Cut in handling is limited to divided roads until the next suite.",
+        "risk_accepted": "Time to collision margin in cut in scenarios stays below the floor.",
+        "signer": "release board"
+       },
+       "waiver_note": "waiver expired"
+      },
+      {
+       "bound": 0.6613,
+       "bound_kind": "lower",
+       "class": "soft",
+       "deviation": null,
+       "direction": "floor",
+       "failing_ids": [
+        "core-brk-0006"
+       ],
+       "frozen_status": null,
+       "gate_id": "a.soft.ttc_hardbrake",
+       "kind": "rate",
+       "margin": 0.0613,
+       "n": 14,
+       "n_fail": 1,
+       "n_unscorable": 0,
+       "point_estimate": 0.9286,
+       "reason": null,
+       "status": "pass",
+       "threshold": 0.6,
+       "waiver": null,
+       "waiver_note": null
+      },
+      {
+       "bound": 0.7541,
+       "bound_kind": "lower",
+       "class": "soft",
+       "deviation": null,
+       "direction": "floor",
+       "failing_ids": [
+        "core-ped-0001",
+        "core-ped-0002",
+        "core-ped-0003",
+        "core-ped-0004",
+        "core-ped-0005",
+        "core-ped-0006",
+        "core-ped-0007",
+        "core-ped-0008"
+       ],
+       "frozen_status": null,
+       "gate_id": "a.soft.dmin_all",
+       "kind": "rate",
+       "margin": 0.1541,
+       "n": 60,
+       "n_fail": 8,
+       "n_unscorable": 0,
+       "point_estimate": 0.8667,
+       "reason": null,
+       "status": "pass",
+       "threshold": 0.6,
+       "waiver": null,
+       "waiver_note": null
+      },
+      {
+       "bound": 0.6613,
+       "bound_kind": "lower",
+       "class": "soft",
+       "deviation": null,
+       "direction": "floor",
+       "failing_ids": [
+        "core-wea-0010"
+       ],
+       "frozen_status": null,
+       "gate_id": "a.soft.severity_weather",
+       "kind": "rate",
+       "margin": 0.0613,
+       "n": 14,
+       "n_fail": 1,
+       "n_unscorable": 0,
+       "point_estimate": 0.9286,
+       "reason": null,
+       "status": "pass",
+       "threshold": 0.6,
+       "waiver": null,
+       "waiver_note": null
+      },
+      {
+       "bound": 0.5856,
+       "bound_kind": "lower",
+       "class": "availability",
+       "deviation": {
+        "changed_at": "2026-09-05T09:20:00Z",
+        "field": "threshold",
+        "frozen_value": 0.6,
+        "gate_id": "a.avail.hard_brake",
+        "new_value": 0.55,
+        "reason": "The braking comfort floor was relaxed for the demo suite after review.",
+        "signer": "release board"
+       },
+       "direction": "floor",
+       "failing_ids": [
+        "core-ped-0001",
+        "core-ped-0002",
+        "core-ped-0003",
+        "core-ped-0004",
+        "core-ped-0005",
+        "core-ped-0006",
+        "core-cut-0001",
+        "core-cut-0002",
+        "core-cut-0003",
+        "core-cut-0004"
+       ],
+       "frozen_status": "fail",
+       "gate_id": "a.avail.hard_brake",
+       "kind": "rate",
+       "margin": 0.0356,
+       "n": 60,
+       "n_fail": 17,
+       "n_unscorable": 0,
+       "point_estimate": 0.7167,
+       "reason": null,
+       "status": "pass",
+       "threshold": 0.55,
+       "waiver": null,
+       "waiver_note": null
+      },
+      {
+       "bound": null,
+       "bound_kind": "none",
+       "class": "availability",
+       "deviation": null,
+       "direction": "floor",
+       "failing_ids": [],
+       "frozen_status": null,
+       "gate_id": "a.avail.speed",
+       "kind": "rate",
+       "margin": null,
+       "n": 0,
+       "n_fail": 0,
+       "n_unscorable": 60,
+       "point_estimate": null,
+       "reason": "insufficient_n",
+       "status": "fail",
+       "threshold": 0.6,
+       "waiver": null,
+       "waiver_note": null
+      },
+      {
+       "bound": null,
+       "bound_kind": "none",
+       "class": "coverage",
+       "deviation": null,
+       "direction": "max",
+       "failing_ids": [
+        "ped_occluded.ped_speed_mps.bin3"
+       ],
+       "frozen_status": null,
+       "gate_id": "a.cov.bins",
+       "kind": "count",
+       "margin": null,
+       "n": 36,
+       "n_fail": 1,
+       "n_unscorable": 0,
+       "point_estimate": null,
+       "reason": null,
+       "status": "fail",
+       "threshold": 0.0,
+       "waiver": null,
+       "waiver_note": null
+      },
+      {
+       "bound": null,
+       "bound_kind": "none",
+       "class": "regression",
+       "deviation": null,
+       "direction": "max",
+       "failing_ids": [
+        "core-ped-0004",
+        "core-cut-0007"
+       ],
+       "frozen_status": null,
+       "gate_id": "a.reg.paired",
+       "kind": "count",
+       "margin": null,
+       "n": 60,
+       "n_fail": 2,
+       "n_unscorable": 0,
+       "point_estimate": null,
+       "reason": null,
+       "status": "fail",
+       "threshold": 0.0,
+       "waiver": null,
+       "waiver_note": null
+      }
+     ],
+     "regression": {
+      "baseline": "idm",
+      "candidate": "cautious_idm",
+      "family_means": {
+       "cut_in": {
+        "ttc_baseline": 1.9163,
+        "ttc_candidate": 1.8662,
+        "ttc_delta": -0.05
+       },
+       "hard_brake": {
+        "ttc_baseline": 1.9543,
+        "ttc_candidate": 1.9579,
+        "ttc_delta": 0.0036
+       },
+       "ped_occluded": {
+        "ttc_baseline": 0.75,
+        "ttc_candidate": 0.7063,
+        "ttc_delta": -0.0437
+       },
+       "weather_ramp": {
+        "ttc_baseline": 1.8914,
+        "ttc_candidate": 1.8986,
+        "ttc_delta": 0.0071
+       }
+      },
+      "kind": "regression",
+      "n_pairs": 60,
+      "n_tier_worse": 0,
+      "n_ttc_drop": 2,
+      "pairs": [
+       {
+        "family": "ped_occluded",
+        "scenario_id": "core-ped-0001",
+        "tier_baseline": "critical",
+        "tier_candidate": "critical",
+        "tier_worse": false,
+        "ttc_baseline": 0.0,
+        "ttc_candidate": 0.0,
+        "ttc_delta": 0.0,
+        "ttc_drop": false
+       },
+       {
+        "family": "ped_occluded",
+        "scenario_id": "core-ped-0002",
+        "tier_baseline": "critical",
+        "tier_candidate": "critical",
+        "tier_worse": false,
+        "ttc_baseline": 0.0,
+        "ttc_candidate": 0.0,
+        "ttc_delta": 0.0,
+        "ttc_drop": false
+       },
+       {
+        "family": "ped_occluded",
+        "scenario_id": "core-ped-0003",
+        "tier_baseline": "critical",
+        "tier_candidate": "critical",
+        "tier_worse": false,
+        "ttc_baseline": 0.0,
+        "ttc_candidate": 0.0,
+        "ttc_delta": 0.0,
+        "ttc_drop": false
+       },
+       {
+        "family": "ped_occluded",
+        "scenario_id": "core-ped-0004",
+        "tier_baseline": "near_miss",
+        "tier_candidate": "near_miss",
+        "tier_worse": false,
+        "ttc_baseline": 2.4,
+        "ttc_candidate": 1.7,
+        "ttc_delta": -0.7,
+        "ttc_drop": true
+       },
+       {
+        "family": "ped_occluded",
+        "scenario_id": "core-ped-0005",
+        "tier_baseline": "critical",
+        "tier_candidate": "critical",
+        "tier_worse": false,
+        "ttc_baseline": 0.0,
+        "ttc_candidate": 0.0,
+        "ttc_delta": 0.0,
+        "ttc_drop": false
+       },
+       {
+        "family": "ped_occluded",
+        "scenario_id": "core-ped-0006",
+        "tier_baseline": "critical",
+        "tier_candidate": "critical",
+        "tier_worse": false,
+        "ttc_baseline": 0.0,
+        "ttc_candidate": 0.0,
+        "ttc_delta": 0.0,
+        "ttc_drop": false
+       },
+       {
+        "family": "ped_occluded",
+        "scenario_id": "core-ped-0007",
+        "tier_baseline": "critical",
+        "tier_candidate": "critical",
+        "tier_worse": false,
+        "ttc_baseline": 0.0,
+        "ttc_candidate": 0.0,
+        "ttc_delta": 0.0,
+        "ttc_drop": false
+       },
+       {
+        "family": "ped_occluded",
+        "scenario_id": "core-ped-0008",
+        "tier_baseline": "critical",
+        "tier_candidate": "critical",
+        "tier_worse": false,
+        "ttc_baseline": 0.0,
+        "ttc_candidate": 0.0,
+        "ttc_delta": 0.0,
+        "ttc_drop": false
+       },
+       {
+        "family": "ped_occluded",
+        "scenario_id": "core-ped-0009",
+        "tier_baseline": "critical",
+        "tier_candidate": "critical",
+        "tier_worse": false,
+        "ttc_baseline": 0.0,
+        "ttc_candidate": 0.0,
+        "ttc_delta": 0.0,
+        "ttc_drop": false
+       },
+       {
+        "family": "ped_occluded",
+        "scenario_id": "core-ped-0010",
+        "tier_baseline": "critical",
+        "tier_candidate": "critical",
+        "tier_worse": false,
+        "ttc_baseline": 0.0,
+        "ttc_candidate": 0.0,
+        "ttc_delta": 0.0,
+        "ttc_drop": false
+       },
+       {
+        "family": "ped_occluded",
+        "scenario_id": "core-ped-0011",
+        "tier_baseline": "critical",
+        "tier_candidate": "critical",
+        "tier_worse": false,
+        "ttc_baseline": 0.0,
+        "ttc_candidate": 0.0,
+        "ttc_delta": 0.0,
+        "ttc_drop": false
+       },
+       {
+        "family": "ped_occluded",
+        "scenario_id": "core-ped-0012",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 1.76,
+        "ttc_candidate": 1.71,
+        "ttc_delta": -0.05,
+        "ttc_drop": false
+       },
+       {
+        "family": "ped_occluded",
+        "scenario_id": "core-ped-0013",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 1.84,
+        "ttc_candidate": 1.84,
+        "ttc_delta": 0.0,
+        "ttc_drop": false
+       },
+       {
+        "family": "ped_occluded",
+        "scenario_id": "core-ped-0014",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 1.92,
+        "ttc_candidate": 1.97,
+        "ttc_delta": 0.05,
+        "ttc_drop": false
+       },
+       {
+        "family": "ped_occluded",
+        "scenario_id": "core-ped-0015",
+        "tier_baseline": "near_miss",
+        "tier_candidate": "near_miss",
+        "tier_worse": false,
+        "ttc_baseline": 2.0,
+        "ttc_candidate": 2.1,
+        "ttc_delta": 0.1,
+        "ttc_drop": false
+       },
+       {
+        "family": "ped_occluded",
+        "scenario_id": "core-ped-0016",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 2.08,
+        "ttc_candidate": 1.98,
+        "ttc_delta": -0.1,
+        "ttc_drop": false
+       },
+       {
+        "family": "cut_in",
+        "scenario_id": "core-cut-0001",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 2.16,
+        "ttc_candidate": 2.11,
+        "ttc_delta": -0.05,
+        "ttc_drop": false
+       },
+       {
+        "family": "cut_in",
+        "scenario_id": "core-cut-0002",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 2.24,
+        "ttc_candidate": 2.24,
+        "ttc_delta": 0.0,
+        "ttc_drop": false
+       },
+       {
+        "family": "cut_in",
+        "scenario_id": "core-cut-0003",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 1.6,
+        "ttc_candidate": 1.65,
+        "ttc_delta": 0.05,
+        "ttc_drop": false
+       },
+       {
+        "family": "cut_in",
+        "scenario_id": "core-cut-0004",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 1.68,
+        "ttc_candidate": 1.78,
+        "ttc_delta": 0.1,
+        "ttc_drop": false
+       },
+       {
+        "family": "cut_in",
+        "scenario_id": "core-cut-0005",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 1.76,
+        "ttc_candidate": 1.66,
+        "ttc_delta": -0.1,
+        "ttc_drop": false
+       },
+       {
+        "family": "cut_in",
+        "scenario_id": "core-cut-0006",
+        "tier_baseline": "near_miss",
+        "tier_candidate": "near_miss",
+        "tier_worse": false,
+        "ttc_baseline": 1.84,
+        "ttc_candidate": 1.79,
+        "ttc_delta": -0.05,
+        "ttc_drop": false
+       },
+       {
+        "family": "cut_in",
+        "scenario_id": "core-cut-0007",
+        "tier_baseline": "near_miss",
+        "tier_candidate": "near_miss",
+        "tier_worse": false,
+        "ttc_baseline": 2.1,
+        "ttc_candidate": 1.35,
+        "ttc_delta": -0.75,
+        "ttc_drop": true
+       },
+       {
+        "family": "cut_in",
+        "scenario_id": "core-cut-0008",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 2.0,
+        "ttc_candidate": 2.05,
+        "ttc_delta": 0.05,
+        "ttc_drop": false
+       },
+       {
+        "family": "cut_in",
+        "scenario_id": "core-cut-0009",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 2.08,
+        "ttc_candidate": 2.18,
+        "ttc_delta": 0.1,
+        "ttc_drop": false
+       },
+       {
+        "family": "cut_in",
+        "scenario_id": "core-cut-0010",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 2.16,
+        "ttc_candidate": 2.06,
+        "ttc_delta": -0.1,
+        "ttc_drop": false
+       },
+       {
+        "family": "cut_in",
+        "scenario_id": "core-cut-0011",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 2.24,
+        "ttc_candidate": 2.19,
+        "ttc_delta": -0.05,
+        "ttc_drop": false
+       },
+       {
+        "family": "cut_in",
+        "scenario_id": "core-cut-0012",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 1.6,
+        "ttc_candidate": 1.6,
+        "ttc_delta": 0.0,
+        "ttc_drop": false
+       },
+       {
+        "family": "cut_in",
+        "scenario_id": "core-cut-0013",
+        "tier_baseline": "near_miss",
+        "tier_candidate": "near_miss",
+        "tier_worse": false,
+        "ttc_baseline": 1.68,
+        "ttc_candidate": 1.73,
+        "ttc_delta": 0.05,
+        "ttc_drop": false
+       },
+       {
+        "family": "cut_in",
+        "scenario_id": "core-cut-0014",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 1.76,
+        "ttc_candidate": 1.86,
+        "ttc_delta": 0.1,
+        "ttc_drop": false
+       },
+       {
+        "family": "cut_in",
+        "scenario_id": "core-cut-0015",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 1.84,
+        "ttc_candidate": 1.74,
+        "ttc_delta": -0.1,
+        "ttc_drop": false
+       },
+       {
+        "family": "cut_in",
+        "scenario_id": "core-cut-0016",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 1.92,
+        "ttc_candidate": 1.87,
+        "ttc_delta": -0.05,
+        "ttc_drop": false
+       },
+       {
+        "family": "hard_brake",
+        "scenario_id": "core-brk-0001",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 2.0,
+        "ttc_candidate": 2.0,
+        "ttc_delta": 0.0,
+        "ttc_drop": false
+       },
+       {
+        "family": "hard_brake",
+        "scenario_id": "core-brk-0002",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 2.08,
+        "ttc_candidate": 2.13,
+        "ttc_delta": 0.05,
+        "ttc_drop": false
+       },
+       {
+        "family": "hard_brake",
+        "scenario_id": "core-brk-0003",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 2.16,
+        "ttc_candidate": 2.26,
+        "ttc_delta": 0.1,
+        "ttc_drop": false
+       },
+       {
+        "family": "hard_brake",
+        "scenario_id": "core-brk-0004",
+        "tier_baseline": "near_miss",
+        "tier_candidate": "near_miss",
+        "tier_worse": false,
+        "ttc_baseline": 2.24,
+        "ttc_candidate": 2.14,
+        "ttc_delta": -0.1,
+        "ttc_drop": false
+       },
+       {
+        "family": "hard_brake",
+        "scenario_id": "core-brk-0005",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 1.6,
+        "ttc_candidate": 1.55,
+        "ttc_delta": -0.05,
+        "ttc_drop": false
+       },
+       {
+        "family": "hard_brake",
+        "scenario_id": "core-brk-0006",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 1.68,
+        "ttc_candidate": 1.68,
+        "ttc_delta": 0.0,
+        "ttc_drop": false
+       },
+       {
+        "family": "hard_brake",
+        "scenario_id": "core-brk-0007",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 1.76,
+        "ttc_candidate": 1.81,
+        "ttc_delta": 0.05,
+        "ttc_drop": false
+       },
+       {
+        "family": "hard_brake",
+        "scenario_id": "core-brk-0008",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 1.84,
+        "ttc_candidate": 1.94,
+        "ttc_delta": 0.1,
+        "ttc_drop": false
+       },
+       {
+        "family": "hard_brake",
+        "scenario_id": "core-brk-0009",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 1.92,
+        "ttc_candidate": 1.82,
+        "ttc_delta": -0.1,
+        "ttc_drop": false
+       },
+       {
+        "family": "hard_brake",
+        "scenario_id": "core-brk-0010",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 2.0,
+        "ttc_candidate": 1.95,
+        "ttc_delta": -0.05,
+        "ttc_drop": false
+       },
+       {
+        "family": "hard_brake",
+        "scenario_id": "core-brk-0011",
+        "tier_baseline": "near_miss",
+        "tier_candidate": "near_miss",
+        "tier_worse": false,
+        "ttc_baseline": 2.08,
+        "ttc_candidate": 2.08,
+        "ttc_delta": 0.0,
+        "ttc_drop": false
+       },
+       {
+        "family": "hard_brake",
+        "scenario_id": "core-brk-0012",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 2.16,
+        "ttc_candidate": 2.21,
+        "ttc_delta": 0.05,
+        "ttc_drop": false
+       },
+       {
+        "family": "hard_brake",
+        "scenario_id": "core-brk-0013",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 2.24,
+        "ttc_candidate": 2.34,
+        "ttc_delta": 0.1,
+        "ttc_drop": false
+       },
+       {
+        "family": "hard_brake",
+        "scenario_id": "core-brk-0014",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 1.6,
+        "ttc_candidate": 1.5,
+        "ttc_delta": -0.1,
+        "ttc_drop": false
+       },
+       {
+        "family": "weather_ramp",
+        "scenario_id": "core-wea-0001",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 1.68,
+        "ttc_candidate": 1.63,
+        "ttc_delta": -0.05,
+        "ttc_drop": false
+       },
+       {
+        "family": "weather_ramp",
+        "scenario_id": "core-wea-0002",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 1.76,
+        "ttc_candidate": 1.76,
+        "ttc_delta": 0.0,
+        "ttc_drop": false
+       },
+       {
+        "family": "weather_ramp",
+        "scenario_id": "core-wea-0003",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 1.84,
+        "ttc_candidate": 1.89,
+        "ttc_delta": 0.05,
+        "ttc_drop": false
+       },
+       {
+        "family": "weather_ramp",
+        "scenario_id": "core-wea-0004",
+        "tier_baseline": "near_miss",
+        "tier_candidate": "near_miss",
+        "tier_worse": false,
+        "ttc_baseline": 1.92,
+        "ttc_candidate": 2.02,
+        "ttc_delta": 0.1,
+        "ttc_drop": false
+       },
+       {
+        "family": "weather_ramp",
+        "scenario_id": "core-wea-0005",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 2.0,
+        "ttc_candidate": 1.9,
+        "ttc_delta": -0.1,
+        "ttc_drop": false
+       },
+       {
+        "family": "weather_ramp",
+        "scenario_id": "core-wea-0006",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 2.08,
+        "ttc_candidate": 2.03,
+        "ttc_delta": -0.05,
+        "ttc_drop": false
+       },
+       {
+        "family": "weather_ramp",
+        "scenario_id": "core-wea-0007",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 2.16,
+        "ttc_candidate": 2.16,
+        "ttc_delta": 0.0,
+        "ttc_drop": false
+       },
+       {
+        "family": "weather_ramp",
+        "scenario_id": "core-wea-0008",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 2.24,
+        "ttc_candidate": 2.29,
+        "ttc_delta": 0.05,
+        "ttc_drop": false
+       },
+       {
+        "family": "weather_ramp",
+        "scenario_id": "core-wea-0009",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 1.6,
+        "ttc_candidate": 1.7,
+        "ttc_delta": 0.1,
+        "ttc_drop": false
+       },
+       {
+        "family": "weather_ramp",
+        "scenario_id": "core-wea-0010",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 1.68,
+        "ttc_candidate": 1.58,
+        "ttc_delta": -0.1,
+        "ttc_drop": false
+       },
+       {
+        "family": "weather_ramp",
+        "scenario_id": "core-wea-0011",
+        "tier_baseline": "near_miss",
+        "tier_candidate": "near_miss",
+        "tier_worse": false,
+        "ttc_baseline": 1.76,
+        "ttc_candidate": 1.71,
+        "ttc_delta": -0.05,
+        "ttc_drop": false
+       },
+       {
+        "family": "weather_ramp",
+        "scenario_id": "core-wea-0012",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 1.84,
+        "ttc_candidate": 1.84,
+        "ttc_delta": 0.0,
+        "ttc_drop": false
+       },
+       {
+        "family": "weather_ramp",
+        "scenario_id": "core-wea-0013",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 1.92,
+        "ttc_candidate": 1.97,
+        "ttc_delta": 0.05,
+        "ttc_drop": false
+       },
+       {
+        "family": "weather_ramp",
+        "scenario_id": "core-wea-0014",
+        "tier_baseline": "nominal",
+        "tier_candidate": "nominal",
+        "tier_worse": false,
+        "ttc_baseline": 2.0,
+        "ttc_candidate": 2.1,
+        "ttc_delta": 0.1,
+        "ttc_drop": false
+       }
+      ],
+      "passed": false
+     },
+     "residual_risk": [
+      {
+       "cannot_see": [
+        "risk.ped_occluded.perception",
+        "risk.ped_occluded.latency",
+        "risk.ped_occluded.multi_actor",
+        "risk.ped_occluded.odd_exit"
+       ],
+       "family": "ped_occluded",
+       "not_covered": [
+        "intersections",
+        "cyclists",
+        "night",
+        "sensor_faults",
+        "multi_actor",
+        "odd_exit"
+       ]
+      },
+      {
+       "cannot_see": [
+        "risk.cut_in.perception",
+        "risk.cut_in.latency",
+        "risk.cut_in.multi_actor",
+        "risk.cut_in.odd_exit"
+       ],
+       "family": "cut_in",
+       "not_covered": [
+        "intersections",
+        "cyclists",
+        "night",
+        "sensor_faults",
+        "multi_actor",
+        "odd_exit"
+       ]
+      },
+      {
+       "cannot_see": [
+        "risk.hard_brake.perception",
+        "risk.hard_brake.latency",
+        "risk.hard_brake.multi_actor",
+        "risk.hard_brake.odd_exit"
+       ],
+       "family": "hard_brake",
+       "not_covered": [
+        "intersections",
+        "cyclists",
+        "night",
+        "sensor_faults",
+        "multi_actor",
+        "odd_exit"
+       ]
+      },
+      {
+       "cannot_see": [
+        "risk.weather_ramp.perception",
+        "risk.weather_ramp.latency",
+        "risk.weather_ramp.multi_actor",
+        "risk.weather_ramp.odd_exit"
+       ],
+       "family": "weather_ramp",
+       "not_covered": [
+        "intersections",
+        "cyclists",
+        "night",
+        "sensor_faults",
+        "multi_actor",
+        "odd_exit"
+       ]
+      }
+     ],
+     "results": [
+      {
+       "description": "A pedestrian steps out from behind a parked van into the ego lane.",
+       "duration_s": 12.0,
+       "family": "ped_occluded",
+       "metrics": {
+        "collision": true,
+        "collision_t_s": 3.1,
+        "d_min_m": 0.0,
+        "d_min_t_s": 2.8,
+        "delta_v_mps": 6.4,
+        "hard_brake_events": 0,
+        "hard_brake_fraction": 0.04,
+        "mean_speed_ratio": null,
+        "pet_min_s": 0.6,
+        "severity_index": 3,
+        "ttc_min_s": 0.0,
+        "ttc_min_t_s": 2.4
+       },
+       "n_steps": 240,
+       "parameters": {
+        "ego_speed_mps": 8.0,
+        "occluder_x_m": 40.0,
+        "ped_speed_mps": 1.0,
+        "trigger_offset_m": 12.0
+       },
+       "planner": "cautious_idm",
+       "scenario_id": "core-ped-0001",
+       "score": 0.11,
+       "severity_tier": "critical",
+       "suite": "demo",
+       "thumbnail": "thumbs/ped_occluded_cautious_idm_core-ped-0001.png"
+      },
+      {
+       "description": "A pedestrian steps out from behind a parked van into the ego lane.",
+       "duration_s": 12.5,
+       "family": "ped_occluded",
+       "metrics": {
+        "collision": true,
+        "collision_t_s": 3.3,
+        "d_min_m": 0.0,
+        "d_min_t_s": 3.0,
+        "delta_v_mps": 6.7,
+        "hard_brake_events": 1,
+        "hard_brake_fraction": 0.07,
+        "mean_speed_ratio": null,
+        "pet_min_s": 0.8,
+        "severity_index": 3,
+        "ttc_min_s": 0.0,
+        "ttc_min_t_s": 2.7
+       },
+       "n_steps": 250,
+       "parameters": {
+        "ego_speed_mps": 10.4,
+        "occluder_x_m": 51.5,
+        "ped_speed_mps": 1.6,
+        "trigger_offset_m": 12.7
+       },
+       "planner": "cautious_idm",
+       "scenario_id": "core-ped-0002",
+       "score": 0.12,
+       "severity_tier": "critical",
+       "suite": "demo",
+       "thumbnail": null
+      },
+      {
+       "description": "A pedestrian steps out from behind a parked van into the ego lane.",
+       "duration_s": 13.0,
+       "family": "ped_occluded",
+       "metrics": {
+        "collision": true,
+        "collision_t_s": 3.5,
+        "d_min_m": 0.0,
+        "d_min_t_s": 3.2,
+        "delta_v_mps": 7.0,
+        "hard_brake_events": 2,
+        "hard_brake_fraction": 0.1,
+        "mean_speed_ratio": null,
+        "pet_min_s": 1.0,
+        "severity_index": 3,
+        "ttc_min_s": 0.0,
+        "ttc_min_t_s": 3.0
+       },
+       "n_steps": 260,
+       "parameters": {
+        "ego_speed_mps": 12.8,
+        "occluder_x_m": 63.0,
+        "ped_speed_mps": 2.2,
+        "trigger_offset_m": 13.4
+       },
+       "planner": "cautious_idm",
+       "scenario_id": "core-ped-0003",
+       "score": 0.13,
+       "severity_tier": "critical",
+       "suite": "demo",
+       "thumbnail": null
+      },
+      {
+       "description": "A pedestrian steps out from behind a parked van into the ego lane.",
+       "duration_s": 13.5,
+       "family": "ped_occluded",
+       "metrics": {
+        "collision": true,
+        "collision_t_s": 3.7,
+        "d_min_m": 0.0,
+        "d_min_t_s": 3.4,
+        "delta_v_mps": 7.3,
+        "hard_brake_events": 3,
+        "hard_brake_fraction": 0.13,
+        "mean_speed_ratio": null,
+        "pet_min_s": 1.2,
+        "severity_index": 3,
+        "ttc_min_s": 0.0,
+        "ttc_min_t_s": 3.3
+       },
+       "n_steps": 270,
+       "parameters": {
+        "ego_speed_mps": 9.2,
+        "occluder_x_m": 44.5,
+        "ped_speed_mps": 1.3,
+        "trigger_offset_m": 14.1
+       },
+       "planner": "cautious_idm",
+       "scenario_id": "core-ped-0004",
+       "score": 0.14,
+       "severity_tier": "critical",
+       "suite": "demo",
+       "thumbnail": "thumbs/ped_occluded_cautious_idm_core-ped-0004.png"
+      },
+      {
+       "description": "A pedestrian steps out from behind a parked van into the ego lane.",
+       "duration_s": 14.0,
+       "family": "ped_occluded",
+       "metrics": {
+        "collision": true,
+        "collision_t_s": 3.1,
+        "d_min_m": 0.0,
+        "d_min_t_s": 3.6,
+        "delta_v_mps": 7.6,
+        "hard_brake_events": 0,
+        "hard_brake_fraction": 0.16,
+        "mean_speed_ratio": null,
+        "pet_min_s": 0.6,
+        "severity_index": 3,
+        "ttc_min_s": 0.0,
+        "ttc_min_t_s": 3.6
+       },
+       "n_steps": 280,
+       "parameters": {
+        "ego_speed_mps": 11.6,
+        "occluder_x_m": 50.0,
+        "ped_speed_mps": 1.5,
+        "trigger_offset_m": 14.8
+       },
+       "planner": "cautious_idm",
+       "scenario_id": "core-ped-0005",
+       "score": 0.15,
+       "severity_tier": "critical",
+       "suite": "demo",
+       "thumbnail": null
+      },
+      {
+       "description": "A pedestrian steps out from behind a parked van into the ego lane.",
+       "duration_s": 14.5,
+       "family": "ped_occluded",
+       "metrics": {
+        "collision": true,
+        "collision_t_s": 3.3,
+        "d_min_m": 0.0,
+        "d_min_t_s": 2.8,
+        "delta_v_mps": 6.4,
+        "hard_brake_events": 1,
+        "hard_brake_fraction": 0.04,
+        "mean_speed_ratio": null,
+        "pet_min_s": 0.8,
+        "severity_index": 3,
+        "ttc_min_s": 0.0,
+        "ttc_min_t_s": 2.4
+       },
+       "n_steps": 290,
+       "parameters": {
+        "ego_speed_mps": 12.0,
+        "occluder_x_m": 61.5,
+        "ped_speed_mps": 2.1,
+        "trigger_offset_m": 15.5
+       },
+       "planner": "cautious_idm",
+       "scenario_id": "core-ped-0006",
+       "score": 0.11,
+       "severity_tier": "critical",
+       "suite": "demo",
+       "thumbnail": null
+      },
+      {
+       "description": "A pedestrian steps out from behind a parked van into the ego lane.",
+       "duration_s": 12.0,
+       "family": "ped_occluded",
+       "metrics": {
+        "collision": true,
+        "collision_t_s": 3.5,
+        "d_min_m": 0.0,
+        "d_min_t_s": 3.0,
+        "delta_v_mps": 6.7,
+        "hard_brake_events": 2,
+        "hard_brake_fraction": 0.07,
+        "mean_speed_ratio": null,
+        "pet_min_s": 1.0,
+        "severity_index": 3,
+        "ttc_min_s": 0.0,
+        "ttc_min_t_s": 2.7
+       },
+       "n_steps": 240,
+       "parameters": {
+        "ego_speed_mps": 8.4,
+        "occluder_x_m": 43.0,
+        "ped_speed_mps": 1.2,
+        "trigger_offset_m": 16.2
+       },
+       "planner": "cautious_idm",
+       "scenario_id": "core-ped-0007",
+       "score": 0.12,
+       "severity_tier": "critical",
+       "suite": "demo",
+       "thumbnail": "thumbs/ped_occluded_cautious_idm_core-ped-0007.png"
+      },
+      {
+       "description": "A pedestrian steps out from behind a parked van into the ego lane.",
+       "duration_s": 12.5,
+       "family": "ped_occluded",
+       "metrics": {
+        "collision": true,
+        "collision_t_s": 3.7,
+        "d_min_m": 0.0,
+        "d_min_t_s": 3.2,
+        "delta_v_mps": 7.0,
+        "hard_brake_events": 3,
+        "hard_brake_fraction": 0.1,
+        "mean_speed_ratio": null,
+        "pet_min_s": 1.2,
+        "severity_index": 3,
+        "ttc_min_s": 0.0,
+        "ttc_min_t_s": 3.0
+       },
+       "n_steps": 250,
+       "parameters": {
+        "ego_speed_mps": 10.8,
+        "occluder_x_m": 54.5,
+        "ped_speed_mps": 1.8,
+        "trigger_offset_m": 16.9
+       },
+       "planner": "cautious_idm",
+       "scenario_id": "core-ped-0008",
+       "score": 0.13,
+       "severity_tier": "critical",
+       "suite": "demo",
+       "thumbnail": null
+      },
+      {
+       "description": "A pedestrian steps out from behind a parked van into the ego lane.",
+       "duration_s": 13.0,
+       "family": "ped_occluded",
+       "metrics": {
+        "collision": true,
+        "collision_t_s": 3.1,
+        "d_min_m": 0.0,
+        "d_min_t_s": 3.4,
+        "delta_v_mps": 7.3,
+        "hard_brake_events": 0,
+        "hard_brake_fraction": 0.13,
+        "mean_speed_ratio": null,
+        "pet_min_s": 0.6,
+        "severity_index": 3,
+        "ttc_min_s": 0.0,
+        "ttc_min_t_s": 3.3
+       },
+       "n_steps": 260,
+       "parameters": {
+        "ego_speed_mps": 13.2,
+        "occluder_x_m": 60.0,
+        "ped_speed_mps": 2.0,
+        "trigger_offset_m": 17.6
+       },
+       "planner": "cautious_idm",
+       "scenario_id": "core-ped-0009",
+       "score": 0.14,
+       "severity_tier": "critical",
+       "suite": "demo",
+       "thumbnail": null
+      },
+      {
+       "description": "A pedestrian steps out from behind a parked van into the ego lane.",
+       "duration_s": 13.5,
+       "family": "ped_occluded",
+       "metrics": {
+        "collision": true,
+        "collision_t_s": 3.3,
+        "d_min_m": 0.0,
+        "d_min_t_s": 3.6,
+        "delta_v_mps": 7.6,
+        "hard_brake_events": 1,
+        "hard_brake_fraction": 0.16,
+        "mean_speed_ratio": null,
+        "pet_min_s": 0.8,
+        "severity_index": 3,
+        "ttc_min_s": 0.0,
+        "ttc_min_t_s": 3.6
+       },
+       "n_steps": 270,
+       "parameters": {
+        "ego_speed_mps": 9.6,
+        "occluder_x_m": 41.5,
+        "ped_speed_mps": 1.1,
+        "trigger_offset_m": 18.3
+       },
+       "planner": "cautious_idm",
+       "scenario_id": "core-ped-0010",
+       "score": 0.15,
+       "severity_tier": "critical",
+       "suite": "demo",
+       "thumbnail": "thumbs/ped_occluded_cautious_idm_core-ped-0010.png"
+      },
+      {
+       "description": "A pedestrian steps out from behind a parked van into the ego lane.",
+       "duration_s": 14.0,
+       "family": "ped_occluded",
+       "metrics": {
+        "collision": true,
+        "collision_t_s": 3.5,
+        "d_min_m": 0.0,
+        "d_min_t_s": 2.8,
+        "delta_v_mps": 6.4,
+        "hard_brake_events": 2,
+        "hard_brake_fraction": 0.04,
+        "mean_speed_ratio": null,
+        "pet_min_s": 1.0,
+        "severity_index": 3,
+        "ttc_min_s": 0.0,
+        "ttc_min_t_s": 2.4
+       },
+       "n_steps": 280,
+       "parameters": {
+        "ego_speed_mps": 10.0,
+        "occluder_x_m": 53.0,
+        "ped_speed_mps": 1.7,
+        "trigger_offset_m": 19.0
+       },
+       "planner": "cautious_idm",
+       "scenario_id": "core-ped-0011",
+       "score": 0.11,
+       "severity_tier": "critical",
+       "suite": "demo",
+       "thumbnail": null
+      },
+      {
+       "description": "A pedestrian steps out from behind a parked van into the ego lane.",
+       "duration_s": 14.5,
+       "family": "ped_occluded",
+       "metrics": {
+        "collision": false,
+        "collision_t_s": null,
+        "d_min_m": 0.62,
+        "d_min_t_s": 3.0,
+        "delta_v_mps": 0.0,
+        "hard_brake_events": 3,
+        "hard_brake_fraction": 0.07,
+        "mean_speed_ratio": null,
+        "pet_min_s": 1.2,
+        "severity_index": 2,
+        "ttc_min_s": 1.7,
+        "ttc_min_t_s": 2.7
+       },
+       "n_steps": 290,
+       "parameters": {
+        "ego_speed_mps": 12.4,
+        "occluder_x_m": 64.5,
+        "ped_speed_mps": 2.3,
+        "trigger_offset_m": 19.7
+       },
+       "planner": "cautious_idm",
+       "scenario_id": "core-ped-0012",
+       "score": 0.84,
+       "severity_tier": "near_miss",
+       "suite": "demo",
+       "thumbnail": null
+      },
+      {
+       "description": "A pedestrian steps out from behind a parked van into the ego lane.",
+       "duration_s": 12.0,
+       "family": "ped_occluded",
+       "metrics": {
+        "collision": false,
+        "collision_t_s": null,
+        "d_min_m": 0.42,
+        "d_min_t_s": 3.2,
+        "delta_v_mps": 0.0,
+        "hard_brake_events": 0,
+        "hard_brake_fraction": 0.1,
+        "mean_speed_ratio": null,
+        "pet_min_s": 0.6,
+        "severity_index": 2,
+        "ttc_min_s": 1.1,
+        "ttc_min_t_s": 3.0
+       },
+       "n_steps": 240,
+       "parameters": {
+        "ego_speed_mps": 8.8,
+        "occluder_x_m": 40.0,
+        "ped_speed_mps": 1.0,
+        "trigger_offset_m": 20.4
+       },
+       "planner": "cautious_idm",
+       "scenario_id": "core-ped-0013",
+       "score": 0.86,
+       "severity_tier": "near_miss",
+       "suite": "demo",
+       "thumbnail": "thumbs/ped_occluded_cautious_idm_core-ped-0013.png"
+      },
+      {
+       "description": "A pedestrian steps out from behind a parked van into the ego lane.",
+       "duration_s": 12.5,
+       "family": "ped_occluded",
+       "metrics": {
+        "collision": false,
+        "collision_t_s": null,
+        "d_min_m": 0.52,
+        "d_min_t_s": 3.4,
+        "delta_v_mps": 0.0,
+        "hard_brake_events": 1,
+        "hard_brake_fraction": 0.13,
+        "mean_speed_ratio": null,
+        "pet_min_s": 0.8,
+        "severity_index": 2,
+        "ttc_min_s": 1.3,
+        "ttc_min_t_s": 3.3
+       },
+       "n_steps": 250,
+       "parameters": {
+        "ego_speed_mps": 11.2,
+        "occluder_x_m": 51.5,
+        "ped_speed_mps": 1.6,
+        "trigger_offset_m": 21.1
+       },
+       "planner": "cautious_idm",
+       "scenario_id": "core-ped-0014",
+       "score": 0.88,
+       "severity_tier": "near_miss",
+       "suite": "demo",
+       "thumbnail": null
+      },
+      {
+       "description": "A pedestrian steps out from behind a parked van into the ego lane.",
+       "duration_s": 13.0,
+       "family": "ped_occluded",
+       "metrics": {
+        "collision": false,
+        "collision_t_s": null,
+        "d_min_m": 0.62,
+        "d_min_t_s": 3.6,
+        "delta_v_mps": 0.0,
+        "hard_brake_events": 2,
+        "hard_brake_fraction": 0.16,
+        "mean_speed_ratio": null,
+        "pet_min_s": 1.0,
+        "severity_index": 2,
+        "ttc_min_s": 1.5,
+        "ttc_min_t_s": 3.6
+       },
+       "n_steps": 260,
+       "parameters": {
+        "ego_speed_mps": 13.6,
+        "occluder_x_m": 63.0,
+        "ped_speed_mps": 2.2,
+        "trigger_offset_m": 21.8
+       },
+       "planner": "cautious_idm",
+       "scenario_id": "core-ped-0015",
+       "score": 0.9,
+       "severity_tier": "near_miss",
+       "suite": "demo",
+       "thumbnail": null
+      },
+      {
+       "description": "A pedestrian steps out from behind a parked van into the ego lane.",
+       "duration_s": 13.5,
+       "family": "ped_occluded",
+       "metrics": {
+        "collision": false,
+        "collision_t_s": null,
+        "d_min_m": 0.42,
+        "d_min_t_s": 2.8,
+        "delta_v_mps": 0.0,
+        "hard_brake_events": 3,
+        "hard_brake_fraction": 0.04,
+        "mean_speed_ratio": null,
+        "pet_min_s": 1.2,
+        "severity_index": 2,
+        "ttc_min_s": 1.7,
+        "ttc_min_t_s": 2.4
+       },
+       "n_steps": 270,
+       "parameters": {
+        "ego_speed_mps": 8.0,
+        "occluder_x_m": 44.5,
+        "ped_speed_mps": 1.3,
+        "trigger_offset_m": 22.5
+       },
+       "planner": "cautious_idm",
+       "scenario_id": "core-ped-0016",
+       "score": 0.92,
+       "severity_tier": "near_miss",
+       "suite": "demo",
+       "thumbnail": "thumbs/ped_occluded_cautious_idm_core-ped-0016.png"
+      },
+      {
+       "description": "A vehicle in the adjacent lane cuts in ahead of the ego vehicle.",
+       "duration_s": 12.0,
+       "family": "cut_in",
+       "metrics": {
+        "collision": false,
+        "collision_t_s": null,
+        "d_min_m": 0.8,
+        "d_min_t_s": 2.8,
+        "delta_v_mps": 0.0,
+        "hard_brake_events": 0,
+        "hard_brake_fraction": 0.04,
+        "mean_speed_ratio": null,
+        "pet_min_s": 0.6,
+        "severity_index": 1,
+        "ttc_min_s": 1.9,
+        "ttc_min_t_s": 2.4
+       },
+       "n_steps": 240,
+       "parameters": {
+        "ego_speed_mps": 15.0,
+        "initial_gap_m": 15.0,
+        "lateral_speed_mps": 0.8,
+        "speed_delta_mps": -3.0,
+        "trigger_gap_m": 8.0
+       },
+       "planner": "cautious_idm",
+       "scenario_id": "core-cut-0001",
+       "score": 0.71,
+       "severity_tier": "nominal",
+       "suite": "demo",
+       "thumbnail": "thumbs/cut_in_cautious_idm_core-cut-0001.png"
+      },
+      {
+       "description": "A vehicle in the adjacent lane cuts in ahead of the ego vehicle.",
+       "duration_s": 12.5,
+       "family": "cut_in",
+       "metrics": {
+        "collision": false,
+        "collision_t_s": null,
+        "d_min_m": 1.0,
+        "d_min_t_s": 3.0,
+        "delta_v_mps": 0.0,
+        "hard_brake_events": 1,
+        "hard_brake_fraction": 0.07,
+        "mean_speed_ratio": null,
+        "pet_min_s": 0.8,
+        "severity_index": 1,
+        "ttc_min_s": 2.15,
+        "ttc_min_t_s": 2.7
+       },
+       "n_steps": 250,
+       "parameters": {
+        "ego_speed_mps": 17.63,
+        "initial_gap_m": 20.8,
+        "lateral_speed_mps": 0.85,
+        "speed_delta_mps": -3.2,
+        "trigger_gap_m": 11.73
+       },
+       "planner": "cautious_idm",
+       "scenario_id": "core-cut-0002",
+       "score": 0.72,
+       "severity_tier": "nominal",
+       "suite": "demo",
+       "thumbnail": null
+      },
+      {
+       "description": "A vehicle in the adjacent lane cuts in ahead of the ego vehicle.",
+       "duration_s": 13.0,
+       "family": "cut_in",
+       "metrics": {
+        "collision": false,
+        "collision_t_s": null,
+        "d_min_m": 1.2,
+        "d_min_t_s": 3.2,
+        "delta_v_mps": 0.0,
+        "hard_brake_events": 2,
+        "hard_brake_fraction": 0.1,
+        "mean_speed_ratio": null,
+        "pet_min_s": 1.0,
+        "severity_index": 2,
+        "ttc_min_s": 1.25,
+        "ttc_min_t_s": 3.0
+       },
+       "n_steps": 260,
+       "parameters": {
+        "ego_speed_mps": 20.26,
+        "initial_gap_m": 26.6,
+        "lateral_speed_mps": 0.9,
+        "speed_delta_mps": -3.4,
+        "trigger_gap_m": 15.46
+       },
+       "planner": "cautious_idm",
+       "scenario_id": "core-cut-0003",
+       "score": 0.73,
+       "severity_tier": "near_miss",
+       "suite": "demo",
+       "thumbnail": null
+      },
+      {
+       "description": "The lead vehicle brakes hard while the ego vehicle follows.",
+       "duration_s": 12.0,
+       "family": "hard_brake",
+       "metrics": {
+        "collision": false,
+        "collision_t_s": null,
+        "d_min_m": 0.7,
+        "d_min_t_s": 2.8,
+        "delta_v_mps": 0.0,
+        "hard_brake_events": 0,
+        "hard_brake_fraction": 0.04,
+        "mean_speed_ratio": null,
+        "pet_min_s": 0.6,
+        "severity_index": 1,
+        "ttc_min_s": 1.8,
+        "ttc_min_t_s": 2.4
+       },
+       "n_steps": 240,
+       "parameters": {
+        "brake_decel_mps2": 3.5,
+        "ego_speed_mps": 15.0,
+        "initial_gap_m": 12.0,
+        "lead_speed_delta_mps": 1.5
+       },
+       "planner": "cautious_idm",
+       "scenario_id": "core-brk-0001",
+       "score": 0.69,
+       "severity_tier": "nominal",
+       "suite": "demo",
+       "thumbnail": "thumbs/hard_brake_cautious_idm_core-brk-0001.png"
+      },
+      {
+       "description": "The lead vehicle brakes hard while the ego vehicle follows.",
+       "duration_s": 12.5,
+       "family": "hard_brake",
+       "metrics": {
+        "collision": false,
+        "collision_t_s": null,
+        "d_min_m": 0.85,
+        "d_min_t_s": 3.0,
+        "delta_v_mps": 0.0,
+        "hard_brake_events": 1,
+        "hard_brake_fraction": 0.07,
+        "mean_speed_ratio": null,
+        "pet_min_s": 0.8,
+        "severity_index": 1,
+        "ttc_min_s": 2.1,
+        "ttc_min_t_s": 2.7
+       },
+       "n_steps": 250,
+       "parameters": {
+        "brake_decel_mps2": 5.2,
+        "ego_speed_mps": 17.68,
+        "initial_gap_m": 20.77,
+        "lead_speed_delta_mps": 1.7
+       },
+       "planner": "cautious_idm",
+       "scenario_id": "core-brk-0002",
+       "score": 0.7,
+       "severity_tier": "nominal",
+       "suite": "demo",
+       "thumbnail": null
+      },
+      {
+       "description": "Visibility and road friction fall over the length of the run.",
+       "duration_s": 12.0,
+       "family": "weather_ramp",
+       "metrics": {
+        "collision": false,
+        "collision_t_s": null,
+        "d_min_m": 1.1,
+        "d_min_t_s": 2.8,
+        "delta_v_mps": 0.0,
+        "hard_brake_events": 0,
+        "hard_brake_fraction": 0.04,
+        "mean_speed_ratio": null,
+        "pet_min_s": 0.6,
+        "severity_index": 1,
+        "ttc_min_s": 2.2,
+        "ttc_min_t_s": 2.4
+       },
+       "n_steps": 240,
+       "parameters": {
+        "ego_speed_mps": 14.0,
+        "friction_end": 0.25,
+        "visibility_end_m": 15.0
+       },
+       "planner": "cautious_idm",
+       "scenario_id": "core-wea-0001",
+       "score": 0.66,
+       "severity_tier": "nominal",
+       "suite": "demo",
+       "thumbnail": "thumbs/weather_ramp_cautious_idm_core-wea-0001.png"
+      },
+      {
+       "description": "Visibility and road friction fall over the length of the run.",
+       "duration_s": 12.5,
+       "family": "weather_ramp",
+       "metrics": {
+        "collision": false,
+        "collision_t_s": null,
+        "d_min_m": 1.2,
+        "d_min_t_s": 3.0,
+        "delta_v_mps": 0.0,
+        "hard_brake_events": 1,
+        "hard_brake_fraction": 0.07,
+        "mean_speed_ratio": null,
+        "pet_min_s": 0.8,
+        "severity_index": 1,
+        "ttc_min_s": 2.4,
+        "ttc_min_t_s": 2.7
+       },
+       "n_steps": 250,
+       "parameters": {
+        "ego_speed_mps": 16.3,
+        "friction_end": 0.3433,
+        "visibility_end_m": 26.2
+       },
+       "planner": "cautious_idm",
+       "scenario_id": "core-wea-0002",
+       "score": 0.67,
+       "severity_tier": "nominal",
+       "suite": "demo",
+       "thumbnail": null
+      }
+     ],
+     "samples": [],
+     "verdict": {
+      "candidate": "cautious_idm",
+      "conditional_gates": [],
+      "failing_gates": [
+       "a.hard.ped_collision",
+       "a.cov.bins",
+       "a.reg.paired",
+       "a.soft.ttc_cutin",
+       "a.avail.speed"
+      ],
+      "headline": "cautious_idm: NO_GO. 5 of 9 gates failed. Pedestrian collision, Coverage bins, Paired regression, Cut in time to collision, Speed availability.",
+      "n_gates": 9,
+      "suite": "demo",
+      "verdict": "NO_GO"
+     },
+     "worked_example": {
+      "bound": 0.5435,
+      "gate_id": "a.soft.ttc_cutin",
+      "live": true,
+      "n": 16,
+      "n_fail": 3,
+      "note_key": "gates.worked_example",
+      "point_estimate": 0.8125,
+      "threshold": 0.6
+     }
+    }
+   ],
+   "credibility": [
+    "credibility.1",
+    "credibility.2",
+    "credibility.3",
+    "credibility.4",
+    "credibility.5",
+    "credibility.6",
+    "credibility.7"
+   ],
+   "deviations": [
+    {
+     "changed_at": "2026-09-05T09:20:00Z",
+     "field": "threshold",
+     "frozen_value": 0.6,
+     "gate_id": "a.avail.hard_brake",
+     "new_value": 0.55,
+     "reason": "The braking comfort floor was relaxed for the demo suite after review.",
+     "signer": "release board"
+    }
+   ],
+   "first_run_at": "2026-09-03T12:00:00Z",
+   "gate_file_sha256": "3f8c1d0b6a24e97514c2b8ef0d6135a7c94b2e81df5306ca7b9e4218cd07f5a3",
+   "gate_published_at": null,
+   "independence": [
+    "independence.1",
+    "independence.2",
+    "independence.3",
+    "independence.mitigations"
+   ],
+   "preregistered": false,
+   "suite": "demo"
+  }
+ ],
+ "track": "a"
+}

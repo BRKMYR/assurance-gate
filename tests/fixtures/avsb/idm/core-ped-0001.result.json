@@ -1,0 +1,25 @@
+{
+  "duration_s": 15.0,
+  "family": "ped_occluded",
+  "metrics": {
+    "collision": true,
+    "collision_t_s": 5.4,
+    "d_min_m": -1.1328,
+    "d_min_t_s": 5.6,
+    "delta_v_mps": 0.4427,
+    "hard_brake_events": 1,
+    "hard_brake_fraction": 0.0331,
+    "pet_min_s": 0.3,
+    "severity_index": 1,
+    "ttc_min_s": 0.0211,
+    "ttc_min_t_s": 5.3
+  },
+  "n_steps": 151,
+  "planner": "idm",
+  "scenario_id": "core-ped-0001",
+  "schema_version": "1.0",
+  "score": 10.0,
+  "severity_tier": "critical",
+  "suite": "core",
+  "trajectory_log": "artifacts/core/idm/core-ped-0001.jsonl"
+}

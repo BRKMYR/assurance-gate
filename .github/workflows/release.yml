@@ -1,0 +1,44 @@
+name: release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+
+concurrency: release
+
+jobs:
+  publish:
+    name: lint, build, publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: install
+        run: pip install -e ".[dev]"
+
+      - name: copy lint, release mode
+        run: python scripts/lint_copy.py --mode release
+
+      - name: pytest
+        run: pytest -q
+
+      - name: build the dashboard data
+        run: gate build --out site/
+
+      - name: publish plan
+        run: gate publish --tag "${GITHUB_REF_NAME}" --dry-run
+
+      - name: publish
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          MIRROR_TOKEN: ${{ secrets.MIRROR_TOKEN }}
+        run: gate publish --tag "${GITHUB_REF_NAME}"

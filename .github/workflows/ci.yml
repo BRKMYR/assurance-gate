@@ -1,0 +1,78 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: tests and copy lint
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: install
+        run: pip install -e ".[dev]"
+
+      - name: pytest
+        run: pytest -q
+
+      - name: copy lint, push mode
+        run: python scripts/lint_copy.py --mode push
+
+      - name: stealth grep over everything that ships
+        run: python scripts/lint_copy.py --mode push site runs space dataset external README.md
+
+      - name: build the dashboard data
+        run: gate build --out site/
+
+      - name: no trajectory log in any output
+        run: |
+          if grep -rIl "trajectory_log" runs site; then
+            echo "trajectory_log reached an output file"
+            exit 1
+          fi
+
+  lighthouse:
+    name: lighthouse
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: install
+        run: pip install -e ".[dev]"
+
+      - name: build the dashboard data
+        run: gate build --out site/
+
+      - name: lighthouse ci
+        run: npx --yes @lhci/cli@0.14.x autorun
+
+      - name: first load budget
+        run: |
+          total=$(cat site/index.html site/app.js site/styles.css site/data.json \
+            | gzip -9 | wc -c)
+          echo "first load ${total} bytes gzipped"
+          test "${total}" -lt 204800

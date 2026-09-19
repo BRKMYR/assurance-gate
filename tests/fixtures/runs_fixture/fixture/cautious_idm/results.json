@@ -1,0 +1,134 @@
+[
+  {
+    "description": "Adjacent-lane vehicle cuts in ahead of ego with 15.2 m initial gap; trigger at gap<=11.1 m; lateral speed 0.78 m/s.",
+    "duration_s": 15.0,
+    "family": "cut_in",
+    "metrics": {
+      "collision": false,
+      "collision_t_s": null,
+      "d_min_m": 7.5186,
+      "d_min_t_s": 1.4,
+      "delta_v_mps": null,
+      "hard_brake_events": 1,
+      "hard_brake_fraction": 0.0662,
+      "mean_speed_ratio": null,
+      "pet_min_s": 0.6,
+      "severity_index": 0,
+      "ttc_min_s": 3.025,
+      "ttc_min_t_s": 0.9
+    },
+    "n_steps": 151,
+    "parameters": {
+      "ego_speed_mps": 21.223,
+      "initial_gap_m": 15.2111,
+      "lateral_speed_mps": 0.7808,
+      "speed_delta_mps": -3.4701,
+      "trigger_gap_m": 11.0806
+    },
+    "planner": "cautious_idm",
+    "scenario_id": "core-cutin-0010",
+    "score": 82.0265,
+    "severity_tier": "near_miss",
+    "suite": "fixture",
+    "thumbnail": null
+  },
+  {
+    "description": "Lead vehicle at 20.6 m/s, initial gap 16.0 m; brakes at -7.71 m/s^2 starting t=3.4 s.",
+    "duration_s": 15.0,
+    "family": "hard_brake",
+    "metrics": {
+      "collision": false,
+      "collision_t_s": null,
+      "d_min_m": 4.0214,
+      "d_min_t_s": 15.0,
+      "delta_v_mps": null,
+      "hard_brake_events": 2,
+      "hard_brake_fraction": 0.1258,
+      "mean_speed_ratio": null,
+      "pet_min_s": 0.6,
+      "severity_index": 0,
+      "ttc_min_s": 2.4096,
+      "ttc_min_t_s": 6.1
+    },
+    "n_steps": 151,
+    "parameters": {
+      "brake_decel_mps2": -7.7118,
+      "brake_trigger_time_s": 3.3706,
+      "ego_speed_mps": 21.3913,
+      "initial_gap_m": 15.983,
+      "lead_speed_delta_mps": 0.7505
+    },
+    "planner": "cautious_idm",
+    "scenario_id": "core-hardbrake-0007",
+    "score": 70.5781,
+    "severity_tier": "near_miss",
+    "suite": "fixture",
+    "thumbnail": null
+  },
+  {
+    "description": "Pedestrian occluded by parked vehicle at x=63.8 m; begins crossing at speed 1.09 m/s when ego reaches x=34.2 m.",
+    "duration_s": 15.0,
+    "family": "ped_occluded",
+    "metrics": {
+      "collision": true,
+      "collision_t_s": 6.2,
+      "d_min_m": -1.2871,
+      "d_min_t_s": 7.1,
+      "delta_v_mps": 0.1761,
+      "hard_brake_events": 1,
+      "hard_brake_fraction": 0.2715,
+      "mean_speed_ratio": null,
+      "pet_min_s": 0.5,
+      "severity_index": 1,
+      "ttc_min_s": 0.0728,
+      "ttc_min_t_s": 6.1
+    },
+    "n_steps": 151,
+    "parameters": {
+      "ego_speed_mps": 11.6311,
+      "occluder_x_m": 63.7636,
+      "ped_speed_mps": 1.0936,
+      "trigger_ego_x_m": 34.1672,
+      "trigger_offset_m": 29.5964
+    },
+    "planner": "cautious_idm",
+    "scenario_id": "core-ped-0001",
+    "score": 10.0,
+    "severity_tier": "critical",
+    "suite": "fixture",
+    "thumbnail": "thumbs/ped_occluded_cautious_idm_core-ped-0001.png"
+  },
+  {
+    "description": "Lead vehicle at 8.6 m/s while visibility ramps 200 -> 18.5 m and friction 0.9 -> 0.40 over 20 s.",
+    "duration_s": 20.0,
+    "family": "weather_ramp",
+    "metrics": {
+      "collision": false,
+      "collision_t_s": null,
+      "d_min_m": 23.2715,
+      "d_min_t_s": 20.0,
+      "delta_v_mps": null,
+      "hard_brake_events": 1,
+      "hard_brake_fraction": 0.0299,
+      "mean_speed_ratio": null,
+      "pet_min_s": 2.8,
+      "severity_index": 0,
+      "ttc_min_s": 4.653,
+      "ttc_min_t_s": 0.0
+    },
+    "n_steps": 201,
+    "parameters": {
+      "ego_speed_mps": 19.57,
+      "friction_end": 0.4021,
+      "initial_gap_m": 55.339,
+      "lead_speed_mps": 8.644,
+      "visibility_end_m": 18.531
+    },
+    "planner": "cautious_idm",
+    "scenario_id": "core-weather-0008",
+    "score": 98.209,
+    "severity_tier": "nominal",
+    "suite": "fixture",
+    "thumbnail": null
+  }
+]

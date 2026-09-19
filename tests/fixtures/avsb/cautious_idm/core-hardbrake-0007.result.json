@@ -1,0 +1,25 @@
+{
+  "duration_s": 15.0,
+  "family": "hard_brake",
+  "metrics": {
+    "collision": false,
+    "collision_t_s": null,
+    "d_min_m": 4.0214,
+    "d_min_t_s": 15.0,
+    "delta_v_mps": null,
+    "hard_brake_events": 2,
+    "hard_brake_fraction": 0.1258,
+    "pet_min_s": 0.6,
+    "severity_index": 0,
+    "ttc_min_s": 2.4096,
+    "ttc_min_t_s": 6.1
+  },
+  "n_steps": 151,
+  "planner": "cautious_idm",
+  "scenario_id": "core-hardbrake-0007",
+  "schema_version": "1.0",
+  "score": 70.5781,
+  "severity_tier": "near_miss",
+  "suite": "core",
+  "trajectory_log": "artifacts/core/cautious_idm/core-hardbrake-0007.jsonl"
+}

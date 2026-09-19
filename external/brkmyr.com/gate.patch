@@ -1,0 +1,329 @@
+From b0e0e70c5fe5754fc8cc2db165fc1463a04fcd0f Mon Sep 17 00:00:00 2001
+From: NKLS BRKMYR <BRKMYR@users.noreply.github.com>
+Date: Sat, 19 Sep 2026 20:09:08 +0200
+Subject: [PATCH] gate: add the Assurance Gate project page and card
+
+Adds an eighth AI builder project: a release assurance dashboard with
+pre registered gates, confidence bounds, coverage and a paired regression.
+
+- portfolio: the card first in the grid, counts moved to eight
+- gate/index.html: problem, solution, result, success criteria, metrics
+- the live dashboard loads from its Space only after a click on the poster
+- README: the gate page names its own outside request
+---
+ README.md                       |   1 +
+ ai-builder-portfolio/index.html |  13 +-
+ gate/index.html                 | 228 ++++++++++++++++++++++++++++++++
+ index.html                      |   4 +-
+ 4 files changed, 241 insertions(+), 5 deletions(-)
+ create mode 100644 gate/index.html
+
+diff --git a/README.md b/README.md
+index 22d39fa..ae86c05 100644
+--- a/README.md
++++ b/README.md
+@@ -3,5 +3,6 @@
+ Personal site of BRKMYR: AI platforms, data platforms, the rise of Physical AI, agentic AI, product innovation. A single static page, no build step, no dependencies, no tracking. The one script is an inline canvas background that degrades to nothing.
+ 
+ Live data, kept honest: the corner readouts show real hub-city clocks (computed client-side), a real measured ping (timed same-origin favicon fetch), and real current temperatures from Open-Meteo. That weather request is the page's single external call: keyless, read-only, no visitor data beyond the request itself. Market tickers are simulated ambience; live quotes would need a keyed API.
++The gate page can reach further, and only on request: the live dashboard loads from its Space after a click on the poster.
+ 
+ Link-only visibility: the page carries a robots noindex tag, and the owner's name appears in the source only entity-encoded. Keep both when editing.
+diff --git a/ai-builder-portfolio/index.html b/ai-builder-portfolio/index.html
+index 430e330..b5b54ca 100644
+--- a/ai-builder-portfolio/index.html
++++ b/ai-builder-portfolio/index.html
+@@ -4,7 +4,7 @@
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>AI Builder Portfolio &middot; BRKMYR</title>
+-<meta name="description" content="Seven AI builder projects across autonomy, defense C2, satellite intelligence, and benchmarks. Each one has a problem, a solution, success criteria, and evals.">
++<meta name="description" content="Eight AI builder projects across autonomy, defense C2, satellite intelligence, and benchmarks. Each one has a problem, a solution, success criteria, and evals.">
+ <meta name="robots" content="noindex, nofollow, noarchive">
+ <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+@@ -17,7 +17,7 @@
+ 
+   <p class="crumbs"><a href="/">BRKMYR</a><span class="sep">/</span>AI Builder Portfolio</p>
+ 
+-  <h1 class="title">Seven AI Builder Projects.</h1>
++  <h1 class="title">Eight AI Builder Projects.</h1>
+   <p class="lede">
+     Each project starts from a customer problem, ships a working system, and reports the numbers that say whether it works. Written the way a product manager writes: problem, solution, success criteria, KPIs.
+   </p>
+@@ -28,6 +28,13 @@
+ 
+   <div class="grid-cards">
+ 
++    <a class="card" href="/gate/">
++      <p class="kicker">Safe Autonomy &middot; Release Assurance</p>
++      <h3>Assurance Gate</h3>
++      <p>[[OWNER_COPY: card body]]</p>
++      <p class="foot">Live dashboard &middot; [[OWNER_COPY: verdict shown]] &middot; 2 tracks</p>
++    </a>
++
+     <a class="card" href="/waymax/">
+       <p class="kicker">Autonomy &middot; Fleet Ops</p>
+       <h3>Waymax Safety Monitor</h3>
+@@ -84,7 +91,7 @@
+ 
+   <p class="section-label">What these have in common</p>
+   <p class="lede" style="font-size: 0.95rem; max-width: 62rem;">
+-    Each project is documented the same way: what problem it addresses, the shipping solution, the success criteria that decide whether it works, and the KPIs an operator or PM would actually track. Reruns are deterministic where possible. The iCub page is the exception: it documents a 2016 research artifact and is not runnable.
++    Each of the eight projects is documented the same way: what problem it addresses, the shipping solution, the success criteria that decide whether it works, and the KPIs an operator or PM would track. Reruns are deterministic where possible. The iCub page is the exception: it documents a 2016 research artifact and is not runnable.
+   </p>
+ 
+   <div class="footer">
+diff --git a/gate/index.html b/gate/index.html
+new file mode 100644
+index 0000000..6e9067d
+--- /dev/null
++++ b/gate/index.html
+@@ -0,0 +1,228 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++<meta charset="UTF-8">
++<meta name="viewport" content="width=device-width, initial-scale=1.0">
++<title>Assurance Gate &middot; AI Builder Portfolio &middot; BRKMYR</title>
++<meta name="description" content="Release assurance for autonomy and model evals. Gates frozen before the run, a bound instead of a point estimate, one verdict with the evidence behind it.">
++<meta name="robots" content="noindex, nofollow, noarchive">
++<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
++<link rel="preconnect" href="https://fonts.googleapis.com">
++<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
++<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
++<link rel="stylesheet" href="/ai-builder-portfolio/assets/portfolio.css">
++<style>
++  .stat-strip {
++    display: grid;
++    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
++    gap: 1px; background: var(--rule); border: 1px solid var(--rule);
++    margin-top: 1.5rem;
++  }
++  .stat-strip .cell { background: var(--bg); padding: 0.9rem 1.1rem; }
++  .stat-strip .k {
++    font-size: var(--label); letter-spacing: var(--track);
++    text-transform: uppercase; color: var(--sec); font-weight: 700;
++  }
++  .stat-strip .v {
++    font-size: 1.6rem; font-weight: 600;
++    letter-spacing: -0.01em; margin-top: 0.3rem;
++  }
++  .cta {
++    display: inline-block; margin-top: 1rem;
++    padding: 0.65rem 1.1rem; border: 1px solid var(--ink);
++    background: var(--bg); color: var(--ink); text-decoration: none;
++    font-family: inherit;
++    font-size: var(--label-l); letter-spacing: var(--track);
++    text-transform: uppercase; font-weight: 600; cursor: pointer;
++  }
++  .cta:hover { background: var(--ink); color: var(--bg); }
++
++  /* Click to load poster. Nothing leaves the page until the button is used. */
++  .poster {
++    margin-top: 1rem;
++    border: 1px solid var(--rule);
++    padding: 1.25rem;
++  }
++  .poster .art {
++    height: clamp(160px, 32vh, 280px);
++    border: 1px solid var(--ink);
++    background:
++      repeating-linear-gradient(0deg, var(--rule) 0 1px, transparent 1px 28px),
++      repeating-linear-gradient(90deg, var(--rule) 0 1px, transparent 1px 28px),
++      var(--bg);
++    display: flex; align-items: flex-end; gap: 0.6rem;
++    padding: 1rem;
++  }
++  .poster .art span {
++    display: block; width: 10%; background: var(--ink);
++  }
++  .poster .art span:nth-child(1) { height: 62%; }
++  .poster .art span:nth-child(2) { height: 38%; }
++  .poster .art span:nth-child(3) { height: 84%; background: var(--bg); border: 1px solid var(--ink); }
++  .poster .art span:nth-child(4) { height: 26%; }
++  .poster .art span:nth-child(5) { height: 51%; }
++  .poster .note {
++    margin-top: 0.8rem; font-size: 0.85rem;
++    color: var(--sec); line-height: 1.5;
++  }
++  .live-frame {
++    width: 100%; height: clamp(420px, 78vh, 900px);
++    margin-top: 1rem; border: 1px solid var(--ink); background: var(--bg);
++  }
++</style>
++</head>
++<body>
++<div class="page" style="max-width: 1100px;">
++
++  <p class="crumbs">
++    <a href="/">BRKMYR</a><span class="sep">/</span>
++    <a href="/ai-builder-portfolio/">AI Builder Portfolio</a><span class="sep">/</span>
++    Assurance Gate
++  </p>
++
++  <h1 class="title">Assurance Gate</h1>
++  <p class="lede">Evaluation results in, release decision out. Gates are written down and frozen before the run. Each one reports a confidence bound next to its threshold, and the dashboard carries the evidence for every number it shows.</p>
++
++  <hr class="rule">
++
++  <div class="doc-section">
++    <p class="doc-label">Problem</p>
++    <h2 class="doc-heading">A score is not a release decision.</h2>
++    <p class="doc-body">
++      [[OWNER_COPY: gate problem]]
++    </p>
++    <p class="doc-body">
++      Two habits make an evaluation score unusable as a decision. Thresholds move after the numbers are known, and a rate from a small sample is read as though it were certain. Both are invisible in the final slide.
++    </p>
++  </div>
++
++  <div class="doc-section">
++    <p class="doc-label">Solution</p>
++    <h2 class="doc-heading">Freeze the gates, publish the hash, then run.</h2>
++    <p class="doc-body">
++      A gate file holds every threshold with its rationale and its source. The file is hashed, the hash is published, and the run manifest records both timestamps. A reader can see whether the gates existed before the result did.
++    </p>
++    <p class="doc-body">
++      Each rate gate passes on a Clopper Pearson bound rather than on the point estimate, so a small sample cannot buy a pass. Count gates on collisions stay absolute. Coverage checks that every parameter bin was drawn at all. A paired regression compares the candidate against its baseline scenario by scenario. The verdict is GO, NO GO or CONDITIONAL, and a waiver can only soften a soft gate, never a hard one.
++    </p>
++    <p class="doc-body">
++      Two tracks share the engine. Track A reads driving scenario runs from a simulation suite. Track B reads language model safety evals produced with Inspect.
++    </p>
++  </div>
++
++  <hr class="rule">
++
++  <div class="doc-section">
++    <p class="doc-label">Result</p>
++    <h2 class="doc-heading">One verdict, with the evidence under it.</h2>
++    <p class="doc-body">
++      [[OWNER_COPY: gate result]]
++    </p>
++    <div class="stat-strip">
++      <div class="cell"><p class="k">Tracks</p><p class="v">2</p></div>
++      <div class="cell"><p class="k">Gate classes</p><p class="v">5</p></div>
++      <div class="cell"><p class="k">Pages</p><p class="v">6</p></div>
++      <div class="cell"><p class="k">Taps to evidence</p><p class="v">3</p></div>
++    </div>
++
++    <div class="poster" id="gate-poster">
++      <div class="art" aria-hidden="true">
++        <span></span><span></span><span></span><span></span><span></span>
++      </div>
++      <p class="note">
++        The live dashboard runs on a hosted Space. It loads only when you ask for it, so this page makes no outside request on its own.
++      </p>
++      <button class="cta" type="button" id="gate-load">Load live dashboard</button>
++    </div>
++  </div>
++
++  <hr class="rule">
++
++  <div class="doc-section">
++    <p class="doc-label">Success criteria</p>
++    <h2 class="doc-heading">When this counts as working.</h2>
++    <ul class="criteria-list">
++      <li>The gates for a run were frozen and published before that run started, and the dashboard shows both times.</li>
++      <li>Every rate gate reports a bound next to its point estimate, and the bound is what decides.</li>
++      <li>Coverage names every empty bin, and an empty bin blocks the release on its own.</li>
++      <li>A regression against the baseline catches any scenario that got worse, even when the average improved.</li>
++      <li>Nothing private reaches a published file. No raw trajectory log, no local path, no address.</li>
++      <li>A reader reaches the evidence behind a failing gate in three taps on a phone.</li>
++      <li>The build is deterministic. The same inputs produce the same bytes.</li>
++      <li>Every judgement call in the build is written down where a reviewer can find it.</li>
++    </ul>
++  </div>
++
++  <div class="doc-section">
++    <p class="doc-label">Metrics, KPIs, evals</p>
++    <h2 class="doc-heading">What the dashboard reports.</h2>
++    <table class="metrics-table">
++      <thead>
++        <tr><th>Metric</th><th>Type</th><th>What it tells the PM</th></tr>
++      </thead>
++      <tbody>
++        <tr>
++          <td class="k">Verdict</td>
++          <td class="v">GO, NO GO, CONDITIONAL</td>
++          <td class="note">The release call for one candidate against one frozen gate file. CONDITIONAL means a soft gate failed and a signed waiver carries it.</td>
++        </tr>
++        <tr>
++          <td class="k">Gates failed of n</td>
++          <td class="v">count</td>
++          <td class="note">How much of the gate set is red, and which classes. Hard gates rank first, then severity, so the first row is the one to fix.</td>
++        </tr>
++        <tr>
++          <td class="k">Coverage empty bins</td>
++          <td class="v">count</td>
++          <td class="note">Parameter ranges the suite never drew. An empty bin means the claim was never tested there, and it blocks the release.</td>
++        </tr>
++        <tr>
++          <td class="k">Regression drops</td>
++          <td class="v">count of pairs</td>
++          <td class="note">Scenarios where the candidate got worse than the baseline by tier or by time to collision. A better average still fails here.</td>
++        </tr>
++        <tr>
++          <td class="k">Bound example</td>
++          <td class="v">rate and bound</td>
++          <td class="note">Fourteen passes out of sixteen give a point estimate of 0.875 and a lower bound near 0.62. A threshold of 0.70 fails on the bound.</td>
++        </tr>
++      </tbody>
++    </table>
++  </div>
++
++  <div class="doc-section">
++    <div class="gaps">
++      <b>What this does not do.</b>
++      <ul>
++        <li>It does not replace a safety case. It produces the evidence layer one would sit on.</li>
++        <li>A gate can only see what the suite tested. The limitations page lists the hazards no gate covers.</li>
++        <li>Demo runs are labelled as demo. Their gates were written after the fact, and the dashboard says so.</li>
++      </ul>
++    </div>
++  </div>
++
++  <div class="footer">
++    <span>&copy; 2026. Built with AI in the EU.</span>
++    <span><a href="/ai-builder-portfolio/">back to portfolio</a></span>
++  </div>
++
++</div>
++<script>
++  (function () {
++    var button = document.getElementById('gate-load');
++    var poster = document.getElementById('gate-poster');
++    if (!button || !poster) { return; }
++    button.addEventListener('click', function () {
++      var frame = document.createElement('iframe');
++      frame.className = 'live-frame';
++      frame.src = 'https://n20x-assurance-gate.static.hf.space';
++      frame.title = 'Assurance Gate live dashboard';
++      frame.loading = 'lazy';
++      frame.referrerPolicy = 'no-referrer';
++      frame.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-popups');
++      poster.replaceWith(frame);
++    });
++  })();
++</script>
++</body>
++</html>
+diff --git a/index.html b/index.html
+index 8d85535..2bf940e 100644
+--- a/index.html
++++ b/index.html
+@@ -346,9 +346,9 @@
+         <svg class="mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M2 4h20a2 2 0 0 1 2 2v.35l-12 6.6L0 6.35V6a2 2 0 0 1 2-2zm22 4.63V18a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8.63l11.52 6.34a1 1 0 0 0 .96 0L24 8.63z"/></svg>
+       </a>
+       <span class="split" aria-hidden="true"></span>
+-      <a class="work" href="/ai-builder-portfolio/" aria-label="Projects: seven AI builder projects">
++      <a class="work" href="/ai-builder-portfolio/" aria-label="Projects: eight AI builder projects">
+         <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="9" width="12" height="12"/><rect x="9" y="3" width="12" height="12"/><path d="M3 9l6-6M15 9l6-6M3 21l6-6M15 21l6-6"/></svg>
+-        <span class="cap">PROJECTS · 7</span>
++        <span class="cap">PROJECTS · 8</span>
+       </a>
+     </nav>
+   </div>
+-- 
+2.49.0
+
