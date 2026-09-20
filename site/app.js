@@ -1193,9 +1193,10 @@
   /* case study page layout ----------------------------------------------- */
 
   /* Slots that sit above the dashboard header, in order. */
-  var CS_TOP = ["crumbs", "intro", "problem", "solution", "result", "kpis"];
+  var CS_TOP = ["crumbs", "intro", "status", "glance", "problem", "what",
+                "solution", "result"];
   /* Slots that sit under the dashboard view, above its own footnote. */
-  var CS_BOTTOM = ["criteria", "metrics", "not"];
+  var CS_BOTTOM = ["architecture", "why", "how", "criteria", "metrics", "not"];
 
   function slotBox(node) {
     var box = h("div", { class: "wrap cs" });
