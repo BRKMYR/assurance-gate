@@ -567,9 +567,13 @@ hr.rule { border: 0; border-bottom: 1px solid var(--rule); margin: 24px 0; }
   font-size: 0.78rem;
   color: var(--ink-2);
   display: flex;
-  justify-content: space-between;
+  /* The website centres this line on every page, so the copyright and the
+     way back never jump position when a reader arrives here. */
+  justify-content: center;
+  align-items: baseline;
+  text-align: center;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 6px 24px;
 }
 .sitefooter a { color: var(--ink-2); }
 .sitefooter a:hover { color: var(--ink); }
