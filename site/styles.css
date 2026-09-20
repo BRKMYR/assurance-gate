@@ -1,16 +1,17 @@
-/* Assurance Gate. Black and white, colour for status only. */
+/* Assurance Gate. Archival off-white paper (#eeeee8) as on every other
+   page of the site, ink and rules warmed to match, colour for status only. */
 
 :root {
-  --ink: #111111;
-  --ink-2: #555555;
-  --ink-3: #767676;
-  --paper: #ffffff;
-  --rule: #d8d8d8;
-  --rule-2: #efefef;
+  --ink: #171712;
+  --ink-2: #5a5a52;
+  --ink-3: #7a7a70;
+  --paper: #eeeee8;
+  --rule: #d7d7cd;
+  --rule-2: #e3e3d8;
   --pass: #1a7f37;
   --fail: #b3261e;
   --warn: #8a5a00;
-  --grey: #5f5f5f;
+  --grey: #5f5f57;
   --gutter: 16px;
   --sans: "Inter Tight", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
@@ -363,9 +364,9 @@ tbody tr.figrow:hover { background: none; }
 .cell-state { display: block; font-size: 0.75rem; font-weight: 600; }
 .cell a { text-decoration: none; }
 .cell a:hover .cell-n { text-decoration: underline; }
-.cell.ok { background: #f4faf6; box-shadow: inset 3px 0 0 var(--pass); }
-.cell.sparse { background: #fdf8ee; box-shadow: inset 3px 0 0 var(--warn); }
-.cell.empty { background: #fdf1f0; box-shadow: inset 3px 0 0 var(--fail); }
+.cell.ok { background: #e6efe7; box-shadow: inset 3px 0 0 var(--pass); }
+.cell.sparse { background: #efe9da; box-shadow: inset 3px 0 0 var(--warn); }
+.cell.empty { background: #efe4e2; box-shadow: inset 3px 0 0 var(--fail); }
 
 .hbar { display: block; width: 100%; height: auto; max-width: 18rem; }
 .hbar rect.fill { fill: var(--ink); }
