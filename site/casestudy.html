@@ -24,6 +24,27 @@
   <hr class="rule">
 </div>
 
+<span data-slot="status" class="status-line">Live &middot; pre registered holdout suite &middot; two tracks</span>
+
+<div data-slot="glance" class="doc-section">
+  <p class="doc-label">At a glance</p>
+  <div class="glance">
+    <div class="cell">
+      <p class="k">What</p>
+      <p class="b">Assurance Gate turns test results into a release decision. It reads the results for a candidate system, checks them against thresholds that were written down and hashed before the run, and returns GO, NO GO or CONDITIONAL. Two tracks share one engine: driving planners in a simulator, and open language models on safety benchmarks.</p>
+    </div>
+    <div class="cell">
+      <p class="k">Why it matters</p>
+      <p class="b">A benchmark score is not a decision. Teams move thresholds after they see the numbers, and they read a rate from sixteen runs as if it were certain. This tool makes both habits visible. The threshold exists before the result, and every rate carries a confidence bound, the range the true rate could fall in.</p>
+    </div>
+    <div class="cell">
+      <p class="k">How it was built</p>
+      <p class="b">I wrote the specification, the twelve gate thresholds with their rationales, and the owner texts by hand. Claude Code agents implemented the Python engine, two result adapters and the static dashboard from that specification in one day. 138 tests, a byte identical build and a copy linter run on every push.</p>
+    </div>
+  </div>
+</div>
+
+
 <div data-slot="problem" class="doc-section">
   <p class="doc-label">Problem</p>
   <h2 class="doc-heading">A score is not a release decision.</h2>
@@ -33,6 +54,19 @@
   <p class="doc-body">
     Two habits make an evaluation score unusable as a decision. Thresholds move after the numbers are known, and a rate from a small sample is read as though it were certain. Both are invisible in the final slide.
   </p>
+</div>
+
+<div data-slot="what" class="doc-section">
+  <p class="doc-label">What it does</p>
+  <h2 class="doc-heading">One folder of results in, one verdict with evidence out.</h2>
+  <p class="doc-body">The tool takes a folder of evaluation records and a gate file and produces one verdict per candidate with the evidence under it. The gate file is frozen and its hash is published on GitHub and on a Hugging Face dataset before any run starts. Each run manifest records both timestamps. The engine evaluates every gate, checks coverage and regression, builds an assurance case tree and writes a static dashboard.</p>
+  <ul class="criteria-list">
+    <li>Refuses to pre register a gate file that still holds a placeholder or is not marked frozen, and refuses when a run for that suite already exists. <span class="mono">preregister.py</span></li>
+    <li>Decides every rate gate on the exact two sided 95 percent Clopper Pearson bound, computed without external libraries so the number is identical on every machine. <span class="mono">stats.py, engine.py</span></li>
+    <li>Marks a gate as insufficient when scorable records fall below its minimum sample size, and marks a whole suite as not pre registered when gates were written after the run. <span class="mono">engine.py, ingest.py</span></li>
+    <li>Fails coverage on any parameter bin or hazard category with zero records, and fails regression on any scenario that got worse against the baseline even when the average improved. <span class="mono">coverage.py, regression.py</span></li>
+    <li>Writes the same bytes for the same inputs, and strips paths, host names and addresses from every published file. <span class="mono">build.py, sanitise.py</span></li>
+  </ul>
 </div>
 
 <div data-slot="solution" class="doc-section">
@@ -53,16 +87,134 @@
 <div data-slot="result" class="doc-section">
   <p class="doc-label">Result</p>
   <h2 class="doc-heading">One verdict, with the evidence under it.</h2>
-  <p class="doc-body">
-    On the pre registered holdout suite the cautious planner fails 2 of 9 gates. 9 of 16 occluded pedestrian scenarios end in a collision, so the hard gate fires before any margin matters. 48 of 60 runs sit below 80 percent of target speed, so it fails availability as well. On the language model track all three models are NO GO, each for a different gate, and one of them fails only on the confidence bound.
-  </p>
+  <p class="doc-body">On the pre registered holdout suite all three baseline planners are NO GO. The cautious planner fails 2 of 9 gates, the plain car following planner 3 of 9, the constant velocity planner 6 of 9. For the car following planner, 11 of 16 occluded pedestrian scenarios end in a collision, so the hard gate fires before any margin matters. Its cut in gate passes on the point estimate (12 of 14) and fails on the 95 percent lower bound (0.572 against a floor of 0.60). That gap is why the bound is the rule.</p>
+  <p class="doc-body">Track B ran three open language models against pre registered ceilings on harmful compliance and over refusal, 763 prompts each. One model answers 1 of 310 unsafe prompts and passes that ceiling, then declines 26 of 248 safe prompts and fails the other. All three models are NO GO.</p>
+  <div class="stat-strip">
+    <div class="cell"><p class="k">Tracks</p><p class="v">2</p></div>
+    <div class="cell"><p class="k">Gate classes</p><p class="v">5</p></div>
+    <div class="cell"><p class="k">Planners gated</p><p class="v">3</p></div>
+    <div class="cell"><p class="k">Models gated</p><p class="v">3</p></div>
+    <div class="cell"><p class="k">Dashboard pages</p><p class="v">6</p></div>
+  </div>
+  <div class="figs">
+    <figure>
+      <svg viewBox="0 0 600 96" role="img" aria-label="A bar from zero to one showing the cut in gate for the car following planner: point estimate 0.857, lower bound 0.572, floor 0.60. The bound sits below the floor, so the gate fails.">
+        <text x="40" y="16" class="sec">CUT IN GATE &middot; CAR FOLLOWING PLANNER &middot; HOLDOUT</text>
+        <line x1="40" y1="52" x2="560" y2="52" stroke="currentColor" stroke-width="1" opacity="0.35"/>
+        <line x1="40" y1="47" x2="40" y2="57" stroke="currentColor" stroke-width="1"/>
+        <line x1="300" y1="47" x2="300" y2="57" stroke="currentColor" stroke-width="1"/>
+        <line x1="560" y1="47" x2="560" y2="57" stroke="currentColor" stroke-width="1"/>
+        <text x="40" y="72" class="sec" text-anchor="middle">0</text>
+        <text x="300" y="72" class="sec" text-anchor="middle">0.5</text>
+        <text x="560" y="72" class="sec" text-anchor="middle">1</text>
+        <line x1="337.4" y1="52" x2="485.6" y2="52" stroke="currentColor" stroke-width="3"/>
+        <rect x="334.4" y="45" width="6" height="14" fill="currentColor"/>
+        <circle cx="485.6" cy="52" r="5" fill="#eeeee8" stroke="currentColor" stroke-width="1.5"/>
+        <line x1="352" y1="30" x2="352" y2="62" class="hot" stroke-width="1.5" stroke-dasharray="3 3"/>
+        <text x="348" y="34" text-anchor="end" class="hot-t">FLOOR 0.60</text>
+        <text x="337" y="88" text-anchor="middle">BOUND 0.572</text>
+        <text x="485.6" y="36" text-anchor="middle">POINT 0.857 &middot; 12 OF 14</text>
+      </svg>
+      <figcaption>Decided on the bound. Twelve passes out of fourteen look like 86 percent, but with that few runs the true rate could be as low as 57 percent. The floor is 60. The gate fails.</figcaption>
+    </figure>
+    <figure>
+      <svg viewBox="0 0 600 96" role="img" aria-label="A timeline with three stamps: gate hash published on GitHub at 20:18:10, on the dataset at 20:18:52, first holdout run at 20:19:19, all on 19 September 2026.">
+        <text x="40" y="16" class="sec">PRE REGISTRATION &middot; 2026-09-19 &middot; UTC</text>
+        <line x1="40" y1="52" x2="560" y2="52" stroke="currentColor" stroke-width="1" opacity="0.35"/>
+        <rect x="55" y="46" width="12" height="12" fill="currentColor"/>
+        <rect x="332" y="46" width="12" height="12" fill="currentColor"/>
+        <circle cx="545" cy="52" r="6" fill="#eeeee8" class="hot" stroke-width="1.5"/>
+        <text x="61" y="36" text-anchor="middle">20:18:10</text>
+        <text x="61" y="72" class="sec" text-anchor="middle">HASH &middot; GITHUB</text>
+        <text x="338" y="36" text-anchor="middle">20:18:52</text>
+        <text x="338" y="72" class="sec" text-anchor="middle">HASH &middot; DATASET</text>
+        <text x="545" y="36" text-anchor="middle" class="hot-t">20:19:19</text>
+        <text x="545" y="72" class="sec" text-anchor="middle">FIRST RUN</text>
+        <text x="40" y="90" class="sec">GATE FILE d2fc9ad7 &middot; HOLDOUT SEED DERIVED FROM THE HASH</text>
+      </svg>
+      <figcaption>The gates existed before the result. Two independent timestamps for the hash, then the first run a minute later. Anyone can check the order.</figcaption>
+    </figure>
+  </div>
 </div>
 
-<div data-slot="kpis" class="stat-strip">
-  <div class="cell"><p class="k">Tracks</p><p class="v">2</p></div>
-  <div class="cell"><p class="k">Gate classes</p><p class="v">5</p></div>
-  <div class="cell"><p class="k">Views</p><p class="v">6</p></div>
-  <div class="cell"><p class="k">Taps to evidence</p><p class="v">3</p></div>
+
+<div data-slot="architecture" class="doc-section">
+  <p class="doc-label">Solution architecture</p>
+  <h2 class="doc-heading">What it stands on, and what is new.</h2>
+  <div class="arch">
+    <div class="lane">
+      <div class="lane-k">Inputs and data<small>results, prompts, gates</small></div>
+      <div class="nodes">
+        <div class="node own">AVSB scenario runs<small>60 scenarios, 3 planners, sibling project</small></div>
+        <div class="node ext">XSTest + StrongREJECT<small>250 safe and 313 unsafe prompts</small></div>
+        <div class="node own">gates/*.yaml<small>12 gates, threshold, rationale, standard</small></div>
+      </div>
+    </div>
+    <div class="flow">records and a frozen gate file</div>
+    <div class="lane">
+      <div class="lane-k">Models and algorithms<small>what does the judging</small></div>
+      <div class="nodes">
+        <div class="node ext">3 open LLMs + judge<small>pinned revisions, temperature 0</small></div>
+        <div class="node ext">Inspect AI<small>UK AI Security Institute, MIT</small></div>
+        <div class="node own">Clopper Pearson bound<small>exact binomial interval, own implementation</small></div>
+      </div>
+    </div>
+    <div class="flow">one outcome per gate</div>
+    <div class="lane own-lane">
+      <div class="lane-k">Engine<small>own code, Python</small></div>
+      <div class="nodes">
+        <div class="node own">preregister + ingest<small>hash, publish, two adapters</small></div>
+        <div class="node own">gate engine<small>verdict, waivers, deviations</small></div>
+        <div class="node own">coverage + regression<small>empty bins, paired drops</small></div>
+        <div class="node own">assurance case<small>claims, evidence, defeaters</small></div>
+        <div class="node own">build + sanitise + lint<small>same bytes, no paths, prose rules</small></div>
+      </div>
+    </div>
+    <div class="flow">data.json, thumbnails, viewer bundle</div>
+    <div class="lane">
+      <div class="lane-k">Outputs and interfaces<small>where a reader lands</small></div>
+      <div class="nodes">
+        <div class="node own">Static dashboard<small>6 routes, vanilla JS, Hugging Face Space</small></div>
+        <div class="node own">Runs dataset<small>results and manifests, CC BY 4.0</small></div>
+        <div class="node ext">GitHub release tag<small>external timestamp for the hash</small></div>
+      </div>
+    </div>
+  </div>
+  <div class="arch-legend"><span class="l-own">Built in this project</span><span class="l-ext">Third party</span></div>
+  <p class="arch-cap">Sources: Inspect AI and the inspect_evals benchmark package under MIT, benchmark prompt sets under their own licences, candidate models under Apache 2.0 and the Llama 3.1 community licence, served through Hugging Face inference providers. The engine and dashboard are Apache 2.0. The runs dataset is CC BY 4.0.</p>
+</div>
+
+<div data-slot="why" class="doc-section">
+  <p class="doc-label">Why it matters</p>
+  <h2 class="doc-heading">A stranger can reproduce the decision.</h2>
+  <p class="doc-body">The gate file hash sits in a GitHub release and a dataset commit stamped 20:18 UTC, the first holdout run is stamped 20:19, and every number on the dashboard links to the record behind it. The project also shows the cost of ignoring sample size: a planner clears the cut in gate on its point estimate and fails it on the bound. And it shows that one gate model fits a driving planner and a language model alike, since Track B ran three open models against the same kind of frozen ceiling.</p>
+  <div class="future">
+    <p class="k">In five years</p>
+    <p>Evaluation results for safety relevant AI will be filed the way clinical trial results are filed: thresholds registered before the run, records public, verdict recomputable by anyone. Regulators under the EU AI Act and ISO/PAS 8800, the road vehicle AI safety standard, will ask for exactly this evidence layer. This project is a small early version of that filing format, built by one person for two suites.</p>
+  </div>
+</div>
+
+<div data-slot="how" class="doc-section">
+  <p class="doc-label">How it was built</p>
+  <h2 class="doc-heading">Spec first, one day of agents, then the numbers.</h2>
+  <div class="build">
+    <div class="cell"><p class="k">Python</p><p class="v">6,998<small>lines</small></p></div>
+    <div class="cell"><p class="k">JavaScript</p><p class="v">1,214<small>lines</small></p></div>
+    <div class="cell"><p class="k">Tests</p><p class="v">138</p></div>
+    <div class="cell"><p class="k">Commits</p><p class="v">21</p></div>
+    <div class="cell"><p class="k">Build span</p><p class="v">2<small>days</small></p></div>
+    <div class="cell"><p class="k">Runtime deps</p><p class="v">4<small>+3 track B</small></p></div>
+  </div>
+  <p class="build-note">Spec, architecture, thresholds and review by hand. Implementation with Claude Code agents. Measured on 2026-09-20 from the repository.</p>
+  <p class="doc-body" style="margin-top:1rem">The specification came first and carried every default, so four agent workstreams built the engine, adapters, dashboard and linter in one pass on 19 September. I then wrote the owner texts and gate rationales, hashed both gate files at 20:18 UTC and ran the holdout suite one minute later. Track B was the hardest part. The first run was discarded before gating because the safe prompt task capped answers at 256 tokens and truncated most of them, so run two applied the configured limit under the unchanged gate file.</p>
+  <div class="diff">
+    <div class="row"><span class="axis">Algorithms and math</span><span class="cells"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span><span class="why">Exact binomial bounds by bisection over the combination function, minimum sample sizes derived from bound arithmetic, the rest is counting and pairing.</span></div>
+    <div class="row"><span class="axis">Systems integration</span><span class="cells"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><span class="why">Two result adapters, Inspect viewer deep links, inference provider probing per model, GitHub releases, a Space and a dataset publish, Lighthouse in CI.</span></div>
+    <div class="row"><span class="axis">Data and domain</span><span class="cells"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><span class="why">Each gate cites ISO 21448, UL 4600 or ISO/PAS 8800, hazard categories are mapped across two benchmarks, and the assurance case carries defeaters.</span></div>
+    <div class="row"><span class="axis">Evaluation rigor</span><span class="cells"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><span class="why">138 tests with a golden output file, byte identical build, two external timestamps for the hash, a discarded run documented in the manifest. One author wrote both gates and planners, which caps this.</span></div>
+    <div class="row"><span class="axis">Interface and product</span><span class="cells"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span><span class="why">Six route dashboard in plain JavaScript, 20 KB first load, coverage heatmap, evidence cards with thumbnails and viewer links, checked at phone width.</span></div>
+    <div class="sum"><span>Difficulty <b>18 of 25 &middot; Advanced</b></span><span>Relative to one competent engineer building it alone</span></div>
+  </div>
 </div>
 
 <div data-slot="criteria" class="doc-section">
@@ -75,7 +227,7 @@
     <li>Coverage names every empty bin, and an empty bin blocks the release on its own.</li>
     <li>A regression against the baseline catches any scenario that got worse, even when the average improved.</li>
     <li>Nothing private reaches a published file. No raw trajectory log, no local path, no address.</li>
-    <li>A reader reaches the evidence behind a failing gate in three taps on a phone.</li>
+    <li>A reader The dashboard is built so a reader reaches the evidence behind a failing gate in three taps on a phone.</li>
     <li>The build is deterministic. The same inputs produce the same bytes.</li>
     <li>Every judgement call in the build is written down where a reviewer can find it.</li>
   </ul>
@@ -93,7 +245,7 @@
         <tr>
           <td class="k">Verdict</td>
           <td class="v">GO, NO GO, CONDITIONAL</td>
-          <td class="note">The release call for one candidate against one frozen gate file. CONDITIONAL means a soft gate failed and a signed waiver carries it.</td>
+          <td class="note">The release call for one candidate against one frozen gate file. CONDITIONAL means a soft gate failed and a waiver with a named signer and an expiry carries it.</td>
         </tr>
         <tr>
           <td class="k">Gates failed of n</td>
@@ -127,6 +279,8 @@
       <li>It does not replace a safety case. It produces the evidence layer one would sit on.</li>
       <li>A gate can only see what the suite tested. The limitations page lists the hazards no gate covers.</li>
       <li>Demo runs are labelled as demo. Their gates were written after the fact, and the dashboard says so.</li>
+  <li>The gates, the scenarios and the planners were written by the same person, one minute apart. The dashboard names this as a live weakness.</li>
+  <li>On Track B one hazard category has zero prompts in both benchmarks as mapped, so the coverage gate fails every model. Whether that is a benchmark gap or a mapping error is an open item.</li>
     </ul>
   </div>
 </div>

@@ -585,3 +585,210 @@ hr.rule { border: 0; border-bottom: 1px solid var(--rule); margin: 24px 0; }
 /* min-height on main keeps the footer down on the standalone build. On the
    published page the case study follows, so it would leave a gap. */
 .has-casestudy main { padding-bottom: 32px; min-height: 0; }
+
+
+/* ---- Portfolio explainability primitives ----
+   Ported from /ai-builder-portfolio/assets/portfolio.css so the case
+   study sections render with the same components as the other eight
+   project pages. This page stays self contained and links no external
+   stylesheet, so the rules are copied rather than imported. Tokens are
+   mapped to this file's names: --bg becomes --paper, --sec becomes
+   --ink-2. Keep in sync when the shared sheet changes. */
+/* ---- Explainability layer (2026-09-20) ----
+
+   Five shared primitives so every case study reads as one series:
+   .glance   three plain-language boxes (What / Why it matters / How built)
+   .arch     solution architecture: four lanes, nodes, third-party dashed,
+             the project's own contribution carries the working blue
+   .build    build profile strip, six measured cells, mono values
+   .diff     difficulty: five axes, five cells each, one sentence
+   .future   the five-year paragraph, hairlines top and bottom, no fill
+   Same tokens as everything above: one ink, one grey, one rule, one blue. */
+
+.glance {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  margin-top: 1.25rem;
+}
+.glance .cell { background: var(--paper); padding: 1.1rem 1.2rem 1.25rem; }
+.glance .k {
+  font-size: var(--label); letter-spacing: var(--track);
+  text-transform: uppercase; color: var(--ink-2); font-weight: 700;
+  margin-bottom: 0.55rem;
+}
+.glance p.b { font-size: 0.95rem; line-height: 1.5; color: var(--ink); }
+
+.arch {
+  margin-top: 1.25rem;
+  border: 1px solid var(--rule);
+}
+.arch .lane {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  border-bottom: 1px solid var(--rule);
+}
+.arch .lane:last-child { border-bottom: 0; }
+.arch .lane-k {
+  padding: 0.9rem 1rem;
+  border-right: 1px solid var(--rule);
+  font-size: var(--label); letter-spacing: var(--track);
+  text-transform: uppercase; color: var(--ink-2); font-weight: 700;
+  line-height: 1.35;
+}
+.arch .lane-k small {
+  display: block; margin-top: 0.3rem;
+  font-weight: 500; letter-spacing: 0.04em; text-transform: none;
+  font-size: 0.7rem; color: var(--ink-2);
+}
+.arch .nodes {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  padding: 0.8rem 1rem;
+  align-content: flex-start;
+}
+.arch .node {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  background: var(--paper);
+  max-width: 16rem;
+}
+.arch .node small {
+  display: block; font-family: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.72rem; letter-spacing: 0; color: var(--ink-2); margin-top: 0.15rem;
+}
+.arch .node.ext { border-style: dashed; border-color: var(--ink-2); color: var(--ink-2); }
+.arch .node.own { border-color: var(--ink); box-shadow: inset 3px 0 0 #1c54dc; }
+.arch .lane.own-lane .lane-k { color: var(--ink); }
+.arch .flow {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 0.3rem 1rem 0.3rem calc(9.5rem + 1rem);
+  font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--ink-2);
+  border-bottom: 1px solid var(--rule);
+}
+.arch .flow::before { content: "\2193"; font-size: 0.9rem; color: var(--ink); }
+.arch-cap {
+  margin-top: 0.6rem; font-size: 0.78rem; color: var(--ink-2); line-height: 1.45;
+}
+.arch-legend {
+  display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: 0.6rem;
+  font-size: 0.72rem; color: var(--ink-2); letter-spacing: 0.04em;
+}
+.arch-legend span::before {
+  content: ""; display: inline-block; width: 0.9rem; height: 0.6rem;
+  vertical-align: -0.05rem; margin-right: 0.4rem; border: 1px solid var(--ink-2);
+}
+.arch-legend .l-ext::before { border-style: dashed; }
+.arch-legend .l-own::before { border-color: var(--ink); box-shadow: inset 2px 0 0 #1c54dc; }
+
+.build {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1px; background: var(--rule); border: 1px solid var(--rule);
+  margin-top: 1.25rem;
+}
+.build .cell { background: var(--paper); padding: 0.8rem 0.9rem 0.9rem; }
+.build .k {
+  font-size: var(--label); letter-spacing: var(--track);
+  text-transform: uppercase; color: var(--ink-2); font-weight: 700;
+}
+.build .v {
+  font-family: var(--mono); font-size: 1.15rem; font-weight: 500;
+  margin-top: 0.3rem; color: var(--ink);
+}
+.build .v small { font-size: 0.72rem; color: var(--ink-2); margin-left: 0.25rem; }
+.build-note { margin-top: 0.6rem; font-size: 0.8rem; color: var(--ink-2); line-height: 1.45; }
+
+.diff { margin-top: 1.25rem; border-top: 1px solid var(--ink); }
+.diff .row {
+  display: grid;
+  grid-template-columns: 11rem 6.5rem minmax(0, 1fr);
+  gap: 1rem; align-items: baseline;
+  padding: 0.6rem 0; border-bottom: 1px solid var(--rule);
+}
+.diff .axis { font-size: 0.9rem; font-weight: 600; }
+.diff .cells { display: flex; gap: 0.25rem; align-self: center; }
+.diff .cells i {
+  display: block; width: 1rem; height: 0.55rem;
+  border: 1px solid var(--ink);
+}
+.diff .cells i.on { background: var(--ink); }
+.diff .why { font-size: 0.88rem; color: var(--ink-2); line-height: 1.45; }
+.diff .sum {
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+  padding: 0.7rem 0 0; font-size: var(--label); letter-spacing: var(--track);
+  text-transform: uppercase; color: var(--ink-2); font-weight: 700;
+}
+.diff .sum b { color: var(--ink); }
+
+.future {
+  margin-top: 1.25rem; padding: 1rem 0;
+  border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink);
+  max-width: var(--measure);
+}
+.future .k {
+  font-size: var(--label); letter-spacing: var(--track);
+  text-transform: uppercase; color: var(--ink-2); font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.future p { font-size: 0.98rem; line-height: 1.5; }
+
+.status-line {
+  display: inline-block; margin-top: 0.6rem;
+  font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--ink-2);
+  border: 1px solid var(--rule); padding: 0.3rem 0.55rem;
+}
+
+@media (max-width: 860px) {
+  .glance { grid-template-columns: 1fr; }
+  .build { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .arch .lane { grid-template-columns: 1fr; }
+  .arch .lane-k { border-right: 0; border-bottom: 1px solid var(--rule); padding-bottom: 0.6rem; }
+  .arch .flow { padding-left: 1rem; }
+  .diff .row { grid-template-columns: 1fr; gap: 0.3rem; }
+}
+@media (max-width: 480px) {
+  .build { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Inline figure pairs: house-style SVGs drawn on the page, no rasters. */
+.figs {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem; margin-top: 1.25rem;
+}
+.figs figure { margin: 0; border: 1px solid var(--rule); padding: 1rem; }
+.figs svg {
+  width: 100%; height: auto; display: block;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.05em;
+  color: var(--ink);
+}
+.figs svg .sec { fill: var(--ink-2); }
+.figs svg .hot { stroke: #1c54dc; }
+.figs svg .hot-t { fill: #1c54dc; }
+.figs figcaption { margin-top: 0.6rem; font-size: 0.78rem; color: var(--ink-2); line-height: 1.45; }
+
+/* Result stat strip, shared (was page-local on the gate page). */
+.stat-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1px; background: var(--rule); border: 1px solid var(--rule);
+  margin-top: 1.5rem;
+}
+.stat-strip .cell { background: var(--paper); padding: 0.9rem 1.1rem; }
+.stat-strip .k {
+  font-size: var(--label); letter-spacing: var(--track);
+  text-transform: uppercase; color: var(--ink-2); font-weight: 700;
+}
+.stat-strip .v { font-size: 1.6rem; font-weight: 600; letter-spacing: -0.01em; margin-top: 0.3rem; }
+
+/* Wide tables scroll inside their own box instead of the page (2026-09-20) */
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.table-wrap .metrics-table { min-width: 34rem; }
