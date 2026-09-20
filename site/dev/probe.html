@@ -2,20 +2,22 @@
 <html lang="en">
 <head><meta charset="utf-8"><title>Width probe</title>
 <style>body{font:16px monospace;margin:0}iframe{width:390px;height:2200px;border:0;display:block}
-#out{font-size:22px;padding:6px 8px;margin:0}</style></head>
+#out{font-size:20px;padding:6px 8px;margin:0}</style></head>
 <body>
 <p id="out">measuring</p>
 <iframe id="f"></iframe>
 <script>
-var route = new URLSearchParams(location.search).get("r") || "/";
+var q = new URLSearchParams(location.search);
+var base = q.get("base") || "../index.html";
+var route = q.get("r") || "/";
 var f = document.getElementById("f");
 f.addEventListener("load", function () {
   setTimeout(function () {
     var d = f.contentDocument.documentElement;
     document.getElementById("out").textContent =
       route + "  scrollWidth " + d.scrollWidth + "  clientWidth " + d.clientWidth;
-  }, 3000);
+  }, 3500);
 });
-f.src = "../index.html#" + route;
+f.src = base + "#" + route;
 </script>
 </body></html>

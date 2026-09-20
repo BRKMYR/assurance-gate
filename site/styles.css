@@ -417,3 +417,166 @@ tbody tr.figrow:hover { background: none; }
   .grid th[scope="row"] { min-width: 7rem; font-size: 0.75rem; }
   .cell { min-width: 5.5rem; }
 }
+
+/* Case study sections -------------------------------------------------------
+   Mounted around the dashboard on the published page. The markup keeps the
+   class names of the website so the two stay recognisable to each other,
+   and the tokens here are the dashboard's own. */
+
+.cs { margin-top: 24px; }
+.cs:first-of-type { margin-top: 0; }
+
+.crumbs {
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  font-weight: 700;
+  margin: 20px 0 22px;
+}
+.crumbs a { color: var(--ink-2); text-decoration: none; }
+.crumbs a:hover { color: var(--ink); text-decoration: underline; }
+.crumbs .sep { padding: 0 0.6rem; }
+
+h1.title {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  margin: 0 0 10px;
+}
+@media (min-width: 40rem) { h1.title { font-size: 2.6rem; } }
+
+p.lede {
+  font-size: 1.0625rem;
+  color: var(--ink-2);
+  max-width: 62ch;
+  margin: 0 0 4px;
+}
+
+hr.rule { border: 0; border-bottom: 1px solid var(--rule); margin: 24px 0; }
+
+.doc-section { margin-top: 28px; }
+
+.doc-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin: 0 0 8px;
+}
+
+.doc-heading {
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  line-height: 1.2;
+  margin: 0 0 10px;
+}
+
+.doc-body { font-size: 1rem; line-height: 1.55; max-width: 62ch; margin: 0; }
+.doc-body + .doc-body { margin-top: 12px; }
+
+.stat-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  margin-top: 20px;
+}
+.stat-strip .cell { background: var(--paper); padding: 14px 16px; }
+.stat-strip .k {
+  margin: 0;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  font-weight: 700;
+}
+.stat-strip .v {
+  margin: 5px 0 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.criteria-list { list-style: none; padding: 0; margin: 12px 0 0; max-width: 62ch; }
+.criteria-list li {
+  position: relative;
+  padding: 9px 0 9px 28px;
+  border-bottom: 1px solid var(--rule-2);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+.criteria-list li:last-child { border-bottom: 0; }
+.criteria-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 14px;
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--ink);
+}
+
+.metrics-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 0.9375rem; }
+.metrics-table th, .metrics-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 11px 14px 11px 0;
+  border-bottom: 1px solid var(--rule-2);
+}
+.metrics-table th {
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  font-weight: 700;
+  border-bottom: 1px solid var(--ink);
+  white-space: nowrap;
+}
+.metrics-table td.k { font-weight: 600; width: 20%; }
+.metrics-table td.v {
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  width: 22%;
+}
+.metrics-table td.note { color: var(--ink-2); font-size: 0.9rem; }
+
+.gaps {
+  margin-top: 10px;
+  padding: 12px 14px;
+  border-left: 3px solid var(--ink-3);
+  border-top: 1px solid var(--rule);
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  max-width: 62ch;
+}
+.gaps b { font-weight: 600; }
+.gaps ul { margin: 6px 0 0 1.2rem; padding: 0; }
+.gaps li { margin-bottom: 4px; }
+
+.sitefooter {
+  margin-top: 28px;
+  padding-top: 14px;
+  border-top: 1px solid var(--rule);
+  font-size: 0.78rem;
+  color: var(--ink-2);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.sitefooter a { color: var(--ink-2); }
+.sitefooter a:hover { color: var(--ink); }
+
+/* On the published page the dashboard header is a band inside the document,
+   not the top of the page. */
+.has-casestudy .top { border-top: 1px solid var(--rule); margin-top: 28px; }
+/* min-height on main keeps the footer down on the standalone build. On the
+   published page the case study follows, so it would leave a gap. */
+.has-casestudy main { padding-bottom: 32px; min-height: 0; }
