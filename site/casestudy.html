@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Assurance Gate case study fragments</title>
+<meta name="robots" content="noindex">
+</head>
+<body>
+<!--
+  Case study copy for the published page at /gate/. Each top level element
+  carries a data-slot name. app.js parses this file with DOMParser and adopts
+  the nodes around the dashboard. The file is never rendered on its own.
+-->
+
+<p data-slot="crumbs" class="crumbs">
+  <a href="/">BRKMYR</a><span class="sep">/</span>
+  <a href="/ai-builder-portfolio/">AI Builder Portfolio</a><span class="sep">/</span>
+  Assurance Gate
+</p>
+
+<div data-slot="intro">
+  <h1 class="title">Assurance Gate</h1>
+  <p class="lede">Evaluation results in, release decision out. Gates are written down and frozen before the run. Each one reports a confidence bound next to its threshold, and the dashboard carries the evidence for every number it shows.</p>
+  <hr class="rule">
+</div>
+
+<div data-slot="problem" class="doc-section">
+  <p class="doc-label">Problem</p>
+  <h2 class="doc-heading">A score is not a release decision.</h2>
+  <p class="doc-body">
+    Every benchmark I have built ends in a number, and the number was never the hard part. The hard part is the release meeting: is this good enough, against which threshold, decided when, by whom. If the threshold is set after the run, the answer is worthless. This project makes the meeting a page and forces the threshold to exist first.
+  </p>
+  <p class="doc-body">
+    Two habits make an evaluation score unusable as a decision. Thresholds move after the numbers are known, and a rate from a small sample is read as though it were certain. Both are invisible in the final slide.
+  </p>
+</div>
+
+<div data-slot="solution" class="doc-section">
+  <p class="doc-label">Solution</p>
+  <h2 class="doc-heading">Freeze the gates, publish the hash, then run.</h2>
+  <p class="doc-body">
+    A gate file holds every threshold with its rationale and its source. The file is hashed, the hash is published, and the run manifest records both timestamps. A reader can see whether the gates existed before the result did.
+  </p>
+  <p class="doc-body">
+    Each rate gate passes on a Clopper Pearson bound rather than on the point estimate, so a small sample cannot buy a pass. Count gates on collisions stay absolute. Coverage checks that every parameter bin was drawn at all. A paired regression compares the candidate against its baseline scenario by scenario. The verdict is GO, NO GO or CONDITIONAL, and a waiver can only soften a soft gate, never a hard one.
+  </p>
+  <p class="doc-body">
+    Two tracks share the engine. Track A reads driving scenario runs from a simulation suite. Track B reads language model safety evals produced with Inspect.
+  </p>
+  <hr class="rule">
+</div>
+
+<div data-slot="result" class="doc-section">
+  <p class="doc-label">Result</p>
+  <h2 class="doc-heading">One verdict, with the evidence under it.</h2>
+  <p class="doc-body">
+    On the pre registered holdout suite the cautious planner fails 2 of 9 gates. 9 of 16 occluded pedestrian scenarios end in a collision, so the hard gate fires before any margin matters. 48 of 60 runs sit below 80 percent of target speed, so it fails availability as well. On the language model track all three models are NO GO, each for a different gate, and one of them fails only on the confidence bound.
+  </p>
+</div>
+
+<div data-slot="kpis" class="stat-strip">
+  <div class="cell"><p class="k">Tracks</p><p class="v">2</p></div>
+  <div class="cell"><p class="k">Gate classes</p><p class="v">5</p></div>
+  <div class="cell"><p class="k">Views</p><p class="v">6</p></div>
+  <div class="cell"><p class="k">Taps to evidence</p><p class="v">3</p></div>
+</div>
+
+<div data-slot="criteria" class="doc-section">
+  <hr class="rule">
+  <p class="doc-label">Success criteria</p>
+  <h2 class="doc-heading">When this counts as working.</h2>
+  <ul class="criteria-list">
+    <li>The gates for a run were frozen and published before that run started, and the dashboard shows both times.</li>
+    <li>Every rate gate reports a bound next to its point estimate, and the bound is what decides.</li>
+    <li>Coverage names every empty bin, and an empty bin blocks the release on its own.</li>
+    <li>A regression against the baseline catches any scenario that got worse, even when the average improved.</li>
+    <li>Nothing private reaches a published file. No raw trajectory log, no local path, no address.</li>
+    <li>A reader reaches the evidence behind a failing gate in three taps on a phone.</li>
+    <li>The build is deterministic. The same inputs produce the same bytes.</li>
+    <li>Every judgement call in the build is written down where a reviewer can find it.</li>
+  </ul>
+</div>
+
+<div data-slot="metrics" class="doc-section">
+  <p class="doc-label">Metrics, KPIs, evals</p>
+  <h2 class="doc-heading">What the dashboard reports.</h2>
+  <div class="scroll">
+    <table class="metrics-table">
+      <thead>
+        <tr><th scope="col">Metric</th><th scope="col">Type</th><th scope="col">What it tells the PM</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="k">Verdict</td>
+          <td class="v">GO, NO GO, CONDITIONAL</td>
+          <td class="note">The release call for one candidate against one frozen gate file. CONDITIONAL means a soft gate failed and a signed waiver carries it.</td>
+        </tr>
+        <tr>
+          <td class="k">Gates failed of n</td>
+          <td class="v">count</td>
+          <td class="note">How much of the gate set is red, and which classes. Hard gates rank first, then severity, so the first row is the one to fix.</td>
+        </tr>
+        <tr>
+          <td class="k">Coverage empty bins</td>
+          <td class="v">count</td>
+          <td class="note">Parameter ranges the suite never drew. An empty bin means the claim was never tested there, and it blocks the release.</td>
+        </tr>
+        <tr>
+          <td class="k">Regression drops</td>
+          <td class="v">count of pairs</td>
+          <td class="note">Scenarios where the candidate got worse than the baseline by tier or by time to collision. A better average still fails here.</td>
+        </tr>
+        <tr>
+          <td class="k">Bound example</td>
+          <td class="v">rate and bound</td>
+          <td class="note">Thirteen passes out of sixteen give a point estimate of 0.8125 and a lower bound of 0.5435. A floor of 0.60 fails on the bound.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div data-slot="not" class="doc-section">
+  <div class="gaps">
+    <b>What this does not do.</b>
+    <ul>
+      <li>It does not replace a safety case. It produces the evidence layer one would sit on.</li>
+      <li>A gate can only see what the suite tested. The limitations page lists the hazards no gate covers.</li>
+      <li>Demo runs are labelled as demo. Their gates were written after the fact, and the dashboard says so.</li>
+    </ul>
+  </div>
+</div>
+
+<div data-slot="footer" class="sitefooter">
+  <span>&copy; 2026. Built with AI in the EU.</span>
+  <span><a href="/ai-builder-portfolio/">back to portfolio</a></span>
+</div>
+
+</body>
+</html>

@@ -6,6 +6,10 @@
   var DATA_URL = DEV ? "dev/sample_data.json" : "data.json";
   var DATA_B_URL = DEV ? "dev/sample_data_b.json" : "data_b.json";
 
+  /* Optional page configuration, set by an inline script before this file.
+     The Space build leaves it unset and behaves exactly as before. */
+  var CFG = window.GATE_CONFIG || {};
+
   var S = {};
   var DATA = null;
   var DATA_B = null;
@@ -1022,6 +1026,15 @@
     );
   }
 
+  /* Stored refs are relative to the report root. A published page that
+     keeps the evaluation bundle elsewhere sets inspectBase. */
+  function inspectHref(ref) {
+    if (!CFG.inspectBase) return ref;
+    var base = String(CFG.inspectBase);
+    if (base.charAt(base.length - 1) !== "/") base += "/";
+    return base + String(ref).replace(/^\/+/, "");
+  }
+
   /* Track B holds hundreds of samples. One page of 50 is rendered at a
      time and the button extends the page, so the filters stay put. */
   var B_FILTERS = { task: "", text: "" };
@@ -1088,7 +1101,7 @@
       h("tbody", {}, samples.map(function (s) {
         return h("tr", {},
           h("th", { scope: "row" }, s.inspect_ref
-            ? h("a", { href: s.inspect_ref, text: s.sample_id })
+            ? h("a", { href: inspectHref(s.inspect_ref), text: s.sample_id })
             : document.createTextNode(s.sample_id)),
           h("td", { text: s.task }),
           h("td", { text: s.category || t("value.none") }),
@@ -1177,6 +1190,59 @@
     return map[path] || "decision";
   }
 
+  /* case study page layout ----------------------------------------------- */
+
+  /* Slots that sit above the dashboard header, in order. */
+  var CS_TOP = ["crumbs", "intro", "problem", "solution", "result", "kpis"];
+  /* Slots that sit under the dashboard view, above its own footnote. */
+  var CS_BOTTOM = ["criteria", "metrics", "not"];
+
+  function slotBox(node) {
+    var box = h("div", { class: "wrap cs" });
+    box.appendChild(node);
+    return box;
+  }
+
+  /* Fragments are parsed with DOMParser and adopted, so no markup string
+     ever reaches the live document. */
+  function mountCaseStudy(text) {
+    var doc = new DOMParser().parseFromString(text, "text/html");
+    var slots = {};
+    var found = doc.querySelectorAll("[data-slot]");
+    for (var i = 0; i < found.length; i++) {
+      slots[found[i].getAttribute("data-slot")] = found[i];
+    }
+
+    var header = document.querySelector("header.top");
+    var foot = document.querySelector("footer.foot");
+    if (!header || !foot) return;
+
+    CS_TOP.forEach(function (name) {
+      if (!slots[name]) return;
+      document.body.insertBefore(slotBox(document.adoptNode(slots[name])), header);
+    });
+    CS_BOTTOM.forEach(function (name) {
+      if (!slots[name]) return;
+      document.body.insertBefore(slotBox(document.adoptNode(slots[name])), foot);
+    });
+    if (slots.footer) {
+      document.body.insertBefore(
+        slotBox(document.adoptNode(slots.footer)), foot.nextSibling);
+    }
+    document.body.classList.add("has-casestudy");
+  }
+
+  function loadCaseStudy() {
+    if (!CFG.casestudy) return Promise.resolve(null);
+    return fetch("casestudy.html").then(function (r) {
+      if (!r.ok) throw new Error("no case study");
+      return r.text();
+    }).catch(function (err) {
+      if (window.console) window.console.error(err);
+      return null;
+    });
+  }
+
   function applyStaticStrings() {
     var nodes = document.querySelectorAll("[data-s]");
     for (var i = 0; i < nodes.length; i++) {
@@ -1191,10 +1257,12 @@
       fetch(DATA_URL).then(function (r) {
         if (!r.ok) throw new Error("no data");
         return r.json();
-      })
+      }),
+      loadCaseStudy()
     ]).then(function (parts) {
       S = parts[0];
       DATA = parts[1];
+      if (parts[2]) mountCaseStudy(parts[2]);
       applyStaticStrings();
       window.addEventListener("hashchange", render);
       render();
