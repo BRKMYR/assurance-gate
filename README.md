@@ -1,5 +1,7 @@
 # assurance-gate
 
+<a href="https://github.com/BRKMYR/assurance-gate/actions/workflows/ci.yml"><img src="https://github.com/BRKMYR/assurance-gate/actions/workflows/ci.yml/badge.svg" alt="tests"></a>
+
 Evaluation results in, release decision out.
 
 Assurance Gate turns evaluation results into a release decision. Thresholds are hashed and published before the run. Rates are reported as Clopper Pearson bounds with a stated minimum n. Coverage shows empty regions of the input space. Regression is checked pair by pair. The argument is laid out as an assurance case with a link from every claim to its evidence. Two tracks share one gate model: an automated driving planner on a scenario suite and a language model on a refusal trade off.
