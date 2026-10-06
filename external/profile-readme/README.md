@@ -2,7 +2,7 @@
 
 ### Product strategist and builder in B2B deep tech: AI & data platforms for autonomous vehicles, Physical and Industrial AI.
 
-Close to a decade in product management. On this GitHub I explore the latest market and technology trends and turn them into AI project prototypes. Everything here is personal work, built fully outside of and unrelated to my employment. I build at the intersection of spatial intelligence, autonomous systems and AI safety, with a focus on **[redacted] ([redacted]) management**: deciding where an automated driving function is cleared to operate and where it must hand back, by road, region and condition, so that agents perceive, reason, and act only where they are cleared to.
+Close to a decade in product management. On this GitHub I explore the latest market and technology trends and turn them into AI project prototypes. Everything here is personal work, built fully outside of and unrelated to my employment. I build at the intersection of spatial intelligence, autonomous systems and AI safety, with a focus on evals, data engines and safety monitoring for perception and autonomy.
 
 Data engines, evals, and RL environments: the data loop behind AD/ADAS, dual use Earth Observation, and industrial automation. Several of the projects below are in **stealth mode**: they live in private repositories until they are ready to ship. Public repos are linked where available.
 
@@ -12,8 +12,8 @@ My background in Physical AI goes back to 2016, when I worked with the **iCub hu
 
 ## Focus Areas
 
-### Safe Autonomy: Assurance, Evals and [redacted]
-[redacted] management as a clearance question: where an automated driving function may operate, where it must hand back, and how that boundary is maintained in the map rather than discovered in test. Alongside it, safety evaluation for autonomous driving with adversarial scenarios and safety critical metrics on a vendor neutral scorecard, applying **UL 4600** and **SOTIF** (ISO 21448). Real time safety monitoring for robotaxi fleets with teleoperation trigger detection on Waymax and the Waymo Open Motion Dataset. Adversarial robustness tooling is public: [`pytorch-shield`](https://github.com/BRKMYR/pytorch-shield). Above the benchmarks sits the decision layer, where thresholds exist before the data and every claim carries its evidence.
+### Safe Autonomy: Assurance, Evals and Safety Monitoring
+Safety evaluation for autonomous driving with adversarial scenarios and safety critical metrics on a vendor neutral scorecard, applying **UL 4600** and **SOTIF** (ISO 21448). Real time safety monitoring for robotaxi fleets with teleoperation trigger detection on Waymax and the Waymo Open Motion Dataset. Adversarial robustness tooling is public: [`pytorch-shield`](https://github.com/BRKMYR/pytorch-shield). Above the benchmarks sits the decision layer, where thresholds exist before the data and every claim carries its evidence.
 
 ### Spatial Intelligence: SAR and Earth Observation
 SAR and EO AI pipelines from satellite tasking to intelligence product: Sentinel-1 acquisition, change and ship detection, damage assessment, and a vision language analyst console that refuses questions the imaging physics cannot answer. In stealth.

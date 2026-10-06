@@ -40,7 +40,7 @@ ENUMERATIONS: dict[str, list[str]] = {
     "waiver.": ["waiver_expired", "waiver_not_permitted"],
     "nav.": ["decision", "gates", "coverage", "case", "evidence", "limits"],
     "family.": ["ped_occluded", "cut_in", "hard_brake", "weather_ramp"],
-    "hazard.": ["intersections", "cyclists", "night", "sensor_faults", "multi_actor", "odd_exit"],
+    "hazard.": ["intersections", "cyclists", "night", "sensor_faults", "multi_actor", "scope_exit"],
 }
 
 FORMAT_KEYS = {

@@ -31,4 +31,4 @@ not_covered:
   - hazard: multi actor interactions
     note_key: coverage.not_covered.multi_actor
   - hazard: [redacted] exit behaviour
-    note_key: coverage.not_covered.odd_exit
+    note_key: coverage.not_covered.scope_exit

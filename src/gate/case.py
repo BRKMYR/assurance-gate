@@ -19,7 +19,7 @@ CONTEXT_DEPLOYMENT_KEY = "owner.deployment_context"
 STRATEGY_KEY = "case.strategy"
 ASSUMPTIONS = ("simulation_fidelity", "predicate_validity", "baseline_comparable")
 DEFEATERS = ("contamination", "quantisation", "sandbagging", "unknown_unsafe")
-RISK_ITEMS = ("perception", "latency", "multi_actor", "odd_exit")
+RISK_ITEMS = ("perception", "latency", "multi_actor", "scope_exit")
 
 
 def _claim_status(outcomes: Sequence[GateOutcome]) -> str:

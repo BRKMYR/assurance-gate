@@ -870,7 +870,7 @@
               },
               {
                 "hazard": "[redacted] exit behaviour",
-                "note_key": "coverage.not_covered.odd_exit"
+                "note_key": "coverage.not_covered.scope_exit"
               }
             ],
             "passed": true,
@@ -2420,7 +2420,7 @@
                 "risk.cut_in.perception",
                 "risk.cut_in.latency",
                 "risk.cut_in.multi_actor",
-                "risk.cut_in.odd_exit"
+                "risk.cut_in.scope_exit"
               ],
               "family": "cut_in",
               "not_covered": [
@@ -2437,7 +2437,7 @@
                 "risk.hard_brake.perception",
                 "risk.hard_brake.latency",
                 "risk.hard_brake.multi_actor",
-                "risk.hard_brake.odd_exit"
+                "risk.hard_brake.scope_exit"
               ],
               "family": "hard_brake",
               "not_covered": [
@@ -2454,7 +2454,7 @@
                 "risk.ped_occluded.perception",
                 "risk.ped_occluded.latency",
                 "risk.ped_occluded.multi_actor",
-                "risk.ped_occluded.odd_exit"
+                "risk.ped_occluded.scope_exit"
               ],
               "family": "ped_occluded",
               "not_covered": [
@@ -2471,7 +2471,7 @@
                 "risk.weather_ramp.perception",
                 "risk.weather_ramp.latency",
                 "risk.weather_ramp.multi_actor",
-                "risk.weather_ramp.odd_exit"
+                "risk.weather_ramp.scope_exit"
               ],
               "family": "weather_ramp",
               "not_covered": [
@@ -5342,7 +5342,7 @@
               },
               {
                 "hazard": "[redacted] exit behaviour",
-                "note_key": "coverage.not_covered.odd_exit"
+                "note_key": "coverage.not_covered.scope_exit"
               }
             ],
             "passed": true,
@@ -6976,7 +6976,7 @@
                 "risk.cut_in.perception",
                 "risk.cut_in.latency",
                 "risk.cut_in.multi_actor",
-                "risk.cut_in.odd_exit"
+                "risk.cut_in.scope_exit"
               ],
               "family": "cut_in",
               "not_covered": [
@@ -6993,7 +6993,7 @@
                 "risk.hard_brake.perception",
                 "risk.hard_brake.latency",
                 "risk.hard_brake.multi_actor",
-                "risk.hard_brake.odd_exit"
+                "risk.hard_brake.scope_exit"
               ],
               "family": "hard_brake",
               "not_covered": [
@@ -7010,7 +7010,7 @@
                 "risk.ped_occluded.perception",
                 "risk.ped_occluded.latency",
                 "risk.ped_occluded.multi_actor",
-                "risk.ped_occluded.odd_exit"
+                "risk.ped_occluded.scope_exit"
               ],
               "family": "ped_occluded",
               "not_covered": [
@@ -7027,7 +7027,7 @@
                 "risk.weather_ramp.perception",
                 "risk.weather_ramp.latency",
                 "risk.weather_ramp.multi_actor",
-                "risk.weather_ramp.odd_exit"
+                "risk.weather_ramp.scope_exit"
               ],
               "family": "weather_ramp",
               "not_covered": [
@@ -9794,7 +9794,7 @@
               },
               {
                 "hazard": "[redacted] exit behaviour",
-                "note_key": "coverage.not_covered.odd_exit"
+                "note_key": "coverage.not_covered.scope_exit"
               }
             ],
             "passed": true,
@@ -10656,7 +10656,7 @@
                 "risk.cut_in.perception",
                 "risk.cut_in.latency",
                 "risk.cut_in.multi_actor",
-                "risk.cut_in.odd_exit"
+                "risk.cut_in.scope_exit"
               ],
               "family": "cut_in",
               "not_covered": [
@@ -10673,7 +10673,7 @@
                 "risk.hard_brake.perception",
                 "risk.hard_brake.latency",
                 "risk.hard_brake.multi_actor",
-                "risk.hard_brake.odd_exit"
+                "risk.hard_brake.scope_exit"
               ],
               "family": "hard_brake",
               "not_covered": [
@@ -10690,7 +10690,7 @@
                 "risk.ped_occluded.perception",
                 "risk.ped_occluded.latency",
                 "risk.ped_occluded.multi_actor",
-                "risk.ped_occluded.odd_exit"
+                "risk.ped_occluded.scope_exit"
               ],
               "family": "ped_occluded",
               "not_covered": [
@@ -10707,7 +10707,7 @@
                 "risk.weather_ramp.perception",
                 "risk.weather_ramp.latency",
                 "risk.weather_ramp.multi_actor",
-                "risk.weather_ramp.odd_exit"
+                "risk.weather_ramp.scope_exit"
               ],
               "family": "weather_ramp",
               "not_covered": [
@@ -13224,7 +13224,7 @@
               },
               {
                 "hazard": "[redacted] exit behaviour",
-                "note_key": "coverage.not_covered.odd_exit"
+                "note_key": "coverage.not_covered.scope_exit"
               }
             ],
             "passed": true,
@@ -14732,7 +14732,7 @@
                 "risk.cut_in.perception",
                 "risk.cut_in.latency",
                 "risk.cut_in.multi_actor",
-                "risk.cut_in.odd_exit"
+                "risk.cut_in.scope_exit"
               ],
               "family": "cut_in",
               "not_covered": [
@@ -14749,7 +14749,7 @@
                 "risk.hard_brake.perception",
                 "risk.hard_brake.latency",
                 "risk.hard_brake.multi_actor",
-                "risk.hard_brake.odd_exit"
+                "risk.hard_brake.scope_exit"
               ],
               "family": "hard_brake",
               "not_covered": [
@@ -14766,7 +14766,7 @@
                 "risk.ped_occluded.perception",
                 "risk.ped_occluded.latency",
                 "risk.ped_occluded.multi_actor",
-                "risk.ped_occluded.odd_exit"
+                "risk.ped_occluded.scope_exit"
               ],
               "family": "ped_occluded",
               "not_covered": [
@@ -14783,7 +14783,7 @@
                 "risk.weather_ramp.perception",
                 "risk.weather_ramp.latency",
                 "risk.weather_ramp.multi_actor",
-                "risk.weather_ramp.odd_exit"
+                "risk.weather_ramp.scope_exit"
               ],
               "family": "weather_ramp",
               "not_covered": [
@@ -17628,7 +17628,7 @@
               },
               {
                 "hazard": "[redacted] exit behaviour",
-                "note_key": "coverage.not_covered.odd_exit"
+                "note_key": "coverage.not_covered.scope_exit"
               }
             ],
             "passed": true,
@@ -19254,7 +19254,7 @@
                 "risk.cut_in.perception",
                 "risk.cut_in.latency",
                 "risk.cut_in.multi_actor",
-                "risk.cut_in.odd_exit"
+                "risk.cut_in.scope_exit"
               ],
               "family": "cut_in",
               "not_covered": [
@@ -19271,7 +19271,7 @@
                 "risk.hard_brake.perception",
                 "risk.hard_brake.latency",
                 "risk.hard_brake.multi_actor",
-                "risk.hard_brake.odd_exit"
+                "risk.hard_brake.scope_exit"
               ],
               "family": "hard_brake",
               "not_covered": [
@@ -19288,7 +19288,7 @@
                 "risk.ped_occluded.perception",
                 "risk.ped_occluded.latency",
                 "risk.ped_occluded.multi_actor",
-                "risk.ped_occluded.odd_exit"
+                "risk.ped_occluded.scope_exit"
               ],
               "family": "ped_occluded",
               "not_covered": [
@@ -19305,7 +19305,7 @@
                 "risk.weather_ramp.perception",
                 "risk.weather_ramp.latency",
                 "risk.weather_ramp.multi_actor",
-                "risk.weather_ramp.odd_exit"
+                "risk.weather_ramp.scope_exit"
               ],
               "family": "weather_ramp",
               "not_covered": [
@@ -21866,7 +21866,7 @@
               },
               {
                 "hazard": "[redacted] exit behaviour",
-                "note_key": "coverage.not_covered.odd_exit"
+                "note_key": "coverage.not_covered.scope_exit"
               }
             ],
             "passed": true,
@@ -22695,7 +22695,7 @@
                 "risk.cut_in.perception",
                 "risk.cut_in.latency",
                 "risk.cut_in.multi_actor",
-                "risk.cut_in.odd_exit"
+                "risk.cut_in.scope_exit"
               ],
               "family": "cut_in",
               "not_covered": [
@@ -22712,7 +22712,7 @@
                 "risk.hard_brake.perception",
                 "risk.hard_brake.latency",
                 "risk.hard_brake.multi_actor",
-                "risk.hard_brake.odd_exit"
+                "risk.hard_brake.scope_exit"
               ],
               "family": "hard_brake",
               "not_covered": [
@@ -22729,7 +22729,7 @@
                 "risk.ped_occluded.perception",
                 "risk.ped_occluded.latency",
                 "risk.ped_occluded.multi_actor",
-                "risk.ped_occluded.odd_exit"
+                "risk.ped_occluded.scope_exit"
               ],
               "family": "ped_occluded",
               "not_covered": [
@@ -22746,7 +22746,7 @@
                 "risk.weather_ramp.perception",
                 "risk.weather_ramp.latency",
                 "risk.weather_ramp.multi_actor",
-                "risk.weather_ramp.odd_exit"
+                "risk.weather_ramp.scope_exit"
               ],
               "family": "weather_ramp",
               "not_covered": [

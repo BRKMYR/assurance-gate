@@ -83,7 +83,7 @@ for _name in ("contamination", "quantisation", "sandbagging", "unknown_unsafe"):
     BUILT_IN_STRINGS[f"case.defeater.{_name}"] = f"[[OWNER_COPY: defeater {_name}]]"
 for _family in ("cut_in", "hard_brake", "ped_occluded", "weather_ramp"):
     BUILT_IN_STRINGS[f"case.claim.{_family}"] = f"[[OWNER_COPY: claim {_family}]]"
-    for _item in ("perception", "latency", "multi_actor", "odd_exit"):
+    for _item in ("perception", "latency", "multi_actor", "scope_exit"):
         BUILT_IN_STRINGS[f"risk.{_family}.{_item}"] = f"[[OWNER_COPY: risk {_family} {_item}]]"
 for _hazard in (
     "intersections",
@@ -91,7 +91,7 @@ for _hazard in (
     "night_low_light",
     "sensor_faults",
     "multi_actor",
-    "odd_exit",
+    "scope_exit",
 ):
     BUILT_IN_STRINGS[f"coverage.not_covered.{_hazard}"] = f"[[OWNER_COPY: not covered {_hazard}]]"
 BUILT_IN_STRINGS.update(
