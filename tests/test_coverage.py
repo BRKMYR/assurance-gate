@@ -137,7 +137,7 @@ def test_repo_bin_edges_match_the_binding_table() -> None:
         "night and low light",
         "sensor faults",
         "multi actor interactions",
-        "[redacted] exit behaviour",
+        "leaving tested conditions",
     ]
 
 

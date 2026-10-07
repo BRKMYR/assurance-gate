@@ -294,7 +294,7 @@ Last bin is closed on the right. `status = empty` when n is 0, `sparse` when n i
 
 ### 5.2 Not covered rows (fixed)
 
-`intersections, cyclists, night and low light, sensor faults, multi actor interactions, [redacted] exit behaviour`. Each row carries a `strings.json` note. They are rendered under the matrix with the sentence from key `coverage.unknown_unsafe` and never affect the verdict. They feed the residual risk table.
+`intersections, cyclists, night and low light, sensor faults, multi actor interactions, leaving tested conditions`. Each row carries a `strings.json` note. They are rendered under the matrix with the sentence from key `coverage.unknown_unsafe` and never affect the verdict. They feed the residual risk table.
 
 ### 5.3 Track B coverage
 
@@ -404,7 +404,7 @@ Rules:
 - `construction`: regexes for `\b\w+, not \w+`, `, rather than`, `\bThat is the point\b`, `\bthe whole point\b`, `\bproves nothing\b`, sentences of fewer than six words that end a paragraph (warning), three adjectives in a row (warning).
 - `self_certifying`: `honestly clearly obviously simply actual actually genuinely truly realistically` and `real` followed by a noun from `story state argument release`.
 - `owner_copy`: `\[\[OWNER_COPY` allowed in push mode, violation in release mode.
-- `stealth`: case insensitive `[redacted] [redacted] [redacted] [redacted] "[redacted]" [redacted] "[redacted]" [redacted] [redacted] [redacted] [redacted] [redacted]`, case sensitive `[redacted]`, regex `\b2M\b`, `/Users/`, email regex. Applies in both modes and to every file under `site/`, `runs/`, `space/`, `dataset/`, `external/`, `README.md`.
+- `stealth`: terms from a private list kept outside the repository (env `STEALTH_TERMS` in CI from a repository secret, else `STEALTH_TERMS_FILE`, else `~/.config/brkmyr/stealth_terms.txt`), plus `/Users/` and an email regex. A missing list is a violation in CI and a warning locally. Applies in both modes and to every file under `site/`, `runs/`, `space/`, `dataset/`, `external/`, `README.md`.
 
 `tests/fixtures/lint_corpus/` holds one failing file per rule and one passing file, asserted by `test_lint`.
 
@@ -415,7 +415,7 @@ Rules:
 ## 12. Presentation files (workstream D, prepared, not published)
 
 - `external/brkmyr.com/gate.patch`: a git patch against the current `main` of `~/src/github.com/BRKMYR/brkmyr.com` that adds the card as the first card in `ai-builder-portfolio/index.html` (kicker `Safe Autonomy · Release Assurance`, foot template `Live dashboard · {verdict} shown · 2 tracks`), changes "Seven AI Builder Projects" and the closing paragraph to eight, adds `gate/index.html` in the existing project page template (problem, solution, result, success criteria, metrics, with `[[OWNER_COPY]]` slots and a click to load poster that swaps in an iframe of `https://n20x-assurance-gate.static.hf.space`), and updates the site README's external call sentence. The patch is produced with `git format-patch` on a local branch `gate` and the branch is left unpushed.
-- `external/profile-readme/README.md`: the full new profile README with the GATE row first (`Live`, Space URL), focus area renamed to "Safe Autonomy: Assurance, Evals and [redacted]" with one added sentence as an owner slot, the INTENT row moved below the safe autonomy rows with "engagement authorization". Not pushed.
+- `external/profile-readme/README.md`: the full new profile README with the GATE row first (`Live`, Space URL), focus area renamed to "Safe Autonomy: Assurance, Evals and Safety Monitoring" with one added sentence as an owner slot, the INTENT row moved below the safe autonomy rows with "engagement authorization". Not pushed.
 - `README.md`, `space/README.md`, `dataset/README.md`: structure written, owner paragraphs as slots, no employer names, no metrics.
 
 ## 13. Fixtures (`tests/fixtures/`)

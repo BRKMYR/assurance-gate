@@ -11,6 +11,9 @@ jobs:
   test:
     name: tests and copy lint
     runs-on: ubuntu-latest
+    env:
+      # Private stealth list, never in the repository.
+      STEALTH_TERMS: ${{ secrets.STEALTH_TERMS }}
     strategy:
       fail-fast: false
       matrix:

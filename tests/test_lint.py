@@ -34,6 +34,15 @@ def rules(paths: list[Path] | None, mode: str) -> set[str]:
     return {finding.rule for finding in violations(paths, mode)}
 
 
+# Stand-in terms, so the private list never has to appear in the repository.
+FAKE_TERMS = "Acme Mapping\ncs:ZXQ\nre:\\b9Q\\b"
+
+
+@pytest.fixture
+def fake_terms(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("STEALTH_TERMS", FAKE_TERMS)
+
+
 # One failing file per rule, section 10.
 FAILING_FILES = {
     "fail_em_dash.md": "em_dash",
@@ -50,7 +59,7 @@ FAILING_FILES = {
 
 
 @pytest.mark.parametrize("name,rule", sorted(FAILING_FILES.items()))
-def test_each_rule_has_a_failing_fixture(name: str, rule: str) -> None:
+def test_each_rule_has_a_failing_fixture(name: str, rule: str, fake_terms: None) -> None:
     found = rules([CORPUS / name], "push")
     assert found == {rule}, f"{name} should trip {rule} alone, found {sorted(found)}"
 
@@ -80,34 +89,33 @@ def test_finding_output_names_file_line_rule_and_excerpt(capsys: pytest.CaptureF
     assert "the gate failed" in captured
 
 
-def test_stealth_list_is_the_one_from_the_spec() -> None:
-    assert lint_copy.STEALTH_INSENSITIVE == (
-        "[redacted]",
-        "[redacted]",
-        "[redacted]",
-        "[redacted]",
-        "[redacted]",
-        "[redacted]",
-        "[redacted]",
-        "[redacted]",
-        "[redacted]",
-        "[redacted]",
-        "[redacted]",
-        "[redacted]",
-    )
+def test_stealth_terms_come_from_outside_the_repo(fake_terms: None) -> None:
+    patterns = lint_copy.load_stealth_terms()
+    assert patterns is not None
+    assert [p.pattern for p in patterns] == [r"\bAcme\ Mapping\b", r"\bZXQ\b", r"\b9Q\b"]
 
 
-def test_stealth_catches_the_case_sensitive_and_regex_terms(tmp_path: Path) -> None:
+def test_stealth_catches_the_case_sensitive_and_regex_terms(tmp_path: Path, fake_terms: None) -> None:
     sample = tmp_path / "leak.md"
     sample.write_text(
-        "The fleet reached [redacted] vehicles.\n"
+        "The fleet reached 9Q vehicles.\n"
         "Written at /Users/someone/notes.\n"
         "Write to someone@example.com.\n"
-        "Sold by [redacted].\n",
+        "Sold by ZXQ.\n"
+        "Sold by zxq.\n",
         encoding="utf-8",
     )
     found = [f for f in lint_copy.lint([sample], "push", tmp_path) if f.rule == "stealth"]
     assert len(found) == 4
+
+
+def test_missing_terms_fail_in_ci_and_warn_locally(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.delenv("STEALTH_TERMS", raising=False)
+    monkeypatch.setenv("STEALTH_TERMS_FILE", str(tmp_path / "absent.txt"))
+    monkeypatch.setenv("CI", "true")
+    assert "stealth_terms_missing" in rules([CORPUS / "pass.md"], "push")
+    monkeypatch.delenv("CI")
+    assert violations([CORPUS / "pass.md"], "push") == []
 
 
 def test_docs_are_never_linted() -> None:

@@ -30,5 +30,5 @@ not_covered:
     note_key: coverage.not_covered.sensor_faults
   - hazard: multi actor interactions
     note_key: coverage.not_covered.multi_actor
-  - hazard: [redacted] exit behaviour
+  - hazard: leaving tested conditions
     note_key: coverage.not_covered.scope_exit

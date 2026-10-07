@@ -18,6 +18,7 @@ from __future__ import annotations
 import argparse
 import html as html_module
 import json
+import os
 import re
 import sys
 from dataclasses import dataclass
@@ -339,27 +340,46 @@ RE_SELF_CERT_REAL = re.compile(r"\breal\s+(story|state|argument|release)\b", re.
 
 RE_OWNER_COPY = re.compile(r"\[\[OWNER_COPY")
 
-STEALTH_INSENSITIVE = (
-    "[redacted]",
-    "[redacted]",
-    "[redacted]",
-    "[redacted]",
-    "[redacted]",
-    "[redacted]",
-    "[redacted]",
-    "[redacted]",
-    "[redacted]",
-    "[redacted]",
-    "[redacted]",
-    "[redacted]",
-)
-RE_STEALTH_INSENSITIVE = re.compile(
-    "|".join(r"\b" + re.escape(term) + r"\b" for term in STEALTH_INSENSITIVE), re.IGNORECASE
-)
-RE_STEALTH_SENSITIVE = re.compile(r"[redacted]")
-RE_STEALTH_2M = re.compile(r"\b2M\b")
+# The stealth terms live outside the repository so the list itself never ships.
+# Sources in order: env STEALTH_TERMS (CI secret), env STEALTH_TERMS_FILE, then
+# ~/.config/brkmyr/stealth_terms.txt. One term per line, word boundary match,
+# case insensitive. A "cs:" prefix makes a term case sensitive, a "re:" prefix
+# takes a raw regex, and lines starting with "#" are comments.
+STEALTH_TERMS_PATH = Path.home() / ".config" / "brkmyr" / "stealth_terms.txt"
 RE_STEALTH_USERS = re.compile(r"/Users/")
 RE_STEALTH_EMAIL = re.compile(r"\b[A-Za-z0-9._%+-]{2,}@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b")
+
+
+def compile_stealth_terms(raw: str) -> list[re.Pattern[str]]:
+    """Compile the private term list into patterns, insensitive terms first."""
+    insensitive: list[str] = []
+    patterns: list[re.Pattern[str]] = []
+    for line in raw.splitlines():
+        term = line.strip()
+        if not term or term.startswith("#"):
+            continue
+        if term.startswith("re:"):
+            patterns.append(re.compile(term[3:]))
+        elif term.startswith("cs:"):
+            patterns.append(re.compile(r"\b" + re.escape(term[3:]) + r"\b"))
+        else:
+            insensitive.append(term)
+    if insensitive:
+        joined = "|".join(r"\b" + re.escape(term) + r"\b" for term in insensitive)
+        patterns.insert(0, re.compile(joined, re.IGNORECASE))
+    return patterns
+
+
+def load_stealth_terms() -> list[re.Pattern[str]] | None:
+    """Return the private stealth patterns, or None when no source exists."""
+    raw = os.environ.get("STEALTH_TERMS", "")
+    if not raw.strip():
+        override = os.environ.get("STEALTH_TERMS_FILE")
+        path = Path(override) if override else STEALTH_TERMS_PATH
+        if not path.is_file():
+            return None
+        raw = path.read_text(encoding="utf-8")
+    return compile_stealth_terms(raw)
 
 # Approximate adjective list for the three in a row warning.
 ADJECTIVES = {
@@ -461,7 +481,9 @@ def check_segments(path: str, segments: Sequence[Segment], mode: str) -> list[Fi
     return findings
 
 
-def check_stealth(path: str, text: str, suffix: str) -> list[Finding]:
+def check_stealth(
+    path: str, text: str, suffix: str, terms: Sequence[re.Pattern[str]]
+) -> list[Finding]:
     """Stealth grep over raw content. Patches are checked on added lines only."""
     if suffix in {".patch", ".diff"}:
         lines: list[tuple[int, str]] = [
@@ -474,13 +496,7 @@ def check_stealth(path: str, text: str, suffix: str) -> list[Finding]:
 
     findings: list[Finding] = []
     for index, raw in lines:
-        for pattern in (
-            RE_STEALTH_INSENSITIVE,
-            RE_STEALTH_SENSITIVE,
-            RE_STEALTH_2M,
-            RE_STEALTH_USERS,
-            RE_STEALTH_EMAIL,
-        ):
+        for pattern in (*terms, RE_STEALTH_USERS, RE_STEALTH_EMAIL):
             match = pattern.search(raw)
             if match:
                 findings.append(Finding(path, index, "stealth", excerpt_of(match.group(0))))
@@ -560,6 +576,12 @@ def lint(paths: Sequence[Path] | None, mode: str, root: Path = REPO_ROOT) -> lis
         stealth_files = default_stealth_files(root)
 
     findings: list[Finding] = []
+    terms = load_stealth_terms()
+    if terms is None:
+        # CI must never pass on a missing secret, a local run only warns.
+        local = not os.environ.get("CI")
+        findings.append(Finding("stealth_terms", 0, "stealth_terms_missing", "no private term list", local))
+        terms = []
     for path in sorted(set(prose_files)):
         text = read_text(path)
         if text is None:
@@ -574,7 +596,7 @@ def lint(paths: Sequence[Path] | None, mode: str, root: Path = REPO_ROOT) -> lis
         if text is None:
             continue
         name = relative(path, root)
-        findings.extend(check_stealth(name, text, path.suffix.lower()))
+        findings.extend(check_stealth(name, text, path.suffix.lower(), terms))
         if path not in prose_files or EXTRACTORS.get(path.suffix.lower()) is None:
             findings.extend(check_owner_copy_raw(name, text, mode))
     return sorted(set(findings), key=lambda f: (f.path, f.line, f.rule))

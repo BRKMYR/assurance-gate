@@ -869,7 +869,7 @@
                 "note_key": "coverage.not_covered.multi_actor"
               },
               {
-                "hazard": "[redacted] exit behaviour",
+                "hazard": "leaving tested conditions",
                 "note_key": "coverage.not_covered.scope_exit"
               }
             ],
@@ -2429,7 +2429,7 @@
                 "night and low light",
                 "sensor faults",
                 "multi actor interactions",
-                "[redacted] exit behaviour"
+                "leaving tested conditions"
               ]
             },
             {
@@ -2446,7 +2446,7 @@
                 "night and low light",
                 "sensor faults",
                 "multi actor interactions",
-                "[redacted] exit behaviour"
+                "leaving tested conditions"
               ]
             },
             {
@@ -2463,7 +2463,7 @@
                 "night and low light",
                 "sensor faults",
                 "multi actor interactions",
-                "[redacted] exit behaviour"
+                "leaving tested conditions"
               ]
             },
             {
@@ -2480,7 +2480,7 @@
                 "night and low light",
                 "sensor faults",
                 "multi actor interactions",
-                "[redacted] exit behaviour"
+                "leaving tested conditions"
               ]
             }
           ],
@@ -5341,7 +5341,7 @@
                 "note_key": "coverage.not_covered.multi_actor"
               },
               {
-                "hazard": "[redacted] exit behaviour",
+                "hazard": "leaving tested conditions",
                 "note_key": "coverage.not_covered.scope_exit"
               }
             ],
@@ -6985,7 +6985,7 @@
                 "night and low light",
                 "sensor faults",
                 "multi actor interactions",
-                "[redacted] exit behaviour"
+                "leaving tested conditions"
               ]
             },
             {
@@ -7002,7 +7002,7 @@
                 "night and low light",
                 "sensor faults",
                 "multi actor interactions",
-                "[redacted] exit behaviour"
+                "leaving tested conditions"
               ]
             },
             {
@@ -7019,7 +7019,7 @@
                 "night and low light",
                 "sensor faults",
                 "multi actor interactions",
-                "[redacted] exit behaviour"
+                "leaving tested conditions"
               ]
             },
             {
@@ -7036,7 +7036,7 @@
                 "night and low light",
                 "sensor faults",
                 "multi actor interactions",
-                "[redacted] exit behaviour"
+                "leaving tested conditions"
               ]
             }
           ],
@@ -9793,7 +9793,7 @@
                 "note_key": "coverage.not_covered.multi_actor"
               },
               {
-                "hazard": "[redacted] exit behaviour",
+                "hazard": "leaving tested conditions",
                 "note_key": "coverage.not_covered.scope_exit"
               }
             ],
@@ -10665,7 +10665,7 @@
                 "night and low light",
                 "sensor faults",
                 "multi actor interactions",
-                "[redacted] exit behaviour"
+                "leaving tested conditions"
               ]
             },
             {
@@ -10682,7 +10682,7 @@
                 "night and low light",
                 "sensor faults",
                 "multi actor interactions",
-                "[redacted] exit behaviour"
+                "leaving tested conditions"
               ]
             },
             {
@@ -10699,7 +10699,7 @@
                 "night and low light",
                 "sensor faults",
                 "multi actor interactions",
-                "[redacted] exit behaviour"
+                "leaving tested conditions"
               ]
             },
             {
@@ -10716,7 +10716,7 @@
                 "night and low light",
                 "sensor faults",
                 "multi actor interactions",
-                "[redacted] exit behaviour"
+                "leaving tested conditions"
               ]
             }
           ],
@@ -13223,7 +13223,7 @@
                 "note_key": "coverage.not_covered.multi_actor"
               },
               {
-                "hazard": "[redacted] exit behaviour",
+                "hazard": "leaving tested conditions",
                 "note_key": "coverage.not_covered.scope_exit"
               }
             ],
@@ -14741,7 +14741,7 @@
                 "night and low light",
                 "sensor faults",
                 "multi actor interactions",
-                "[redacted] exit behaviour"
+                "leaving tested conditions"
               ]
             },
             {
@@ -14758,7 +14758,7 @@
                 "night and low light",
                 "sensor faults",
                 "multi actor interactions",
-                "[redacted] exit behaviour"
+                "leaving tested conditions"
               ]
             },
             {
@@ -14775,7 +14775,7 @@
                 "night and low light",
                 "sensor faults",
                 "multi actor interactions",
-                "[redacted] exit behaviour"
+                "leaving tested conditions"
               ]
             },
             {
@@ -14792,7 +14792,7 @@
                 "night and low light",
                 "sensor faults",
                 "multi actor interactions",
-                "[redacted] exit behaviour"
+                "leaving tested conditions"
               ]
             }
           ],
@@ -17627,7 +17627,7 @@
                 "note_key": "coverage.not_covered.multi_actor"
               },
               {
-                "hazard": "[redacted] exit behaviour",
+                "hazard": "leaving tested conditions",
                 "note_key": "coverage.not_covered.scope_exit"
               }
             ],
@@ -19263,7 +19263,7 @@
                 "night and low light",
                 "sensor faults",
                 "multi actor interactions",
-                "[redacted] exit behaviour"
+                "leaving tested conditions"
               ]
             },
             {
@@ -19280,7 +19280,7 @@
                 "night and low light",
                 "sensor faults",
                 "multi actor interactions",
-                "[redacted] exit behaviour"
+                "leaving tested conditions"
               ]
             },
             {
@@ -19297,7 +19297,7 @@
                 "night and low light",
                 "sensor faults",
                 "multi actor interactions",
-                "[redacted] exit behaviour"
+                "leaving tested conditions"
               ]
             },
             {
@@ -19314,7 +19314,7 @@
                 "night and low light",
                 "sensor faults",
                 "multi actor interactions",
-                "[redacted] exit behaviour"
+                "leaving tested conditions"
               ]
             }
           ],
@@ -21865,7 +21865,7 @@
                 "note_key": "coverage.not_covered.multi_actor"
               },
               {
-                "hazard": "[redacted] exit behaviour",
+                "hazard": "leaving tested conditions",
                 "note_key": "coverage.not_covered.scope_exit"
               }
             ],
@@ -22704,7 +22704,7 @@
                 "night and low light",
                 "sensor faults",
                 "multi actor interactions",
-                "[redacted] exit behaviour"
+                "leaving tested conditions"
               ]
             },
             {
@@ -22721,7 +22721,7 @@
                 "night and low light",
                 "sensor faults",
                 "multi actor interactions",
-                "[redacted] exit behaviour"
+                "leaving tested conditions"
               ]
             },
             {
@@ -22738,7 +22738,7 @@
                 "night and low light",
                 "sensor faults",
                 "multi actor interactions",
-                "[redacted] exit behaviour"
+                "leaving tested conditions"
               ]
             },
             {
@@ -22755,7 +22755,7 @@
                 "night and low light",
                 "sensor faults",
                 "multi actor interactions",
-                "[redacted] exit behaviour"
+                "leaving tested conditions"
               ]
             }
           ],
