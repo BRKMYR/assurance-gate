@@ -41,7 +41,7 @@ FILES = (
 DIRS = ("thumbs", "assets")
 
 #: The Space keeps the evaluation bundle, so Track B refs point there.
-INSPECT_BASE = "https://n20x-assurance-gate.static.hf.space/"
+INSPECT_BASE = "https://brkmyr-assurance-gate.static.hf.space/"
 
 #: The website marks every project page this way. site/index.html carries no
 #: robots rule because the Space is meant to be found.

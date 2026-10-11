@@ -280,7 +280,7 @@ index 0000000..cc7522a
 +    button.addEventListener('click', function () {
 +      var frame = document.createElement('iframe');
 +      frame.className = 'live-frame';
-+      frame.src = 'https://n20x-assurance-gate.static.hf.space';
++      frame.src = 'https://brkmyr-assurance-gate.static.hf.space';
 +      frame.title = 'Assurance Gate live dashboard';
 +      frame.loading = 'lazy';
 +      frame.referrerPolicy = 'no-referrer';
