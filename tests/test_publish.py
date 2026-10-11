@@ -97,8 +97,8 @@ def test_dry_run_prints_every_operation_and_touches_nothing(
     assert snapshot(repo) == before
     assert FakeApi.calls == []
     out = capsys.readouterr().out
-    assert "N20X/assurance-gate" in out
-    assert "N20X/assurance-gate-runs" in out
+    assert "BRKMYR/assurance-gate" in out
+    assert "BRKMYR/assurance-gate-runs" in out
     assert "delete_patterns=['*']" in out
     assert "space/README.md" in out
     assert "dataset/README.md" in out

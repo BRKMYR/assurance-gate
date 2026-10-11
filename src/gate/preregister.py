@@ -20,7 +20,7 @@ from pathlib import Path
 from gate.schema import SCHEMA_VERSION
 
 OWNER_COPY_MARKER = "[[OWNER_COPY"
-DATASET_REPO = "N20X/assurance-gate-runs"
+DATASET_REPO = "BRKMYR/assurance-gate-runs"
 
 
 class PreregisterRefused(RuntimeError):

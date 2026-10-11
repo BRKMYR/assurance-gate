@@ -32,7 +32,7 @@ Ordered by current priority. Most projects are developed in private repositories
 
 | Project | Status | Repo | Focus |
 | :--- | :--- | :--- | :--- |
-| Assurance Gate | Live | [Space](https://huggingface.co/spaces/N20X/assurance-gate) and [GitHub](https://github.com/BRKMYR/assurance-gate) | Release gate over eval results: thresholds hashed before the run, Clopper Pearson bounds, parameter space coverage, paired regression, assurance case with linked evidence. Live on a static Space. |
+| Assurance Gate | Live | [Space](https://huggingface.co/spaces/BRKMYR/assurance-gate) and [GitHub](https://github.com/BRKMYR/assurance-gate) | Release gate over eval results: thresholds hashed before the run, Clopper Pearson bounds, parameter space coverage, paired regression, assurance case with linked evidence. Live on a static Space. |
 | Waymax Safety Monitor | Shipped | Private | Risk ranked fleet dashboard for robotaxi teleoperators: three scenarios, seven trigger kinds, rewindable timeline on the Waymo Open Motion Dataset. |
 | AV Safety Benchmark | Shipped | Private | Vendor neutral safety scorecard: 60 scenarios, four families, one composite score. 180 runs against three baselines. |
 | World Model Benchmark | v0.2 | Private | World foundation model evaluation: six metrics, six failure modes, closed form baselines, toy suite leaderboard. |

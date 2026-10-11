@@ -9,7 +9,7 @@ Human only steps. The build does not wait for them, the release does.
 | Precondition | State on 2026-09-19 | Effect while missing |
 |---|---|---|
 | Owner texts in `strings.json`, `gates.yaml` rationales, READMEs | missing | `[[OWNER_COPY: slot]]` placeholders, release lint fails, `gate preregister` refuses |
-| `HF_TOKEN` with write scope on `N20X/assurance-gate` and `N20X/assurance-gate-runs`, billing method for Inference Providers | missing | `gate publish` and `gate run --track b` run in `--dry-run` only |
+| `HF_TOKEN` with write scope on `BRKMYR/assurance-gate` and `BRKMYR/assurance-gate-runs`, billing method for Inference Providers | missing | `gate publish` and `gate run --track b` run in `--dry-run` only |
 | GitHub repo `BRKMYR/assurance-gate` (created private, flipped public at release) | to be created by the build | `gate preregister` needs `gh` (present, authenticated as BRKMYR) |
 | Mirror token for `brkmyr.github.io` | missing | mirror step skipped with a warning |
 
@@ -368,7 +368,7 @@ The `maps_to` values are matched case insensitively against the category strings
 
 `gate build --out site/` reads every suite under `runs/`, evaluates, writes `site/data.json` and `site/data_b.json` (the latter only when a Track B suite exists), copies thumbnails to `site/thumbs/`, merges gate rationales into the strings under `rationale.<gate_id>`, validates that every `strings.json` key referenced by `app.js` (listed in `site/strings.required.txt`, owned by C) exists, and exits non zero on a missing key or a `schema_version` mismatch. Byte identical on rerun.
 
-`gate publish --tag v1.0 [--dry-run]`: uploads `site/` to Space `N20X/assurance-gate` with `upload_folder(delete_patterns=["*"])` while preserving `space/README.md` as the Space README (front matter `title: Assurance Gate`, `emoji: 🚧`, `sdk: static`, `app_file: index.html`, `pinned: false`, `license: apache-2.0`), uploads `runs/**/results.json`, `runs/**/manifest.json`, `preregistration/*.json` and `dataset/README.md` to the dataset, and mirrors `site/` into a checkout of `brkmyr.com` (the website repo, renamed from brkmyr.github.io on 2026-09-19, remote github.com/BRKMYR/brkmyr.com) under `gate/live/` when `MIRROR_TOKEN` is set. Commit message format `gate publish <tag> <utc time>`. Dry run prints every operation and touches nothing.
+`gate publish --tag v1.0 [--dry-run]`: uploads `site/` to Space `BRKMYR/assurance-gate` with `upload_folder(delete_patterns=["*"])` while preserving `space/README.md` as the Space README (front matter `title: Assurance Gate`, `emoji: 🚧`, `sdk: static`, `app_file: index.html`, `pinned: false`, `license: apache-2.0`), uploads `runs/**/results.json`, `runs/**/manifest.json`, `preregistration/*.json` and `dataset/README.md` to the dataset, and mirrors `site/` into a checkout of `brkmyr.com` (the website repo, renamed from brkmyr.github.io on 2026-09-19, remote github.com/BRKMYR/brkmyr.com) under `gate/live/` when `MIRROR_TOKEN` is set. Commit message format `gate publish <tag> <utc time>`. Dry run prints every operation and touches nothing.
 
 ## 9. Dashboard (workstream C, `site/`)
 

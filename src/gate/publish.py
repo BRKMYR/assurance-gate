@@ -2,8 +2,8 @@
 
 Three destinations, one command:
 
-1. the static Space `N20X/assurance-gate` gets the contents of `site/`,
-2. the dataset `N20X/assurance-gate-runs` gets the public run records,
+1. the static Space `BRKMYR/assurance-gate` gets the contents of `site/`,
+2. the dataset `BRKMYR/assurance-gate-runs` gets the public run records,
 3. a checkout of the website repository gets a mirror of `site/` under
    `gate/live/`, and only when `MIRROR_TOKEN` is set.
 
@@ -34,8 +34,8 @@ def _resolve_token() -> str | None:
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 
-SPACE_REPO_ID = "N20X/assurance-gate"
-DATASET_REPO_ID = "N20X/assurance-gate-runs"
+SPACE_REPO_ID = "BRKMYR/assurance-gate"
+DATASET_REPO_ID = "BRKMYR/assurance-gate-runs"
 
 SITE_DIR = "site"
 SPACE_CARD = "space/README.md"
